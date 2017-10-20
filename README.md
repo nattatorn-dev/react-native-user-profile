@@ -1,6 +1,13 @@
 # react-native-user-profile
 A react native mobile starter kit, Examples of user profiles pages to help you write component and design 🎨
 
+## Find it on Expo
+https://expo.io/@nattatorn-dev/expo-react-native-user-profile
+
+## Profile1
+![Profile1](https://image.ibb.co/c97iGR/pro1.png)
+
+## Features
 - **In app theme hot reload support**!
 - Carefully crafted user experience and design
 - Clean and comprehensive codebase
