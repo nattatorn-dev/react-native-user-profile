@@ -1,0 +1,57 @@
+{
+  "globals": {
+    "it": true,
+    "expect": true
+  },
+  "extends": [
+    "airbnb",
+    "eslint-config-prettier",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": ["react-native", "prettier", "eslint-plugin-prettier"],
+  "rules": {
+    "semi": ["error", "never"],
+
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".js", ".jsx"] }
+    ],
+
+    "space-before-blocks": 2,
+    "space-before-function-paren": [
+      2,
+      { "anonymous": "always", "named": "never" }
+    ],
+    "comma-spacing": [2, { "before": false, "after": true }],
+    "comma-style": [2, "last"],
+    "no-lonely-if": 2,
+    "array-bracket-spacing": [2, "never"],
+    "no-spaced-func": [2],
+    "space-in-parens": [2, "never"],
+    "space-infix-ops": 2,
+
+    "no-unused-vars": [
+      2,
+      {
+        "vars": "all",
+        "args": "after-used"
+      }
+    ],
+    "no-use-before-define": [2],
+    "indent": [
+      2,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+
+    "prettier/prettier": [
+      "error",
+      { "singleQuote": true, "semi": false, "trailingComma": "es5" }
+    ]
+  }
+}
