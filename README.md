@@ -1,5 +1,5 @@
 # react-native-user-profile
-A react native mobile starter kit, Examples of user profiles pages to help you write component and design 🎨
+A react native mobile starter kit, Examples of user profiles pages to help you create component and design 🎨
 
 ## Find it on Expo
 https://expo.io/@nattatorn-dev/expo-react-native-user-profile
