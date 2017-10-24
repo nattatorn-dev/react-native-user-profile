@@ -14,6 +14,11 @@ const styles = StyleSheet.create({
     color: '#01C89E',
     fontSize: 30,
   },
+  name: {
+    fontSize: 14,
+    color: 'gray',
+    fontWeight: '200'
+  }
 })
 
 const Email = ({ containerStyle, onPressEmail, name, email, index }) => (
@@ -51,7 +56,7 @@ const Email = ({ containerStyle, onPressEmail, name, email, index }) => (
       </View>
       <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
         {name.trim().length !== 0 && (
-          <Text style={{ fontSize: 14, color: 'gray', fontWeight: '200' }}>
+          <Text style={styles.name}>
             {name}
           </Text>
         )}
