@@ -6,12 +6,7 @@ const Separator = () => (
   <View style={styles.separatorContainer}>
     <View style={styles.separatorOffset} />
     <View
-      style={{
-        flexDirection: "row",
-        flex: 8,
-        borderColor: "#EDEDED",
-        borderWidth: 0.8,
-      }}
+      style={styles.separator}
     />
   </View>
 );
@@ -23,6 +18,12 @@ const styles = StyleSheet.create({
   separatorOffset: {
     flexDirection: "row",
     flex: 2,
+  },
+  separator: {
+    flexDirection: "row",
+    flex: 8,
+    borderColor: "#EDEDED",
+    borderWidth: 0.8,
   },
 });
 
