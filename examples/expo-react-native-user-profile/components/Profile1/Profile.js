@@ -1,19 +1,20 @@
-import { Card, Icon } from 'react-native-elements'
+import React, { Component } from "react"
+import { Card, Icon } from "react-native-elements"
 import {
   Image,
   Linking,
+  ListView,
   Platform,
   ScrollView,
   StyleSheet,
   Text,
   View,
-} from 'react-native'
+} from "react-native"
 
-import Email from './Email'
-import PropTypes from 'prop-types'
-import React from 'react'
-import Separator from './Separator'
-import Tel from './Tel'
+import Email from "./Email"
+import PropTypes from "prop-types"
+import Separator from "./Separator"
+import Tel from "./Tel"
 
 const styles = StyleSheet.create({
   cardWrapper: {
@@ -24,34 +25,34 @@ const styles = StyleSheet.create({
     padding: 0,
     margin: 0,
     borderWidth: 0,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
   },
   cardHeaderContainer: {},
 
   contactHeaderName: {
     fontSize: 22,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     paddingBottom: 8,
-    textAlign: 'center',
-    color: '#fff',
+    textAlign: "center",
+    color: "#fff",
   },
   placeIcon: {
-    color: 'white',
+    color: "white",
     fontSize: 26,
   },
   contactHeaderdDepartment: {
     fontSize: 15,
-    textAlign: 'center',
-    color: '#a5a5a5',
-    fontWeight: '600',
+    textAlign: "center",
+    color: "#a5a5a5",
+    fontWeight: "600",
   },
   contactBodyContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     flex: 1,
     paddingTop: 30,
   },
   image: {
-    borderColor: '#01C89E',
+    borderColor: "#01C89E",
     borderRadius: 85,
     borderWidth: 3,
     height: 170,
@@ -59,46 +60,61 @@ const styles = StyleSheet.create({
     width: 170,
   },
   imageContainer: {
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
     ...Platform.select({
       ios: {
-        alignItems: 'center',
+        alignItems: "center",
         elevation: 1,
         marginTop: -1,
       },
       android: {
-        alignItems: 'center',
+        alignItems: "center",
       },
     }),
   },
 })
 
 const contact = {
-  imgUrl: 'https://www.mendetails.com/wp-content/uploads/2015/10/JD1.jpg',
+  imgUrl: "https://www.mendetails.com/wp-content/uploads/2015/10/JD1.jpg",
   imgBackground:
-    'https://orig00.deviantart.net/dcd7/f/2014/027/2/0/mountain_background_by_pukahuna-d73zlo5.png',
-  name: 'Elsie Goodman',
-  postion: 'Front-end Engineer',
-  country: 'Thailand',
-  city: 'Bangkok',
+    "https://orig00.deviantart.net/dcd7/f/2014/027/2/0/mountain_background_by_pukahuna-d73zlo5.png",
+  name: "Elsie Goodman",
+  postion: "Front-end Engineer",
+  country: "Thailand",
+  city: "Bangkok",
   tels: [
-    { id: 1, name: 'Mobile', number: '(089) 928-2134' },
-    { id: 2, name: 'Work', number: '(999) 435-9887' },
+    { id: 1, name: "Mobile", number: "+66 (089)-928-2134" },
+    { id: 2, name: "Work", number: "+41 (112)-435-9887" },
   ],
   emails: [
-    { id: 1, name: 'Personal', email: 'elsie-goodman@mail.com' },
-    { id: 2, name: 'Work', email: 'elsie@work.com' },
+    { id: 1, name: "Personal", email: "elsie-goodman@mail.com" },
+    { id: 2, name: "Work", email: "elsie@work.com" },
   ],
 }
 
-const { city, country, imgUrl, imgBackground, name } = contact
+const { city, country, emails, imgUrl, imgBackground, name, tels } = contact
 
-const Contact = () => {
-  const renderContactHeader = () => (
+class Contact extends Component {
+  static propTypes = {}
+  static navigationOptions = {
+    header: null,
+  }
+
+  constructor(props) {
+    super(props)
+
+    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
+    this.state = {
+      telDataSource: ds.cloneWithRows(tels),
+      emailDataSource: ds.cloneWithRows(emails),
+    }
+  }
+
+  renderContactHeader = () => (
     <View style={styles.cardHeaderContainer}>
       <Image
         style={{
-          backgroundColor: 'rgb(45,62,80)',
+          backgroundColor: "rgb(45,62,80)",
           paddingTop: 35,
           paddingBottom: 20,
         }}
@@ -117,19 +133,19 @@ const Contact = () => {
           <Text style={styles.contactHeaderName}>{name}</Text>
           <View
             style={{
-              flexDirection: 'row',
-              alignItems: 'center',
+              flexDirection: "row",
+              alignItems: "center",
             }}
           >
             <View>
               <Icon
                 iconStyle={styles.placeIcon}
                 name="place"
-                onPress={onPressPlace}
+                onPress={this.onPressPlace}
                 underlayColor="transparent"
               />
             </View>
-            <View style={{ backgroundColor: 'transparent' }}>
+            <View style={{ backgroundColor: "transparent" }}>
               <Text style={styles.contactHeaderdDepartment}>
                 {city}, {country}
               </Text>
@@ -140,79 +156,76 @@ const Contact = () => {
     </View>
   )
 
-  const onPressPlace = () => {
-    console.log('place')
+  onPressPlace = () => {
+    console.log("place")
   }
 
-  const onPressTel = () => {
-    console.log('call')
-
-    // exmalple
-    // Linking.openURL('tel:1242').catch(err => console.log('Error:', err))
+  onPressTel = number => {
+    Linking.openURL(`tel:${number}`).catch(err => console.log("Error:", err))
   }
 
-  const onPressSms = () => {
-    console.log('sms')
+  onPressSms = () => {
+    console.log("sms")
   }
 
-  const onPressEmail = () => {
-    console.log('send email')
-
-    //exmalple
-    // Linking.openURL(
-    //   'mailto:somethingemail@gmail.com?subject=abcdefg&body=body'
-    // ).catch(err => console.log('Error:', err))
+  onPressEmail = email => {
+    Linking.openURL(`mailto:${email}?subject=subject&body=body`).catch(err =>
+      console.log("Error:", err),
+    )
   }
 
-  const renderTel = () => (
-    <View style={styles.contactBodyContainer}>
-      {contact.tels.map(({ id, name, number }, k) => (
-        <Tel
-          key={`tel-${id}`}
-          index={k}
-          name={name}
-          number={number}
-          onPressSms={onPressSms}
-          onPressTel={onPressTel}
-        />
-      ))}
-    </View>
+  renderTel = () => (
+    <ListView
+      contentContainerStyle={styles.contactBodyContainer}
+      dataSource={this.state.telDataSource}
+      renderRow={({ id, name, number }, _, k) => {
+        console.log(_, k)
+        return (
+          <Tel
+            key={`tel-${id}`}
+            index={k}
+            name={name}
+            number={number}
+            onPressSms={this.onPressSms}
+            onPressTel={this.onPressTel}
+          />
+        )
+      }}
+    />
   )
 
-  const renderEmail = () => (
-    <View style={styles.contactBodyContainer}>
-      {contact.emails.map(({ id, name, email }, k) => (
-        <Email
-          key={`email-${id}`}
-          index={k}
-          name={name}
-          email={email}
-          onPressEmail={onPressEmail}
-        />
-      ))}
-    </View>
+  renderEmail = () => (
+    <ListView
+      contentContainerStyle={styles.contactBodyContainer}
+      dataSource={this.state.emailDataSource}
+      renderRow={({ id, name, email }, _, k) => {
+        return (
+          <Email
+            key={`email-${id}`}
+            index={k}
+            name={name}
+            email={email}
+            onPressEmail={this.onPressEmail}
+          />
+        )
+      }}
+    />
   )
 
-  return (
-    <ScrollView>
-      <View style={styles.cardWrapper}>
-        <Card containerStyle={styles.cardContainer}>
-          {renderContactHeader()}
-          {renderTel()}
-          {Separator()}
-          {renderEmail()}
-        </Card>
-      </View>
-    </ScrollView>
-  )
+  render() {
+    return (
+      <ScrollView>
+        <View style={styles.cardWrapper}>
+          <Card containerStyle={styles.cardContainer}>
+            {this.renderContactHeader()}
+            {this.renderTel()}
+            {Separator()}
+            {this.renderEmail()}
+          </Card>
+        </View>
+      </ScrollView>
+    )
+  }
 }
-
-// Contact.propTypes = {
-//   contact: PropTypes.object.isRequired
-// };
 
 export default Contact
-
-Contact.navigationOptions = {
-  header: null,
-}
