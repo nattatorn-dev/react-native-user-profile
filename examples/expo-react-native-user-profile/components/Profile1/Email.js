@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, TouchableOpacity, Text, View } from 'react-native'
 
 import { Icon } from 'react-native-elements'
 import PropTypes from 'prop-types'
@@ -17,52 +17,50 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 14,
     color: 'gray',
-    fontWeight: '200'
-  }
+    fontWeight: '200',
+  },
 })
 
 const Email = ({ containerStyle, onPressEmail, name, email, index }) => (
-  <View style={[styles.contactBodyItem, containerStyle]}>
-    <View
-      style={{
-        flex: 2,
-        justifyContent: 'center',
-      }}
-    >
-      {index === 0 && (
-        <Icon
-          iconStyle={styles.telIcon}
-          name="email"
-          onPress={onPressEmail}
-          underlayColor="transparent"
-        />
-      )}
-    </View>
-    <View
-      style={{
-        flex: 8,
-        flexDirection: 'column',
-        justifyContent: 'center',
-      }}
-    >
+  <TouchableOpacity onPress={() => onPressEmail(email)}>
+    <View style={[styles.contactBodyItem, containerStyle]}>
       <View
         style={{
-          flexDirection: 'row',
-          justifyContent: 'flex-start',
-          marginBottom: 5,
+          flex: 2,
+          justifyContent: 'center',
         }}
       >
-        <Text style={{ fontSize: 16 }}>{email}</Text>
-      </View>
-      <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
-        {name.trim().length !== 0 && (
-          <Text style={styles.name}>
-            {name}
-          </Text>
+        {+index === 0 && (
+          <Icon
+            iconStyle={styles.telIcon}
+            name="email"
+            onPress={() => onPressEmail()}
+            underlayColor="transparent"
+          />
         )}
       </View>
+      <View
+        style={{
+          flex: 8,
+          flexDirection: 'column',
+          justifyContent: 'center',
+        }}
+      >
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            marginBottom: 5,
+          }}
+        >
+          <Text style={{ fontSize: 16 }}>{email}</Text>
+        </View>
+        <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
+          {name.trim().length !== 0 && <Text style={styles.name}>{name}</Text>}
+        </View>
+      </View>
     </View>
-  </View>
+  </TouchableOpacity>
 )
 
 Email.propTypes = {
