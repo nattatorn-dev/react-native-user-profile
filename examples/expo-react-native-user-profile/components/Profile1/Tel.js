@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, TouchableOpacity, Text, View } from 'react-native'
 
 import { Icon } from 'react-native-elements'
 import PropTypes from 'prop-types'
@@ -29,55 +29,57 @@ const Tel = ({
   name,
 }) => {
   return (
-    <View style={[styles.contactBodyItem, containerStyle]}>
-      <View
-        style={{
-          flex: 2,
-          justifyContent: 'center',
-        }}
-      >
-        {index === 0 && (
-          <Icon
-            iconStyle={styles.telIcon}
-            name="call"
-            onPress={onPressTel}
-            underlayColor="transparent"
-          />
-        )}
-      </View>
-      <View
-        style={{
-          flex: 6,
-          flexDirection: 'column',
-          justifyContent: 'center',
-        }}
-      >
+    <TouchableOpacity onPress={() => onPressTel(number)}>
+      <View style={[styles.contactBodyItem, containerStyle]}>
         <View
           style={{
-            flexDirection: 'row',
-            justifyContent: 'flex-start',
-            marginBottom: 5,
+            flex: 2,
+            justifyContent: 'center',
           }}
         >
-          <Text style={{ fontSize: 16 }}>{number}</Text>
-        </View>
-        <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
-          {name.trim().length !== 0 && (
-            <Text style={{ fontSize: 14, color: 'gray', fontWeight: '200' }}>
-              {name}
-            </Text>
+          {+index === 0 && (
+            <Icon
+              iconStyle={styles.telIcon}
+              name="call"
+              onPress={() => onPressTel(number)}
+              underlayColor="transparent"
+            />
           )}
         </View>
+        <View
+          style={{
+            flex: 6,
+            flexDirection: 'column',
+            justifyContent: 'center',
+          }}
+        >
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'flex-start',
+              marginBottom: 5,
+            }}
+          >
+            <Text style={{ fontSize: 16 }}>{number}</Text>
+          </View>
+          <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
+            {name.trim().length !== 0 && (
+              <Text style={{ fontSize: 14, color: 'gray', fontWeight: '200' }}>
+                {name}
+              </Text>
+            )}
+          </View>
+        </View>
+        <View style={{ flex: 2, justifyContent: 'flex-start' }}>
+          <Icon
+            iconStyle={styles.smsIcon}
+            name="textsms"
+            onPress={() => onPressSms()}
+            underlayColor="transparent"
+          />
+        </View>
       </View>
-      <View style={{ flex: 2, justifyContent: 'flex-start' }}>
-        <Icon
-          iconStyle={styles.smsIcon}
-          name="textsms"
-          onPress={onPressSms}
-          underlayColor="transparent"
-        />
-      </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
