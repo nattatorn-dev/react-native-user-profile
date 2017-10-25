@@ -1,4 +1,6 @@
 # react-native-user-profile
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/nattatorn-dev/react-native-user-profile.svg)](https://greenkeeper.io/)
 A react native mobile starter kit, Examples of user profiles pages to help you create component and design 🎨
 
 ## Find it on Expo
