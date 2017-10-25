@@ -100,14 +100,13 @@ class Contact extends Component {
     header: null,
   }
 
-  constructor(props) {
-    super(props)
-
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
-    this.state = {
-      telDataSource: ds.cloneWithRows(tels),
-      emailDataSource: ds.cloneWithRows(emails),
-    }
+  state = {
+    telDataSource: new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2,
+    }).cloneWithRows(tels),
+    emailDataSource: new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2,
+    }).cloneWithRows(emails),
   }
 
   renderContactHeader = () => (

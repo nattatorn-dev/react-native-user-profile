@@ -5,11 +5,24 @@ import { StackNavigator, TabNavigator } from 'react-navigation'
 import PropTypes from 'prop-types'
 
 import Profile1 from './components/Profile1/Profile'
+import Profile2 from './components/Profile2/Profile'
 
-const ProfileStack = StackNavigator(
+const Profile1Stack = StackNavigator(
   {
     profile: {
       screen: Profile1,
+      path: '/',
+    },
+  },
+  {
+    mode: 'card',
+  }
+)
+
+const Profile2Stack = StackNavigator(
+  {
+    profile: {
+      screen: Profile2,
       path: '/',
     },
   },
@@ -24,10 +37,17 @@ const HomeIcon = ({ focused, tintColor }) => (
 
 const RootTabs = TabNavigator(
   {
-    Home: {
-      screen: ProfileStack,
+    profile1: {
+      screen: Profile1Stack,
       navigationOptions: {
-        tabBarLabel: 'Profile',
+        tabBarLabel: 'Profile1',
+        tabBarIcon: HomeIcon,
+      },
+    },
+    profile2: {
+      screen: Profile2Stack,
+      navigationOptions: {
+        tabBarLabel: 'Profile2',
         tabBarIcon: HomeIcon,
       },
     },
@@ -52,6 +72,7 @@ const RootTabs = TabNavigator(
         justifyContent: 'center',
       },
     },
+    initialRouteName: 'profile1',
   }
 )
 
