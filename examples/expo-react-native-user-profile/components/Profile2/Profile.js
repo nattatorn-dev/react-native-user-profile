@@ -12,7 +12,12 @@ import {
   Text,
   View,
 } from "react-native"
-import { TabViewAnimated, TabBar } from "react-native-tab-view"
+import {
+  TabViewAnimated,
+  TabBar,
+  TabViewPagerScroll,
+  TabViewPagerPan,
+} from "react-native-tab-view"
 import SimplePage from "./SimplePage"
 import PropTypes from "prop-types"
 
@@ -110,7 +115,28 @@ const contact = {
   feeds: [
     {
       id: 1,
-      name: "",
+      name: "Richard Cruz",
+      title: "1217 Vene Lane",
+      description:
+        "figbumecceruhgijzobkamamosihdelanzeogahosjosluhzosjiubugiglimohirubaremafamibdijenoskeogwomcodawipjedjuwafomicukizafajal",
+      image:
+        "https://www.mcdonalds.com/content/dam/usa/promotions/desktop/OFYQ_960x542.jpg",
+    },
+    {
+      id: 2,
+      name: "Richard Cruz",
+      title: "1217 Vene Lane",
+      description:
+        "figbumecceruhgijzobkamamosihdelanzeogahosjosluhzosjiubugiglimohirubaremafamibdijenoskeogwomcodawipjedjuwafomicukizafajal",
+      image:
+        "https://images.pexels.com/photos/372882/pexels-photo-372882.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb",
+    },
+    {
+      id: 3,
+      name: "Richard Cruz",
+      title: "1217 Vene Lane",
+      description:
+        "figbumecceruhgijzobkamamosihdelanzeogahosjosluhzosjiubugiglimohirubaremafamibdijenoskeogwomcodawipjedjuwafomicukizafajal",
       image:
         "https://images.pexels.com/photos/372882/pexels-photo-372882.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb",
     },
@@ -181,15 +207,16 @@ class Profile2 extends Component {
   }
 
   _renderScene = ({ route }) => {
+    console.log("feeds", feeds)
     switch (route.key) {
       case "1":
         return <SimplePage style={styles.page} data={feeds} />
       case "2":
-        return <SimplePage />
+        return <SimplePage style={styles.page} data={feeds} />
       case "3":
-        return <SimplePage />
+        return <SimplePage style={styles.page} data={feeds} />
       case "4":
-        return <SimplePage />
+        return <SimplePage style={styles.page} data={feeds} />
       default:
         return <View />
     }
@@ -347,6 +374,14 @@ class Profile2 extends Component {
   //   />
   // )
 
+  _renderPager = props => {
+    return Platform.OS === "ios" ? (
+      <TabViewPagerScroll {...props} />
+    ) : (
+      <TabViewPagerPan {...props} />
+    )
+  }
+
   render() {
     return (
       <ScrollView>
@@ -357,6 +392,7 @@ class Profile2 extends Component {
               style={[styles.container, this.props.style]}
               navigationState={this.state}
               renderScene={this._renderScene}
+              renderPager={this._renderPager}
               renderHeader={this._renderHeader}
               onIndexChange={this._handleIndexChange}
             />

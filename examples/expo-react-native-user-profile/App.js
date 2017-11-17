@@ -32,7 +32,12 @@ const Profile2Stack = StackNavigator(
 )
 
 const HomeIcon = ({ focused, tintColor }) => (
-  <Icon name="home" size={26} color={focused ? tintColor : 'black'} />
+  <Icon
+    name="circle"
+    type="entypo"
+    size={26}
+    color={focused ? tintColor : 'gray'}
+  />
 )
 
 const RootTabs = TabNavigator(
@@ -72,7 +77,8 @@ const RootTabs = TabNavigator(
         justifyContent: 'center',
       },
     },
-    initialRouteName: 'profile1',
+    tabBarPosition: 'bottom',
+    initialRouteName: 'profile2',
   }
 )
 
