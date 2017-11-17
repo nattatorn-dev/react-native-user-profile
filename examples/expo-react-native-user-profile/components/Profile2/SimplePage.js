@@ -8,6 +8,7 @@ import {
   StyleSheet,
 } from 'react-native'
 import { Avatar, Card } from 'react-native-elements'
+import Separator from './Separator'
 
 export default function CurrentStateIndicator({ state, style, data }) {
   console.log(data)
@@ -23,47 +24,46 @@ export default function CurrentStateIndicator({ state, style, data }) {
           data.map((e, k) => {
             console.log(k)
             return (
-              <TouchableOpacity
-                key={`caseStudy--${k}`}
-                // onPress={() => onPressCaseStudySelect(data[0]., title)}
-              >
-                <View style={styles.card} key={`caseStudy--${k}`}>
-                  <View style={styles.sectionText}>
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                      }}
-                    >
-                      <View style={{ marginRight: 12 }}>
-                        <Avatar
-                          small
-                          rounded
-                          source={{
-                            uri:
-                              'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-                          }}
-                          onPress={() => console.log('Works!')}
-                          activeOpacity={0.7}
-                        />
-                      </View>
-                      <View>
-                        <Text>{e.name}</Text>
-                        <Text style={{ fontSize: 11, color: 'gray' }}>
-                          {`12 mins`}
-                        </Text>
-                      </View>
+              <View style={styles.card} key={`caseStudy--${k}`}>
+                <View style={styles.sectionText}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <View style={{ marginRight: 12 }}>
+                      <Avatar
+                        small
+                        rounded
+                        source={{
+                          uri:
+                            'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+                        }}
+                        onPress={() => console.log('Works!')}
+                        activeOpacity={0.7}
+                      />
+                    </View>
+                    <View>
+                      <Text>{e.name}</Text>
+                      <Text style={{ fontSize: 11, color: 'gray' }}>
+                        {`12 mins`}
+                      </Text>
                     </View>
                   </View>
-                  <View style={styles.sectionImage}>
-                    <Text style={styles.textTitle}>{e.title}</Text>
-                    <Text style={styles.textDescription} numberOfLines={2}>
-                      {e.description}
-                    </Text>
-                  </View>
-                  <Image style={styles.image} source={{ uri: e.image }} />
                 </View>
-              </TouchableOpacity>
+                <View style={styles.sectionImage}>
+                  <Text style={styles.textTitle}>{e.title}</Text>
+                  <Text style={styles.textDescription} numberOfLines={2}>
+                    {e.description}
+                  </Text>
+                </View>
+                {k === 0 && (
+                  <View>
+                    <Image style={styles.image} source={{ uri: e.image }} />
+                  </View>
+                )}
+              </View>
             )
           })}
       </View>
