@@ -80,19 +80,19 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    marginLeft: 25,
-    marginRight: 25,
+    // marginLeft: 25,
+    // marginRight: 25,
     marginBottom: 12,
   },
   tabbar: {
     backgroundColor: "transparent",
   },
   indicator: {
-    backgroundColor: "black",
+    backgroundColor: "transparent",
   },
   page: {
     // width: Dimensions.get("window").width,
-    marginTop: 30,
+    marginTop: 10,
   },
 })
 
@@ -118,7 +118,7 @@ const contact = {
       name: "Richard Cruz",
       title: "1217 Vene Lane",
       description:
-        "figbumecceruhgijzobkamamosihdelanzeogahosjosluhzosjiubugiglimohirubaremafamibdijenoskeogwomcodawipjedjuwafomicukizafajal",
+        "ut ullam dolorem earum nulla. Eligendi voluptas occaecati cupiditate qui.",
       image:
         "https://www.mcdonalds.com/content/dam/usa/promotions/desktop/OFYQ_960x542.jpg",
     },
@@ -200,7 +200,7 @@ class Profile2 extends Component {
         indicatorStyle={styles.indicator}
         renderLabel={this._renderLabel(props)}
         pressOpacity={0.8}
-        pressColor="rgba(255, 64, 129, .5)"
+        // pressColor="rgba(255, 64, 129, .5)"
         style={styles.tabbar}
       />
     )
