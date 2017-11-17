@@ -19,6 +19,7 @@ import {
   TabViewPagerPan,
 } from "react-native-tab-view"
 import SimplePage from "./SimplePage"
+
 import PropTypes from "prop-types"
 
 const styles = StyleSheet.create({
@@ -35,6 +36,7 @@ const styles = StyleSheet.create({
   cardHeaderContainer: {
     marginTop: 45,
     marginBottom: 10,
+    backgroundColor: "#fff",
   },
 
   contactHeaderName: {
@@ -85,7 +87,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   tabbar: {
-    backgroundColor: "transparent",
+    backgroundColor: "rgba(238,239,238, 0.8)",
   },
   indicator: {
     backgroundColor: "transparent",
@@ -207,7 +209,6 @@ class Profile2 extends Component {
   }
 
   _renderScene = ({ route }) => {
-    console.log("feeds", feeds)
     switch (route.key) {
       case "1":
         return <SimplePage style={styles.page} data={feeds} />
