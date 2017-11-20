@@ -14,22 +14,22 @@ const styles = StyleSheet.create({
     flex: 2,
     justifyContent: 'center',
   },
-  icon: {
+  iconEmail: {
     color: '#01C89E',
     fontSize: 30,
   },
-  rowTel: {
+  rowEmail: {
     flex: 8,
     flexDirection: 'column',
     justifyContent: 'center',
   },
-  sectionTelNumber: {
+  sectionEmail: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     marginBottom: 5,
   },
-  textTelNumber: { fontSize: 16 },
-  sectionTelName: {
+  textEmail: { fontSize: 16 },
+  sectionName: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
   },
@@ -46,18 +46,18 @@ const Email = ({ containerStyle, onPressEmail, name, email, index }) => (
       <View style={styles.rowIcon}>
         {+index === 0 && (
           <Icon
-            iconStyle={styles.icon}
+            iconStyle={styles.iconEmail}
             name="email"
             onPress={() => onPressEmail()}
             underlayColor="transparent"
           />
         )}
       </View>
-      <View style={styles.rowTel}>
-        <View style={styles.sectionTelNumber}>
-          <Text style={styles.textTelNumber}>{email}</Text>
+      <View style={styles.rowEmail}>
+        <View style={styles.sectionEmail}>
+          <Text style={styles.textEmail}>{email}</Text>
         </View>
-        <View style={styles.sectionTelName}>
+        <View style={styles.sectionName}>
           {name.trim().length !== 0 && <Text style={styles.name}>{name}</Text>}
         </View>
       </View>
