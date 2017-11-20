@@ -5,10 +5,14 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const styles = StyleSheet.create({
-  contactBodyItem: {
+  container: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     marginBottom: 25,
+  },
+  rowIcon: {
+    flex: 2,
+    justifyContent: 'center',
   },
   smsIcon: {
     color: 'gray',
@@ -17,6 +21,32 @@ const styles = StyleSheet.create({
   telIcon: {
     color: '#01C89E',
     fontSize: 30,
+  },
+  rowTel: {
+    flex: 6,
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  sectionTelNumber: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    marginBottom: 5,
+  },
+  sectionTelName: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+  },
+  textTelNumber: {
+    fontSize: 16,
+  },
+  textTelName: {
+    fontSize: 14,
+    color: 'gray',
+    fontWeight: '200',
+  },
+  rowSms: {
+    flex: 2,
+    justifyContent: 'flex-start',
   },
 })
 
@@ -30,13 +60,8 @@ const Tel = ({
 }) => {
   return (
     <TouchableOpacity onPress={() => onPressTel(number)}>
-      <View style={[styles.contactBodyItem, containerStyle]}>
-        <View
-          style={{
-            flex: 2,
-            justifyContent: 'center',
-          }}
-        >
+      <View style={[styles.container, containerStyle]}>
+        <View style={styles.rowIcon}>
           {+index === 0 && (
             <Icon
               iconStyle={styles.telIcon}
@@ -46,31 +71,17 @@ const Tel = ({
             />
           )}
         </View>
-        <View
-          style={{
-            flex: 6,
-            flexDirection: 'column',
-            justifyContent: 'center',
-          }}
-        >
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'flex-start',
-              marginBottom: 5,
-            }}
-          >
-            <Text style={{ fontSize: 16 }}>{number}</Text>
+        <View style={styles.rowTel}>
+          <View style={styles.sectionTelNumber}>
+            <Text style={styles.textTelNumber}>{number}</Text>
           </View>
-          <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
+          <View style={styles.sectionTelName}>
             {name.trim().length !== 0 && (
-              <Text style={{ fontSize: 14, color: 'gray', fontWeight: '200' }}>
-                {name}
-              </Text>
+              <Text style={styles.textTelName}>{name}</Text>
             )}
           </View>
         </View>
-        <View style={{ flex: 2, justifyContent: 'flex-start' }}>
+        <View style={styles.rowSms}>
           <Icon
             iconStyle={styles.smsIcon}
             name="textsms"
