@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   tabbar: {
-    backgroundColor: "rgba(238,239,238, 0.8)",
+    backgroundColor: "rgb(238,239,238)",
   },
   indicator: {
     backgroundColor: "transparent",
