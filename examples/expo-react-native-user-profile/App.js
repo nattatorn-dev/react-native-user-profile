@@ -3,6 +3,7 @@ import { Platform } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { StackNavigator, TabNavigator } from 'react-navigation'
 import PropTypes from 'prop-types'
+import contactData from './mocks/contact'
 
 import Profile1 from './components/Profile1/Profile'
 import Profile2 from './components/Profile2/Profile'
@@ -10,7 +11,10 @@ import Profile2 from './components/Profile2/Profile'
 const Profile1Stack = StackNavigator(
   {
     profile: {
-      screen: Profile1,
+      screen: () => <Profile1 {...contactData} />,
+      navigationOptions: {
+        header: null,
+      },
       path: '/',
     },
   },
