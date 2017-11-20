@@ -1,13 +1,5 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-
-const Separator = () => (
-  <View style={styles.separatorContainer}>
-    <View style={styles.separatorOffset} />
-    <View style={styles.separator} />
-  </View>
-)
 
 const styles = StyleSheet.create({
   separatorContainer: {
@@ -24,5 +16,12 @@ const styles = StyleSheet.create({
     borderWidth: 0.8,
   },
 })
+
+const Separator = () => (
+  <View style={styles.separatorContainer}>
+    <View style={styles.separatorOffset} />
+    <View style={styles.separator} />
+  </View>
+)
 
 export default Separator
