@@ -5,14 +5,33 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const styles = StyleSheet.create({
-  contactBodyItem: {
+  container: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     marginBottom: 25,
   },
-  telIcon: {
+  rowIcon: {
+    flex: 2,
+    justifyContent: 'center',
+  },
+  icon: {
     color: '#01C89E',
     fontSize: 30,
+  },
+  rowTel: {
+    flex: 8,
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  sectionTelNumber: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    marginBottom: 5,
+  },
+  textTelNumber: { fontSize: 16 },
+  sectionTelName: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
   },
   name: {
     fontSize: 14,
@@ -23,39 +42,22 @@ const styles = StyleSheet.create({
 
 const Email = ({ containerStyle, onPressEmail, name, email, index }) => (
   <TouchableOpacity onPress={() => onPressEmail(email)}>
-    <View style={[styles.contactBodyItem, containerStyle]}>
-      <View
-        style={{
-          flex: 2,
-          justifyContent: 'center',
-        }}
-      >
+    <View style={[styles.container, containerStyle]}>
+      <View style={styles.rowIcon}>
         {+index === 0 && (
           <Icon
-            iconStyle={styles.telIcon}
+            iconStyle={styles.icon}
             name="email"
             onPress={() => onPressEmail()}
             underlayColor="transparent"
           />
         )}
       </View>
-      <View
-        style={{
-          flex: 8,
-          flexDirection: 'column',
-          justifyContent: 'center',
-        }}
-      >
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'flex-start',
-            marginBottom: 5,
-          }}
-        >
-          <Text style={{ fontSize: 16 }}>{email}</Text>
+      <View style={styles.rowTel}>
+        <View style={styles.sectionTelNumber}>
+          <Text style={styles.textTelNumber}>{email}</Text>
         </View>
-        <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
+        <View style={styles.sectionTelName}>
           {name.trim().length !== 0 && <Text style={styles.name}>{name}</Text>}
         </View>
       </View>
