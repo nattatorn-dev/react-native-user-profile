@@ -3,13 +3,14 @@
     "it": true,
     "expect": true
   },
+  "parser": "babel-eslint",
   "extends": [
     "airbnb",
     "eslint-config-prettier",
     "eslint:recommended",
     "plugin:react/recommended"
   ],
-  "plugins": ["react-native", "prettier", "eslint-plugin-prettier"],
+  "plugins": ["react-native", "eslint-plugin-prettier"],
   "rules": {
     "semi": ["error", "never"],
 
