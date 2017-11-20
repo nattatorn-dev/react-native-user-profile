@@ -59,7 +59,7 @@ const RootTabs = TabNavigator(
   },
   {
     tabBarOptions: {
-      activeTintColor: Platform.OS === 'ios' ? 'black' : '#fff',
+      activeTintColor: Platform.OS === 'ios' ? 'black' : 'gray',
       showLabel: false,
       showIcon: true,
       indicatorStyle: {
@@ -69,8 +69,8 @@ const RootTabs = TabNavigator(
         fontSize: 12,
       },
       iconStyle: {
-        width: 24,
-        height: 24,
+        width: 30,
+        height: 30,
       },
       style: {
         backgroundColor: 'white',
@@ -78,7 +78,7 @@ const RootTabs = TabNavigator(
       },
     },
     tabBarPosition: 'bottom',
-    initialRouteName: 'profile2',
+    initialRouteName: 'profile1',
   }
 )
 
