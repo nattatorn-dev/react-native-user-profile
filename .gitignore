@@ -1,5 +1,26 @@
 node_modules/**/*
 .expo/**/*
-.DS_Store
-config/**/*
-yarn.lock
+
+# Generated folders and files
+**/.log
+**/.sass-cache
+**/.tmp
+**/bower_components
+**/complexity
+**/coverage
+**/design.doc.json
+**/node_modules
+**/npm-debug.log
+**/packages
+**/quality
+**/reports
+
+# Git
+**/*.orig
+
+# IntelliJ IDEA / WebStorm
+**/*.iml
+**/*.idea
+
+# MacOS
+**/.DS_Store
