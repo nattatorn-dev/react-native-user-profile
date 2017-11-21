@@ -13,5 +13,34 @@
   "emails": [
     { "id": 1, "name": "Personal", "email": "elsie-goodman@mail.com" },
     { "id": 2, "name": "Work", "email": "elsie@work.com" }
+  ],
+  "feeds": [
+    {
+      "id": 1,
+      "name": "Richard Cruz",
+      "title": "1217 Vene Lane",
+      "description":
+        "ut ullam dolorem earum nulla. Eligendi voluptas occaecati cupiditate qui.",
+      "image":
+        "https://www.mcdonalds.com/content/dam/usa/promotions/desktop/OFYQ_960x542.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Richard Cruz",
+      "title": "1217 Vene Lane",
+      "description":
+        "ut ullam dolorem earum nulla. Eligendi voluptas occaecati cupiditate qui.",
+      "image":
+        "https://www.mcdonalds.com/content/dam/usa/promotions/desktop/OFYQ_960x542.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Richard Cruz",
+      "title": "1217 Vene Lane",
+      "description":
+        "ut ullam dolorem earum nulla. Eligendi voluptas occaecati cupiditate qui.",
+      "image":
+        "https://www.mcdonalds.com/content/dam/usa/promotions/desktop/OFYQ_960x542.jpg"
+    }
   ]
 }
