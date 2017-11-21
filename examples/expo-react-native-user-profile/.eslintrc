@@ -42,6 +42,7 @@
       }
     ],
     "no-use-before-define": [2],
+    "no-console": 0,
     "indent": [
       2,
       2,
