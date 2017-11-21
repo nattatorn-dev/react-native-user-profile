@@ -1,8 +1,8 @@
 # react-native-user-profile
-[![Travis](https://travis-ci.org/nattatorn-dev/react-native-user-profile.svg)]()
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://github.com/nattatorn-dev/react-native-user-profile)
 [![Greenkeeper badge](https://badges.greenkeeper.io/nattatorn-dev/react-native-user-profile.svg)]()
-[![GitHub last commit](https://img.shields.io/github/last-commit/nattatorn-dev/react-native-user-profile.svg)]()
-[![GitHub license](https://img.shields.io/github/license/nattatorn-dev/react-native-user-profile.svg)]()
+[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg)](https://github.com/nattatorn-dev/react-native-user-profile)
+[![GitHub license](https://img.shields.io/github/license/nattatorn-dev/react-native-user-profile.svg)](https://github.com/nattatorn-dev/react-native-user-profile)
 
 A react native mobile starter kit, Examples of user profiles pages to help you create component and design 🎨
 
