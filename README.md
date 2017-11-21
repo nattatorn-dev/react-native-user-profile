@@ -1,5 +1,6 @@
 # react-native-user-profile
 [![Travis](https://travis-ci.org/nattatorn-dev/react-native-user-profile.svg)]()
+[![Greenkeeper badge](https://badges.greenkeeper.io/nattatorn-dev/react-native-user-profile.svg)]
 [![GitHub last commit](https://img.shields.io/github/last-commit/nattatorn-dev/react-native-user-profile.svg)]()
 [![GitHub license](https://img.shields.io/github/license/nattatorn-dev/react-native-user-profile.svg)]()
 
