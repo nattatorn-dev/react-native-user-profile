@@ -26,7 +26,10 @@ const Profile1Stack = StackNavigator(
 const Profile2Stack = StackNavigator(
   {
     profile: {
-      screen: Profile2,
+      screen: () => <Profile2 {...contactData} />,
+      navigationOptions: {
+        header: null,
+      },
       path: '/',
     },
   },
