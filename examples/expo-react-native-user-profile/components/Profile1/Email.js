@@ -10,57 +10,59 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     marginBottom: 25,
   },
-  iconEmail: {
-    color: '#01C89E',
-    fontSize: 30,
-  },
-  name: {
-    color: 'gray',
-    fontSize: 14,
-    fontWeight: '200',
-  },
-  rowEmail: {
-    flex: 8,
-    flexDirection: 'column',
-    justifyContent: 'center',
-  },
-  rowIcon: {
-    flex: 2,
-    justifyContent: 'center',
-  },
-  sectionEmail: {
+  emailColumn: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     marginBottom: 5,
   },
-  sectionName: {
+  emailIcon: {
+    color: '#01C89E',
+    fontSize: 30,
+  },
+  emailNameColumn: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
   },
-  textEmail: {
+  emailNameText: {
+    color: 'gray',
+    fontSize: 14,
+    fontWeight: '200',
+  },
+  emailRow: {
+    flex: 8,
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  emailText: {
     fontSize: 16,
+  },
+  iconRow: {
+    flex: 2,
+    justifyContent: 'center',
   },
 })
 
 const Email = ({ containerStyle, onPressEmail, name, email, index }) => (
   <TouchableOpacity onPress={() => onPressEmail(email)}>
     <View style={[styles.container, containerStyle]}>
-      <View style={styles.rowIcon}>
+      <View style={styles.iconRow}>
         {+index === 0 && (
           <Icon
             name="email"
             underlayColor="transparent"
-            iconStyle={styles.iconEmail}
+            iconStyle={styles.emailIcon}
             onPress={() => onPressEmail()}
           />
         )}
       </View>
-      <View style={styles.rowEmail}>
-        <View style={styles.sectionEmail}>
-          <Text style={styles.textEmail}>{email}</Text>
+      <View style={styles.emailRow}>
+        <View style={styles.emailColumn}>
+          <Text style={styles.emailText}>{email}</Text>
         </View>
-        <View style={styles.sectionName}>
-          {name.trim().length !== 0 && <Text style={styles.name}>{name}</Text>}
+        <View style={styles.emailNameColumn}>
+          {name.trim().length !== 0 && (
+            <Text style={styles.emailNameText}>{name}</Text>
+          )}
         </View>
       </View>
     </View>

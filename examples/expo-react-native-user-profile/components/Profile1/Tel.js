@@ -9,43 +9,43 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     marginBottom: 25,
   },
-  rowIcon: {
+  iconRow: {
     flex: 2,
     justifyContent: 'center',
-  },
-  rowSms: {
-    flex: 2,
-    justifyContent: 'flex-start',
-  },
-  rowTel: {
-    flex: 6,
-    flexDirection: 'column',
-    justifyContent: 'center',
-  },
-  sectionTelName: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-  },
-  sectionTelNumber: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    marginBottom: 5,
   },
   smsIcon: {
     color: 'gray',
     fontSize: 30,
   },
+  smsRow: {
+    flex: 2,
+    justifyContent: 'flex-start',
+  },
   telIcon: {
     color: '#01C89E',
     fontSize: 30,
   },
-  textTelName: {
+  telNameColumn: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+  },
+  telNameText: {
     color: 'gray',
     fontSize: 14,
     fontWeight: '200',
   },
-  textTelNumber: {
+  telNumberColumn: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    marginBottom: 5,
+  },
+  telNumberText: {
     fontSize: 16,
+  },
+  telRow: {
+    flex: 6,
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
 })
 
@@ -60,7 +60,7 @@ const Tel = ({
   return (
     <TouchableOpacity onPress={() => onPressTel(number)}>
       <View style={[styles.container, containerStyle]}>
-        <View style={styles.rowIcon}>
+        <View style={styles.iconRow}>
           {+index === 0 && (
             <Icon
               name="call"
@@ -70,17 +70,17 @@ const Tel = ({
             />
           )}
         </View>
-        <View style={styles.rowTel}>
-          <View style={styles.sectionTelNumber}>
-            <Text style={styles.textTelNumber}>{number}</Text>
+        <View style={styles.telRow}>
+          <View style={styles.telNumberColumn}>
+            <Text style={styles.telNumberText}>{number}</Text>
           </View>
-          <View style={styles.sectionTelName}>
+          <View style={styles.telNameColumn}>
             {name.trim().length !== 0 && (
-              <Text style={styles.textTelName}>{name}</Text>
+              <Text style={styles.telNameText}>{name}</Text>
             )}
           </View>
         </View>
-        <View style={styles.rowSms}>
+        <View style={styles.smsRow}>
           <Icon
             name="textsms"
             underlayColor="transparent"
