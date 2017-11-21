@@ -91,11 +91,13 @@ const styles = StyleSheet.create({
 
 class Contact extends Component {
   static propTypes = {
-    city: PropTypes.string.isRequired,
-    country: PropTypes.string.isRequired,
-    imgUrl: PropTypes.string.isRequired,
-    imgBackground: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    avatarBackground: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    address: PropTypes.shape({
+      city: PropTypes.string.isRequired,
+      country: PropTypes.string.isRequired,
+    }).isRequired,
     emails: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number.isRequired,
@@ -140,7 +142,12 @@ class Contact extends Component {
   }
 
   renderContactHeader = () => {
-    const { city, country, imgUrl, imgBackground, name } = this.props
+    const {
+      avatar,
+      avatarBackground,
+      name,
+      address: { city, country },
+    } = this.props
 
     return (
       <View style={styles.hearderContainer}>
@@ -148,14 +155,14 @@ class Contact extends Component {
           style={styles.headerBackgroundImage}
           blurRadius={10}
           source={{
-            uri: imgBackground,
+            uri: avatarBackground,
           }}
         >
           <View style={styles.headerColumn}>
             <Image
               style={styles.userImage}
               source={{
-                uri: imgUrl,
+                uri: avatar,
               }}
             />
             <Text style={styles.userNameText}>{name}</Text>
