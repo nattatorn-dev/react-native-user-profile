@@ -6,12 +6,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   separatorOffset: {
-    flexDirection: 'row',
     flex: 2,
+    flexDirection: 'row',
   },
   separator: {
-    flexDirection: 'row',
     flex: 8,
+    flexDirection: 'row',
     borderColor: '#EDEDED',
     borderWidth: 0.8,
   },

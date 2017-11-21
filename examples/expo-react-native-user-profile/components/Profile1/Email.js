@@ -10,17 +10,22 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     marginBottom: 25,
   },
-  rowIcon: {
-    flex: 2,
-    justifyContent: 'center',
-  },
   iconEmail: {
     color: '#01C89E',
     fontSize: 30,
   },
+  name: {
+    color: 'gray',
+    fontSize: 14,
+    fontWeight: '200',
+  },
   rowEmail: {
     flex: 8,
     flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  rowIcon: {
+    flex: 2,
     justifyContent: 'center',
   },
   sectionEmail: {
@@ -28,15 +33,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     marginBottom: 5,
   },
-  textEmail: { fontSize: 16 },
   sectionName: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
   },
-  name: {
-    fontSize: 14,
-    color: 'gray',
-    fontWeight: '200',
+  textEmail: {
+    fontSize: 16,
   },
 })
 
@@ -46,10 +48,10 @@ const Email = ({ containerStyle, onPressEmail, name, email, index }) => (
       <View style={styles.rowIcon}>
         {+index === 0 && (
           <Icon
-            iconStyle={styles.iconEmail}
             name="email"
-            onPress={() => onPressEmail()}
             underlayColor="transparent"
+            iconStyle={styles.iconEmail}
+            onPress={() => onPressEmail()}
           />
         )}
       </View>
@@ -69,8 +71,8 @@ Email.propTypes = {
   containerStyle: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   ),
-  index: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
+  index: PropTypes.string.isRequired,
   name: PropTypes.string,
   onPressEmail: PropTypes.func.isRequired,
 }

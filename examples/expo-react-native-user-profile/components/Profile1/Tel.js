@@ -1,8 +1,7 @@
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native'
-
+import React from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Icon } from 'react-native-elements'
 import PropTypes from 'prop-types'
-import React from 'react'
 
 const styles = StyleSheet.create({
   container: {
@@ -14,6 +13,24 @@ const styles = StyleSheet.create({
     flex: 2,
     justifyContent: 'center',
   },
+  rowSms: {
+    flex: 2,
+    justifyContent: 'flex-start',
+  },
+  rowTel: {
+    flex: 6,
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  sectionTelName: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+  },
+  sectionTelNumber: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    marginBottom: 5,
+  },
   smsIcon: {
     color: 'gray',
     fontSize: 30,
@@ -22,41 +39,23 @@ const styles = StyleSheet.create({
     color: '#01C89E',
     fontSize: 30,
   },
-  rowTel: {
-    flex: 6,
-    flexDirection: 'column',
-    justifyContent: 'center',
-  },
-  sectionTelNumber: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    marginBottom: 5,
-  },
-  sectionTelName: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
+  textTelName: {
+    color: 'gray',
+    fontSize: 14,
+    fontWeight: '200',
   },
   textTelNumber: {
     fontSize: 16,
-  },
-  textTelName: {
-    fontSize: 14,
-    color: 'gray',
-    fontWeight: '200',
-  },
-  rowSms: {
-    flex: 2,
-    justifyContent: 'flex-start',
   },
 })
 
 const Tel = ({
   containerStyle,
   index,
+  name,
   number,
   onPressSms,
   onPressTel,
-  name,
 }) => {
   return (
     <TouchableOpacity onPress={() => onPressTel(number)}>
@@ -64,10 +63,10 @@ const Tel = ({
         <View style={styles.rowIcon}>
           {+index === 0 && (
             <Icon
-              iconStyle={styles.telIcon}
               name="call"
-              onPress={() => onPressTel(number)}
               underlayColor="transparent"
+              iconStyle={styles.telIcon}
+              onPress={() => onPressTel(number)}
             />
           )}
         </View>
@@ -83,10 +82,10 @@ const Tel = ({
         </View>
         <View style={styles.rowSms}>
           <Icon
-            iconStyle={styles.smsIcon}
             name="textsms"
-            onPress={() => onPressSms()}
             underlayColor="transparent"
+            iconStyle={styles.smsIcon}
+            onPress={() => onPressSms()}
           />
         </View>
       </View>
@@ -99,10 +98,10 @@ Tel.propTypes = {
     PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   ),
   index: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
   name: PropTypes.string,
-  onPressTel: PropTypes.func.isRequired,
+  number: PropTypes.string.isRequired,
   onPressSms: PropTypes.func.isRequired,
+  onPressTel: PropTypes.func.isRequired,
 }
 
 Tel.defaultProps = {
