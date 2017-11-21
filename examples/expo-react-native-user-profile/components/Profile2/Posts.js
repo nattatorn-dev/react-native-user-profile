@@ -59,7 +59,7 @@ class Posts extends Component {
         removeClippedSubviews={false}
         contentContainerStyle={[styles.container, this.props.containerStyle]}
         dataSource={this.state.postDS}
-        renderRow={(e, _, k) => {
+        renderRow={e => {
           return (
             <Post
               key={`post-${e.id} `}
