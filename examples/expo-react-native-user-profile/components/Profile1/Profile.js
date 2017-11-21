@@ -12,59 +12,32 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 
-import Tel from './Tel'
 import Email from './Email'
 import Separator from './Separator'
+import Tel from './Tel'
 
 const styles = StyleSheet.create({
+  cardContainer: {
+    backgroundColor: '#FFF',
+    borderWidth: 0,
+    flex: 1,
+    margin: 0,
+    padding: 0,
+  },
   container: {
     flex: 1,
   },
-  cardContainer: {
-    flex: 1,
-    padding: 0,
-    margin: 0,
-    borderWidth: 0,
-    backgroundColor: '#fff',
-  },
-  telContainer: {
-    backgroundColor: '#fff',
-    flex: 1,
-    paddingTop: 30,
-  },
   emailContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: '#FFF',
     flex: 1,
     paddingTop: 30,
+  },
+  headerBackgroundImage: {
+    paddingBottom: 20,
+    paddingTop: 35,
   },
   hearderContainer: {},
-
-  contactHeaderName: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    paddingBottom: 8,
-    textAlign: 'center',
-    color: '#fff',
-  },
-  placeIcon: {
-    color: 'white',
-    fontSize: 26,
-  },
-  contactHeaderdDepartment: {
-    fontSize: 15,
-    textAlign: 'center',
-    color: '#a5a5a5',
-    fontWeight: '600',
-  },
-  image: {
-    borderColor: '#01C89E',
-    borderRadius: 85,
-    borderWidth: 3,
-    height: 170,
-    marginBottom: 15,
-    width: 170,
-  },
-  imageContainer: {
+  headerColumn: {
     backgroundColor: 'transparent',
     ...Platform.select({
       ios: {
@@ -77,17 +50,66 @@ const styles = StyleSheet.create({
       },
     }),
   },
+  placeIcon: {
+    color: 'white',
+    fontSize: 26,
+  },
+  telContainer: {
+    backgroundColor: '#FFF',
+    flex: 1,
+    paddingTop: 30,
+  },
+  userAddressRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  userCityRow: {
+    backgroundColor: 'transparent',
+  },
+  userCityText: {
+    color: '#A5A5A5',
+    fontSize: 15,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  userImage: {
+    borderColor: '#01C89E',
+    borderRadius: 85,
+    borderWidth: 3,
+    height: 170,
+    marginBottom: 15,
+    width: 170,
+  },
+  userNameText: {
+    color: '#FFF',
+    fontSize: 22,
+    fontWeight: 'bold',
+    paddingBottom: 8,
+    textAlign: 'center',
+  },
 })
 
 class Contact extends Component {
   static propTypes = {
     city: PropTypes.string.isRequired,
     country: PropTypes.string.isRequired,
-    emails: PropTypes.array.isRequired,
     imgUrl: PropTypes.string.isRequired,
     imgBackground: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    tels: PropTypes.array.isRequired,
+    emails: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+    tels: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        number: PropTypes.string.isRequired,
+      })
+    ).isRequired,
   }
 
   state = {
@@ -123,39 +145,31 @@ class Contact extends Component {
     return (
       <View style={styles.hearderContainer}>
         <Image
-          style={{
-            paddingTop: 35,
-            paddingBottom: 20,
-          }}
+          style={styles.headerBackgroundImage}
           blurRadius={10}
           source={{
             uri: imgBackground,
           }}
         >
-          <View style={styles.imageContainer}>
+          <View style={styles.headerColumn}>
             <Image
-              style={styles.image}
+              style={styles.userImage}
               source={{
                 uri: imgUrl,
               }}
             />
-            <Text style={styles.contactHeaderName}>{name}</Text>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}
-            >
+            <Text style={styles.userNameText}>{name}</Text>
+            <View style={styles.userAddressRow}>
               <View>
                 <Icon
-                  iconStyle={styles.placeIcon}
                   name="place"
-                  onPress={this.onPressPlace}
                   underlayColor="transparent"
+                  iconStyle={styles.placeIcon}
+                  onPress={this.onPressPlace}
                 />
               </View>
-              <View style={{ backgroundColor: 'transparent' }}>
-                <Text style={styles.contactHeaderdDepartment}>
+              <View style={styles.userCityRow}>
+                <Text style={styles.userCityText}>
                   {city}, {country}
                 </Text>
               </View>
