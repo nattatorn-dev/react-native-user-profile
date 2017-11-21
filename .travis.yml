@@ -9,7 +9,6 @@ node_js:
 cache:
   - yarn
 before_script:
-  - cd examples/expo-react-native-user-profile
   - yarn
 script:
   - yarn run eslint
