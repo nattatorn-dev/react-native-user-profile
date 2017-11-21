@@ -47,7 +47,7 @@ class Posts extends Component {
   }
 
   state = {
-    postDataSource: new ListView.DataSource({
+    postDS: new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2,
     }).cloneWithRows(this.props.posts),
   }
@@ -58,7 +58,7 @@ class Posts extends Component {
         scrollEnabled={false}
         removeClippedSubviews={false}
         contentContainerStyle={[styles.container, this.props.containerStyle]}
-        dataSource={this.state.postDataSource}
+        dataSource={this.state.postDS}
         renderRow={(e, _, k) => {
           return (
             <Post

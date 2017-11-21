@@ -115,10 +115,10 @@ class Contact extends Component {
   }
 
   state = {
-    telDataSource: new ListView.DataSource({
+    telDS: new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2,
     }).cloneWithRows(this.props.tels),
-    emailDataSource: new ListView.DataSource({
+    emailDS: new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2,
     }).cloneWithRows(this.props.emails),
   }
@@ -190,7 +190,7 @@ class Contact extends Component {
   renderTel = () => (
     <ListView
       contentContainerStyle={styles.telContainer}
-      dataSource={this.state.telDataSource}
+      dataSource={this.state.telDS}
       renderRow={({ id, name, number }, _, k) => {
         return (
           <Tel
@@ -209,7 +209,7 @@ class Contact extends Component {
   renderEmail = () => (
     <ListView
       contentContainerStyle={styles.emailContainer}
-      dataSource={this.state.emailDataSource}
+      dataSource={this.state.emailDS}
       renderRow={({ id, name, email }, _, k) => {
         return (
           <Email
