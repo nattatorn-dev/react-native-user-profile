@@ -20,7 +20,10 @@
       "error",
       { "extensions": [".js", ".jsx"] }
     ],
+    "react/forbid-prop-types": 0,
+    "react/display-name": 0,
 
+    "import/prefer-default-export": 0,
     "space-before-blocks": 2,
     "space-before-function-paren": [
       2,
