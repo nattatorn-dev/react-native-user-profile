@@ -1,5 +1,5 @@
 {
-  "name": "Albert Wolff",
+  "name": "Darrell Schmeler",
   "username": "Leola_VonRueden",
   "address": {
     "streetA": "Abbott Shoals",
@@ -16,12 +16,14 @@
     }
   },
   "website": "destany.org",
+  "bio":
+    "Web & Mobile UI/UX designer, Motion designer following the latest ui & us trends",
   "company": {
     "name": "Streich, Harber and Hilpert",
     "catchPhrase": "Team-oriented hybrid neural-net",
     "bs": "user-centric embrace vortals"
   },
-  "avatar": "https://www.mendetails.com/wp-content/uploads/2015/10/JD1.jpg",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/dvdwinden/128.jpg",
   "avatarBackground":
     "https://orig00.deviantart.net/dcd7/f/2014/027/2/0/mountain_background_by_pukahuna-d73zlo5.png",
   "tels": [
