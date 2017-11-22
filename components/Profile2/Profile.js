@@ -62,10 +62,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   tabLabelText: {
+    color: 'black',
+    fontSize: 22.5,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  userBioRow: {
+    marginLeft: 40,
+    marginRight: 40,
+  },
+  userBioText: {
     color: 'gray',
-    fontSize: 17.5,
-    fontWeight: '400',
-    marginBottom: 4,
+    fontSize: 13.5,
     textAlign: 'center',
   },
   userImage: {
@@ -74,15 +82,13 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     width: 110,
   },
+  userNameRow: {
+    marginBottom: 10,
+  },
   userNameText: {
     color: '#5B5A5A',
     fontSize: 18,
     fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  userBioText: {
-    color: 'gray',
-    fontSize: 13.5,
     textAlign: 'center',
   },
   userRow: {
@@ -126,10 +132,10 @@ class Profile2 extends Component {
     tabs: {
       index: 0,
       routes: [
-        { key: '1', title: 'Active', count: 31 },
-        { key: '2', title: 'Like', count: 86 },
-        { key: '3', title: 'Following', count: 95 },
-        { key: '4', title: 'Followers', count: '1.3 K' },
+        { key: '1', title: 'active', count: 31 },
+        { key: '2', title: 'like', count: 86 },
+        { key: '3', title: 'following', count: 95 },
+        { key: '4', title: 'followers', count: '1.3 K' },
       ],
     },
   }
@@ -216,10 +222,10 @@ class Profile2 extends Component {
               uri: avatar,
             }}
           />
-          <View style={{ marginBottom: 10 }}>
+          <View style={styles.userNameRow}>
             <Text style={styles.userNameText}>{name}</Text>
           </View>
-          <View style={{ marginLeft: 40, marginRight: 40 }}>
+          <View style={styles.userBioRow}>
             <Text style={styles.userBioText}>{bio}</Text>
           </View>
         </View>
