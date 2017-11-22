@@ -87,31 +87,5 @@
         "email": "Magali1664@gmail.com"
       }
     }
-  ],
-  "accountHistory": [
-    {
-      "amount": "919.76",
-      "date": "2012-02-01T17:00:00.000Z",
-      "business": "Jenkins, Lind and Abshire",
-      "name": "Credit Card Account 0934",
-      "type": "withdrawal",
-      "account": "91928453"
-    },
-    {
-      "amount": "354.28",
-      "date": "2012-02-01T17:00:00.000Z",
-      "business": "Hilpert, Hilll and Christiansen",
-      "name": "Savings Account 8300",
-      "type": "withdrawal",
-      "account": "11800102"
-    },
-    {
-      "amount": "789.96",
-      "date": "2012-02-01T17:00:00.000Z",
-      "business": "D'Amore and Sons",
-      "name": "Checking Account 5201",
-      "type": "payment",
-      "account": "58013435"
-    }
   ]
 }
