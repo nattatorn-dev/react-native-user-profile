@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     paddingTop: 35,
   },
-  hearderContainer: {},
+  headerContainer: {},
   headerColumn: {
     backgroundColor: 'transparent',
     ...Platform.select({
@@ -100,9 +100,9 @@ class Contact extends Component {
     }).isRequired,
     emails: PropTypes.arrayOf(
       PropTypes.shape({
+        email: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
-        email: PropTypes.string.isRequired,
       })
     ).isRequired,
     tels: PropTypes.arrayOf(
@@ -141,7 +141,7 @@ class Contact extends Component {
     )
   }
 
-  renderContactHeader = () => {
+  renderHeader = () => {
     const {
       avatar,
       avatarBackground,
@@ -150,7 +150,7 @@ class Contact extends Component {
     } = this.props
 
     return (
-      <View style={styles.hearderContainer}>
+      <View style={styles.headerContainer}>
         <Image
           style={styles.headerBackgroundImage}
           blurRadius={10}
@@ -210,7 +210,7 @@ class Contact extends Component {
     <ListView
       contentContainerStyle={styles.emailContainer}
       dataSource={this.state.emailDS}
-      renderRow={({ id, name, email }, _, k) => {
+      renderRow={({ email, id, name }, _, k) => {
         return (
           <Email
             key={`email-${id}`}
@@ -229,7 +229,7 @@ class Contact extends Component {
       <ScrollView>
         <View style={styles.container}>
           <Card containerStyle={styles.cardContainer}>
-            {this.renderContactHeader()}
+            {this.renderHeader()}
             {this.renderTel()}
             {Separator()}
             {this.renderEmail()}
