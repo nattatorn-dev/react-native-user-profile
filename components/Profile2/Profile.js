@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Card, Icon } from 'react-native-elements'
 import {
   Animated,
   Image,
@@ -9,6 +8,7 @@ import {
   Text,
   View,
 } from 'react-native'
+import { Card, Icon } from 'react-native-elements'
 import {
   TabViewAnimated,
   TabBar,
@@ -121,10 +121,10 @@ class Profile2 extends Component {
     tabs: {
       index: 0,
       routes: [
-        { key: '1', title: 'Active', count: 31, icon: 'md-restaurant' },
-        { key: '2', title: 'Like', count: 86, icon: 'md-bicycle' },
-        { key: '3', title: 'Following', count: 95, icon: 'md-color-palette' },
-        { key: '4', title: 'Followers', count: '1.3 K', icon: 'md-bicycle' },
+        { key: '1', title: 'Active', count: 31 },
+        { key: '2', title: 'Like', count: 86 },
+        { key: '3', title: 'Following', count: 95 },
+        { key: '4', title: 'Followers', count: '1.3 K' },
       ],
     },
   }
