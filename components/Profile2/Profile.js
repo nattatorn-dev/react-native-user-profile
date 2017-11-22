@@ -69,16 +69,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   userImage: {
-    borderRadius: 40,
-    height: 80,
+    borderRadius: 60,
+    height: 110,
     marginBottom: 10,
-    width: 80,
+    width: 110,
   },
   userNameText: {
     color: '#5B5A5A',
     fontSize: 18,
     fontWeight: 'bold',
-    paddingBottom: 4,
+    textAlign: 'center',
+  },
+  userBioText: {
+    color: 'gray',
+    fontSize: 13.5,
     textAlign: 'center',
   },
   userRow: {
@@ -93,6 +97,7 @@ class Profile2 extends Component {
   static propTypes = {
     avatar: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    bio: PropTypes.string.isRequired,
     containerStyle: PropTypes.object,
     tabContainerStyle: PropTypes.object,
     posts: PropTypes.arrayOf(
@@ -201,7 +206,7 @@ class Profile2 extends Component {
   }
 
   renderContactHeader = () => {
-    const { avatar, name } = this.props
+    const { avatar, name, bio } = this.props
     return (
       <View style={styles.headerContainer}>
         <View style={styles.userRow}>
@@ -211,7 +216,12 @@ class Profile2 extends Component {
               uri: avatar,
             }}
           />
-          <Text style={styles.userNameText}>{name}</Text>
+          <View style={{ marginBottom: 10 }}>
+            <Text style={styles.userNameText}>{name}</Text>
+          </View>
+          <View style={{ marginLeft: 40, marginRight: 40 }}>
+            <Text style={styles.userBioText}>{bio}</Text>
+          </View>
         </View>
         <View style={styles.socialRow}>
           <View>
