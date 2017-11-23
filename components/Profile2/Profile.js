@@ -8,7 +8,7 @@ import {
   Text,
   View,
 } from 'react-native'
-import { Card, Icon } from 'react-native-elements'
+import { Icon } from 'react-native-elements'
 import {
   TabViewAnimated,
   TabBar,
@@ -21,11 +21,7 @@ import Posts from './Posts'
 
 const styles = StyleSheet.create({
   cardContainer: {
-    backgroundColor: '#FFF',
-    borderWidth: 0,
     flex: 1,
-    margin: 0,
-    padding: 0,
   },
   container: {
     flex: 1,
@@ -38,6 +34,9 @@ const styles = StyleSheet.create({
   },
   indicatorTab: {
     backgroundColor: 'transparent',
+  },
+  scroll: {
+    backgroundColor: '#FFF',
   },
   sceneContainer: {
     marginTop: 10,
@@ -267,9 +266,9 @@ class Profile2 extends Component {
 
   render() {
     return (
-      <ScrollView>
+      <ScrollView style={styles.scroll}>
         <View style={[styles.container, this.props.containerStyle]}>
-          <Card containerStyle={styles.cardContainer}>
+          <View style={styles.cardContainer}>
             {this.renderContactHeader()}
             <TabViewAnimated
               style={[styles.tabContainer, this.props.tabContainerStyle]}
@@ -279,7 +278,7 @@ class Profile2 extends Component {
               renderHeader={this._renderHeader}
               onIndexChange={this._handleIndexChange}
             />
-          </Card>
+          </View>
         </View>
       </ScrollView>
     )
