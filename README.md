@@ -10,10 +10,10 @@ A react native mobile starter kit, Examples of user profiles pages to help you c
 https://expo.io/@nattatorn-dev/expo-react-native-user-profile
 
 ## Profile1
-![Profile1](https://image.ibb.co/mFdQHm/profile1.jpg)
+![Profile1](https://image.ibb.co/hcRRQ6/profile1.png)
 
 ## Profile2
-![Profile2](https://image.ibb.co/i2Wecm/profile2.jpg)
+![Profile2](https://image.ibb.co/jLFxXm/profile2.png)
 
 ## Features
 - Carefully crafted user experience and design
