@@ -4,7 +4,7 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg)]()
 [![GitHub license](https://img.shields.io/github/license/nattatorn-dev/react-native-user-profile.svg)]()
 
-A react native mobile starter kit, Examples of user profiles pages to help you create component and design 🎨
+A react native mobile starter kit, Examples of user profiles screens to help you create component and design 🎨
 
 ## Find it on Expo
 https://expo.io/@nattatorn-dev/expo-react-native-user-profile
