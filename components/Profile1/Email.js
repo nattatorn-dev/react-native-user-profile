@@ -69,9 +69,7 @@ const Email = ({ containerStyle, onPressEmail, name, email, index }) => (
 )
 
 Email.propTypes = {
-  containerStyle: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-  ),
+  containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
   email: PropTypes.string.isRequired,
   index: PropTypes.string.isRequired,
   name: PropTypes.string,

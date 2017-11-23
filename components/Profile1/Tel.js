@@ -94,9 +94,7 @@ const Tel = ({
 }
 
 Tel.propTypes = {
-  containerStyle: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-  ),
+  containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
   index: PropTypes.string.isRequired,
   name: PropTypes.string,
   number: PropTypes.string.isRequired,

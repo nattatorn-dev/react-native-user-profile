@@ -21,7 +21,7 @@ import Posts from './Posts'
 
 const styles = StyleSheet.create({
   cardContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: '#FFF',
     borderWidth: 0,
     flex: 1,
     margin: 0,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#FFF',
     marginBottom: 10,
     marginTop: 45,
   },
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   tabBar: {
-    backgroundColor: '#EEEFEE',
+    backgroundColor: '#EEE',
   },
   tabContainer: {
     flex: 1,
@@ -104,8 +104,11 @@ class Profile2 extends Component {
     avatar: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     bio: PropTypes.string.isRequired,
-    containerStyle: PropTypes.object,
-    tabContainerStyle: PropTypes.object,
+    containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    tabContainerStyle: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.number,
+    ]),
     posts: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number.isRequired,
