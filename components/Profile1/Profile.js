@@ -12,6 +12,8 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 
+import mainColor from './constants'
+
 import Email from './Email'
 import Separator from './Separator'
 import Tel from './Tel'
@@ -54,6 +56,9 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 26,
   },
+  scroll: {
+    backgroundColor: '#FFF',
+  },
   telContainer: {
     backgroundColor: '#FFF',
     flex: 1,
@@ -73,7 +78,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   userImage: {
-    borderColor: '#01C89E',
+    borderColor: mainColor,
     borderRadius: 85,
     borderWidth: 3,
     height: 170,
@@ -226,7 +231,7 @@ class Contact extends Component {
 
   render() {
     return (
-      <ScrollView>
+      <ScrollView style={styles.scroll}>
         <View style={styles.container}>
           <Card containerStyle={styles.cardContainer}>
             {this.renderHeader()}

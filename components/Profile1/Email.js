@@ -3,6 +3,8 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Icon } from 'react-native-elements'
 import PropTypes from 'prop-types'
 
+import mainColor from './constants'
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -15,7 +17,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   emailIcon: {
-    color: '#01C89E',
+    color: mainColor,
     fontSize: 30,
   },
   emailNameColumn: {
