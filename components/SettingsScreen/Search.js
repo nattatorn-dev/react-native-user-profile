@@ -7,7 +7,7 @@ import Colors from './constants'
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 40,
+    marginTop: 22,
     flexDirection: 'row',
     height: 40,
     marginLeft: 10,
