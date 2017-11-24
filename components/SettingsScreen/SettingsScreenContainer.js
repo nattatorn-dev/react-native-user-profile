@@ -1,21 +1,56 @@
 import React, { Component } from 'react'
 import { AsyncStorage, ScrollView, StyleSheet, Text, View } from 'react-native'
-import { List, ListItem, Icon } from 'react-native-elements'
+import { Avatar, List, ListItem, Icon } from 'react-native-elements'
 import PropTypes from 'prop-types'
+import { datetime } from '../../utils/'
 
 import * as Colors from './constants'
 
 const styles = StyleSheet.create({
   infoTextStyle: {
-    fontSize: 14,
-    paddingTop: 20,
+    fontSize: 16,
     marginLeft: 20,
-    color: 'black',
-    opacity: 0.7,
+    color: 'gray',
+    fontWeight: '500',
+    // opacity: 0.7,
   },
   settigsGreyBackground: {
-    backgroundColor: 'rgba(247, 247, 247, 1)',
-    paddingTop: 20,
+    backgroundColor: 'white',
+    paddingTop: 10,
+  },
+  date: {
+    color: 'gray',
+    fontSize: 12.5,
+  },
+  postRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingBottom: 6,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 6,
+    // width: Dimensions.get('window').width * 1,
+  },
+  postImage: {
+    backgroundColor: 'rgba(0, 0, 0, 0.075)',
+    height: 200,
+  },
+  userImage: {
+    marginRight: 12,
+  },
+  wordRow: {
+    marginBottom: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 6,
+  },
+  wordText: {
+    fontSize: 14,
+    fontWeight: '500',
+    lineHeight: 22,
+  },
+  list: {
+    paddingLeft: 2,
   },
 })
 
@@ -53,8 +88,15 @@ class SettingsScreen extends Component {
     // await this.props.getSaveRecent()
   }
 
-  onChangeAutoComplete = () => {
+  state = {
+    pushNotifications: true,
+  }
+
+  onChangePushNotifications = () => {
     // this.props.changeAutoComplete(!this.props.autocomplete)
+    this.setState({
+      pushNotifications: !this.state.pushNotifications,
+    })
   }
 
   onChangeSaveRecents = () => {
@@ -82,81 +124,126 @@ class SettingsScreen extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <ScrollView style={styles.settigsGreyBackground}>
-        <InfoText text="General" />
-        <List>
+        <View style={styles.postRow}>
+          <View style={styles.userImage}>
+            <Avatar
+              large
+              rounded
+              source={{
+                uri: this.props.avatar,
+              }}
+            />
+          </View>
+          <View>
+            <Text style={{ fontSize: 16 }}>{this.props.name}</Text>
+            <Text
+              style={{
+                fontSize: 16,
+                color: 'gray',
+              }}
+            >
+              {this.props.emails[0].email}
+            </Text>
+          </View>
+        </View>
+        <InfoText text="System" />
+        <List containerStyle={{ marginBottom: 0, marginTop: 0 }}>
           <ListItem
-            title="Home"
-            titleStyle={{ fontSize: 18 }}
-            rightTitle={this.props.default_tab}
-            onPress={this.onDefaultStorySetting}
-          />
-        </List>
-        <InfoText text="Stories" />
-        <List>
-          <ListItem
-            title="Sources"
-            titleStyle={{ fontSize: 18 }}
+            title="Your Location"
+            rightTitle="New York"
+            titleStyle={{ fontSize: 16 }}
             onPress={this.onSourcesSetting}
+            leftIcon={{
+              name: 'place',
+              type: 'material',
+            }}
           />
           <ListItem
-            title="Readability"
-            titleStyle={{ fontSize: 18 }}
+            switchButton
+            title="Push Notifications"
+            titleStyle={{ fontSize: 16 }}
+            hideChevron
+            switchOnTintColor={Colors.tintColor}
+            switched={this.state.pushNotifications}
+            onSwitch={this.onChangePushNotifications}
+            leftIcon={{ name: 'bell', type: 'entypo' }}
+          />
+          <ListItem
+            title="Language"
+            rightTitle="English"
+            titleStyle={{ fontSize: 16 }}
+            onPress={this.onSourcesSetting}
+            leftIcon={{ name: 'language', type: 'material' }}
+            // containerStyle={styles.list}
+          />
+          <ListItem
+            // chevronColor="transparent"
+            hideChevron
+            title="App Settings"
+            titleStyle={{ fontSize: 16 }}
+            onPress={this.onSourcesSetting}
+            leftIcon={{ name: 'gear', type: 'octicon' }}
+          />
+        </List>
+        <InfoText text="More" />
+        <List containerStyle={{ marginBottom: 0, marginTop: 0 }}>
+          <ListItem
+            chevronColor="transparent"
+            title="About US"
+            titleStyle={{ fontSize: 16 }}
+            onPress={this.onSourcesSetting}
+            leftIcon={{ name: 'md-information-circle', type: 'ionicon' }}
+          />
+          <ListItem
+            chevronColor="transparent"
+            title="Terms and Policies"
+            titleStyle={{ fontSize: 16 }}
             onPress={this.onReadabilitySetting}
-          />
-        </List>
-        <InfoText text="Search" />
-        <List>
-          <ListItem
-            switchButton
-            title="Autocomplete"
-            titleStyle={{ fontSize: 18 }}
-            hideChevron
-            switchOnTintColor={Colors.tintColor}
-            switched={this.props.autocomplete}
-            onSwitch={this.onChangeAutoComplete}
+            leftIcon={{ name: 'light-bulb', type: 'entypo' }}
           />
           <ListItem
-            title="Region"
-            rightTitle="None (Default)"
-            titleStyle={{ fontSize: 18 }}
-            onPress={this.onRegionSetting}
-          />
-        </List>
-        <InfoText text="Privacy" />
-        <List>
-          <ListItem
-            switchButton
-            title="Save Recents"
-            titleStyle={{ fontSize: 18 }}
-            hideChevron
-            switchOnTintColor={Colors.tintColor}
-            switched={this.props.save_recent}
-            onSwitch={this.onChangeSaveRecents}
+            chevronColor="transparent"
+            title="Share our App"
+            titleStyle={{ fontSize: 16 }}
+            onPress={this.onReadabilitySetting}
+            leftIcon={{ name: 'share', type: 'entypo' }}
           />
           <ListItem
-            title="Clear Recents"
-            hideChevron
-            titleStyle={{ fontSize: 18 }}
-            onPress={this.onClearRecents}
+            chevronColor="transparent"
+            title="Rate Us"
+            titleStyle={{ fontSize: 16 }}
+            onPress={this.onReadabilitySetting}
+            leftIcon={{ name: 'star', type: 'entypo' }}
+          />
+          <ListItem
+            chevronColor="transparent"
+            title="Send FeedBack"
+            titleStyle={{ fontSize: 16 }}
+            onPress={this.onReadabilitySetting}
+            leftIcon={{ name: 'feedback', type: 'materialicon' }}
           />
         </List>
-        <InfoText text="Other" />
-        <List>
-          <ListItem title="Send Feedback" titleStyle={{ fontSize: 18 }} />
-          <ListItem title="Share" titleStyle={{ fontSize: 18 }} />
-          <ListItem title="Leave a Rating" titleStyle={{ fontSize: 18 }} />
-        </List>
-        <InfoText text="Version 0.1.1" />
-        <View style={{ paddingBottom: 50 }} />
       </ScrollView>
     )
   }
 }
 
 const InfoText = ({ text }) => {
-  return <Text style={styles.infoTextStyle}>{text}</Text>
+  return (
+    <View
+      style={{
+        paddingTop: 20,
+        paddingBottom: 12,
+        // paddingTop: 25,
+        backgroundColor: '#F4F5F4',
+      }}
+    >
+      <Text style={styles.infoTextStyle}>{text}</Text>
+    </View>
+  )
 }
 
 InfoText.propTypes = {
