@@ -7,6 +7,9 @@ import contactData from './mocks/contact.json'
 
 import Profile1 from './components/Profile1/Profile'
 import Profile2 from './components/Profile2/Profile'
+import Profile3 from './components/Profile3/Profile'
+import SettingsScreen from './components/SettingsScreen/SettingsScreenContainer'
+import Search from './components/SettingsScreen/Search'
 
 const Profile1Stack = StackNavigator(
   {
@@ -38,6 +41,21 @@ const Profile2Stack = StackNavigator(
   }
 )
 
+const Profile3Stack = StackNavigator(
+  {
+    profile: {
+      screen: () => <SettingsScreen {...contactData} />,
+      navigationOptions: {
+        header: <Search title="Settings" />,
+      },
+      path: '/',
+    },
+  },
+  {
+    mode: 'card',
+  }
+)
+
 const HomeIcon = ({ focused, tintColor }) => (
   <Icon
     name="circle"
@@ -60,6 +78,13 @@ const RootTabs = TabNavigator(
       screen: Profile2Stack,
       navigationOptions: {
         tabBarLabel: 'Profile2',
+        tabBarIcon: HomeIcon,
+      },
+    },
+    profile3: {
+      screen: Profile3Stack,
+      navigationOptions: {
+        tabBarLabel: 'Profile3',
         tabBarIcon: HomeIcon,
       },
     },
