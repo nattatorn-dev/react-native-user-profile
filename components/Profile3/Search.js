@@ -47,8 +47,7 @@ const styles = StyleSheet.create({
   },
 })
 
-console.log(Colors)
-const HeaderNavigation = ({ navigation, title }) => (
+const HeaderNavigation = ({ title }) => (
   <View style={{ backgroundColor: '#FFF' }}>
     <View style={styles.container}>
       <View style={styles.leftSection}>
@@ -86,7 +85,7 @@ const HeaderNavigation = ({ navigation, title }) => (
 )
 
 HeaderNavigation.propTypes = {
-  navigation: PropTypes.object.isRequired,
+  // navigation: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
 }
 
