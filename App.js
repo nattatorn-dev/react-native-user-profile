@@ -7,9 +7,9 @@ import contactData from './mocks/contact.json'
 
 import Profile1 from './components/Profile1/Profile'
 import Profile2 from './components/Profile2/Profile'
-import Profile3 from './components/Profile3/Profile'
-import SettingsScreen from './components/SettingsScreen/SettingsScreenContainer'
-import Search from './components/SettingsScreen/Search'
+import Profile3 from './components/Profile3/SettingsScreenContainer'
+
+import Search from './components/Profile3/Search'
 
 const Profile1Stack = StackNavigator(
   {
@@ -44,7 +44,7 @@ const Profile2Stack = StackNavigator(
 const Profile3Stack = StackNavigator(
   {
     profile: {
-      screen: () => <SettingsScreen {...contactData} />,
+      screen: () => <Profile3 {...contactData} />,
       navigationOptions: {
         header: <Search title="Settings" />,
       },

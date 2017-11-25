@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { AsyncStorage, ScrollView, StyleSheet, Text, View } from 'react-native'
-import { Avatar, List, ListItem, Icon } from 'react-native-elements'
+import { Avatar, List, ListItem } from 'react-native-elements'
 import PropTypes from 'prop-types'
-import { datetime } from '../../utils/'
+// import { datetime } from '../../utils/'
 
 import * as Colors from './constants'
 
@@ -12,15 +12,10 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     color: 'gray',
     fontWeight: '500',
-    // opacity: 0.7,
   },
   settigsGreyBackground: {
     backgroundColor: 'white',
     paddingTop: 10,
-  },
-  date: {
-    color: 'gray',
-    fontSize: 12.5,
   },
   postRow: {
     alignItems: 'center',
@@ -29,57 +24,21 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 6,
-    // width: Dimensions.get('window').width * 1,
-  },
-  postImage: {
-    backgroundColor: 'rgba(0, 0, 0, 0.075)',
-    height: 200,
   },
   userImage: {
     marginRight: 12,
-  },
-  wordRow: {
-    marginBottom: 10,
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingTop: 6,
-  },
-  wordText: {
-    fontSize: 14,
-    fontWeight: '500',
-    lineHeight: 22,
-  },
-  list: {
-    paddingLeft: 2,
   },
 })
 
 class SettingsScreen extends Component {
   static propTypes = {
-    // autocomplete: PropTypes.bool.isRequired,
-    // changeAutoComplete: PropTypes.func.isRequired,
-    // changeSaveRecent: PropTypes.func.isRequired,
-    // default_tab: PropTypes.string.isRequired,
-    // getAutoComplete: PropTypes.func.isRequired,
-    // getDefaultTab: PropTypes.func.isRequired,
-    // getSaveRecent: PropTypes.func.isRequired,
-    // lang: PropTypes.string.isRequired,
-    // navigation: PropTypes.object.isRequired,
-    // save_recent: PropTypes.bool.isRequired,
-  }
-
-  static navigationOptions = ({ navigation }) => {
-    return {
-      tabBarLabel: 'Settings',
-      tabBarIcon: ({ focused }) => (
-        <Icon
-          name="settings"
-          size={24}
-          color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
-        />
-      ),
-      header: <View style={{ backgroundColor: Colors.tintColor }} />,
-    }
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    emails: PropTypes.arrayOf(
+      PropTypes.shape({
+        email: PropTypes.string.isRequired,
+      })
+    ).isRequired,
   }
 
   static async componentDidMount() {
@@ -124,7 +83,6 @@ class SettingsScreen extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <ScrollView style={styles.settigsGreyBackground}>
         <View style={styles.postRow}>

@@ -11,4 +11,4 @@ cache:
 before_script:
   - yarn
 script:
-  - yarn run eslint
+  - yarn run lint
