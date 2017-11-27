@@ -1,0 +1,172 @@
+{
+  "name": "Jennis BNK48",
+  "username": "Jennis_BNK48",
+  "address": {
+    "streetA": "Abbott Shoals",
+    "streetB": "505 Winona Place",
+    "streetC": "4306 Hudson Street Suite 875",
+    "streetD": "Suite 489",
+    "city": "Ginatown",
+    "state": "Massachusetts",
+    "country": "Nepal",
+    "zipcode": "41428-0189",
+    "geo": {
+      "lat": "-75.8513",
+      "lng": "81.3262"
+    }
+  },
+  "website": "destany.org",
+  "bio": "Singer",
+  "company": {
+    "name": "Streich, Harber and Hilpert",
+    "catchPhrase": "Team-oriented hybrid neural-net",
+    "bs": "user-centric embrace vortals"
+  },
+  "avatar":
+    "https://instagram.fbkk1-5.fna.fbcdn.net/t51.2885-19/s320x320/22860796_2092599727635043_6266815081133113344_n.jpg",
+  "avatarBackground":
+    "https://scontent.fbkk1-5.fna.fbcdn.net/v/t31.0-8/21731738_477105036002034_2224382863757666662_o.jpg?_nc_eui2=v1%3AAeGrhsE0ySS4x4vjIcNRRkRcaxWg1jO6JL-PCL7AzeaUlWh4GAGZVGNt4yhU8NzGkEPAv8h4u6uuxA8YUfoP22Kb-3PEkb4V2eli5-ypa5FnEA&oh=c7a4929535a5ddc7b394f6d8468bb1a3&oe=5AD52E28",
+  "tels": [
+    { "id": 1, "name": "Mobile", "number": "+66 (089)-928-2134" },
+    { "id": 2, "name": "Work", "number": "+41 (112)-435-9887" }
+  ],
+  "emails": [
+    { "id": 1, "name": "Personal", "email": "elsie-goodman@mail.com" },
+    { "id": 2, "name": "Work", "email": "elsie@work.com" }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "words": "cupiditate qui cum",
+      "sentence": "Ipsum laborum quasi debitis dolores veniam.",
+      "sentences":
+        "Impedit veritatis harum nihil dolores dolorem optio assumenda. Laborum saepe voluptas officia odit. Ut voluptas mollitia mollitia eum autem quisquam qui aut. Et ipsa hic harum molestias et quam qui cum. Sint sit soluta.",
+      "paragraph":
+        "Beatae voluptas ea magni quibusdam dolorem sit aut qui. Dolorem rerum et consequuntur inventore officia excepturi dolore architecto fuga. Quia consequatur asperiores rerum qui corporis dolorum. At harum velit adipisci iste odit modi veniam ut. Deserunt quibusdam velit non ea.",
+      "image":
+        "https://scontent.fbkk1-5.fna.fbcdn.net/v/t31.0-8/21457827_476148852764319_2280229895848990707_o.jpg?_nc_eui2=v1%3AAeG06o2k5W8C9DStkTxKr_o1UUyI_Z8vjTLmfhMryLrLdlpFdaO3DAqj-kxAKakmM-SJQYjLAMbUL8gMvVbzYOaB8H-LOg0zsnAcOD2Z9OekyQ&oh=75921039e059c4b7e332cd658a93ebdb&oe=5A8D2D83",
+      "createdDate": "2017-11-21T02:33:53.770Z",
+      "user": {
+        "name": "Ronaldo",
+        "username": "Ronaldo.Effertz",
+        "avatar":
+          "https://s3.amazonaws.com/uifaces/faces/twitter/samuelkraft/128.jpg",
+        "email": "Ronaldo.Effertz.Deckow@hotmail.com"
+      }
+    },
+    {
+      "id": 2,
+      "words": "est voluptatum aut",
+      "sentence": "Omnis omnis aut dolor quaerat sunt et optio.",
+      "sentences":
+        "Nam numquam magni saepe. Deserunt aspernatur dolorem libero soluta sint molestias et sint sed. Maiores id quis assumenda voluptates quos ut saepe officia voluptatem. Ea placeat sed ut. Modi sed earum voluptas cumque unde eum doloribus ipsam.",
+      "paragraph":
+        "Quam aut reprehenderit asperiores aut. Sunt quis aspernatur incidunt. Illo et perferendis ex incidunt eos ut maxime dolorem voluptatem. Qui rem nihil quos cumque eum doloribus. Quae beatae tempore commodi.",
+      "image":
+        "https://scontent.fbkk1-5.fna.fbcdn.net/v/t31.0-8/23119928_497688637277007_46440359373687503_o.jpg?_nc_eui2=v1%3AAeEnQaDlLuCDhjV-9R9kke5rKgrU_sJAeRp_TGv2URw_CqwqXrS5Jyb62gumtPGpuF37MyzRAuW9ydQguIOBYywd9p5ZAiRVAZGG6ewNOjqy-w&oh=85fee8839bdbd80f5f3d8c7059be61dc&oe=5AA5EFF8",
+      "createdDate": "2017-11-20T18:04:58.858Z",
+      "user": {
+        "name": "Markus",
+        "username": "Markus.Price68",
+        "avatar":
+          "https://s3.amazonaws.com/uifaces/faces/twitter/kikillo/128.jpg",
+        "email": "Markus.Price68.Dicki@yahoo.com"
+      }
+    },
+    {
+      "id": 3,
+      "words": "vitae voluptas quia",
+      "sentence": "Voluptates dolor ad rem amet voluptas.",
+      "sentences":
+        "Rem ipsum quis. Animi ipsum ut at possimus. Beatae molestiae non odio soluta quidem ut suscipit.",
+      "paragraph":
+        "Veniam veritatis nihil illum rerum et. Temporibus facere sed delectus corporis alias. Et odio aliquid est. Quas sit et quia tempora sit eveniet quam.",
+      "createdDate": "2017-03-24T10:56:15.461Z",
+      "image":
+        "https://scontent.fbkk1-5.fna.fbcdn.net/v/t31.0-8/18953368_434064656972739_7957566771056776291_o.jpg?_nc_eui2=v1%3AAeF0uaIqR8bPw5HNQJp6ulIte7Hiipq-NYt5xyFJmcoYv4XTPkTPC0Py-svxx25T7gU3y-7dwtGZhDWK4iD3g6_UMRVnuChP-0s8rJ_cgGh8AQ&oh=9de11b701335c4773a5b199252c5d8f2&oe=5A97DE1B",
+      "user": {
+        "name": "Magali",
+        "username": "Magali16",
+        "avatar":
+          "https://s3.amazonaws.com/uifaces/faces/twitter/mastermindesign/128.jpg",
+        "email": "Magali1664@gmail.com"
+      }
+    },
+    {
+      "id": 4,
+      "words": "vitae voluptas quia",
+      "sentence": "Voluptates dolor ad rem amet voluptas.",
+      "sentences":
+        "Rem ipsum quis. Animi ipsum ut at possimus. Beatae molestiae non odio soluta quidem ut suscipit.",
+      "paragraph":
+        "Veniam veritatis nihil illum rerum et. Temporibus facere sed delectus corporis alias. Et odio aliquid est. Quas sit et quia tempora sit eveniet quam.",
+      "createdDate": "2017-03-24T10:56:15.461Z",
+      "image":
+        "https://scontent.fbkk1-5.fna.fbcdn.net/v/t31.0-8/23275681_500058437040027_2858878983636331335_o.jpg?_nc_eui2=v1%3AAeGk-8dVc9P_W0cOosos7f6X4NEq79K-IX-I5TVPf48n8NEtzQtBRKBy4hK08Kb4kHFprhidmjpYuv_RfrrOo1XZwyH3yCJbZ7zuKjMIY049vw&oh=ef4cf324ab2eeebe3e2bed9f01ca394a&oe=5A8A18C0",
+      "user": {
+        "name": "Magali",
+        "username": "Magali16",
+        "avatar":
+          "https://s3.amazonaws.com/uifaces/faces/twitter/mastermindesign/128.jpg",
+        "email": "Magali1664@gmail.com"
+      }
+    },
+    {
+      "id": 5,
+      "words": "vitae voluptas quia",
+      "sentence": "Voluptates dolor ad rem amet voluptas.",
+      "sentences":
+        "Rem ipsum quis. Animi ipsum ut at possimus. Beatae molestiae non odio soluta quidem ut suscipit.",
+      "paragraph":
+        "Veniam veritatis nihil illum rerum et. Temporibus facere sed delectus corporis alias. Et odio aliquid est. Quas sit et quia tempora sit eveniet quam.",
+      "createdDate": "2017-03-24T10:56:15.461Z",
+      "image":
+        "https://scontent.fbkk1-5.fna.fbcdn.net/v/t1.0-9/21032368_470796209966250_2624279601445675466_n.jpg?_nc_fx=fbkk1-5&_nc_eui2=v1%3AAeHpF7sozaiX6B3DincT_gCtwrr62SvoNW_FLxF7b4hxAeN1RuHEewlSVWzsFMSLWYunwkaB0-hopABbSZ6Uo5kG1GdJ4SIBOLIEZxZHRMLnLQ&oh=5e5afd565c0198004606de492b3362dc&oe=5A8B779C",
+      "user": {
+        "name": "Magali",
+        "username": "Magali16",
+        "avatar":
+          "https://s3.amazonaws.com/uifaces/faces/twitter/mastermindesign/128.jpg",
+        "email": "Magali1664@gmail.com"
+      }
+    },
+    {
+      "id": 6,
+      "words": "vitae voluptas quia",
+      "sentence": "Voluptates dolor ad rem amet voluptas.",
+      "sentences":
+        "Rem ipsum quis. Animi ipsum ut at possimus. Beatae molestiae non odio soluta quidem ut suscipit.",
+      "paragraph":
+        "Veniam veritatis nihil illum rerum et. Temporibus facere sed delectus corporis alias. Et odio aliquid est. Quas sit et quia tempora sit eveniet quam.",
+      "createdDate": "2017-03-24T10:56:15.461Z",
+      "image":
+        "https://scontent.fbkk1-5.fna.fbcdn.net/v/t1.0-9/20622265_463309644048240_2708137799225022587_n.jpg?_nc_fx=fbkk1-5&_nc_eui2=v1%3AAeH_IIGmAL7y9_Nsz6lY3thZ_y6uS-n2ZKJXBH7ktcyEAIl142K7zIl2P0xSS-q_Igon1QBkyDHHAFK5hX5KVwTyG_G4TJ0QH5wPtyEBPyiizA&oh=129e14ec00d85133a826dda5c783fb3a&oe=5A90E5D5",
+      "user": {
+        "name": "Magali",
+        "username": "Magali16",
+        "avatar":
+          "https://s3.amazonaws.com/uifaces/faces/twitter/mastermindesign/128.jpg",
+        "email": "Magali1664@gmail.com"
+      }
+    },
+    {
+      "id": 7,
+      "words": "vitae voluptas quia",
+      "sentence": "Voluptates dolor ad rem amet voluptas.",
+      "sentences":
+        "Rem ipsum quis. Animi ipsum ut at possimus. Beatae molestiae non odio soluta quidem ut suscipit.",
+      "paragraph":
+        "Veniam veritatis nihil illum rerum et. Temporibus facere sed delectus corporis alias. Et odio aliquid est. Quas sit et quia tempora sit eveniet quam.",
+      "createdDate": "2017-03-24T10:56:15.461Z",
+      "image":
+        "https://instagram.fbkk1-5.fna.fbcdn.net/t51.2885-15/s640x640/sh0.08/e35/22860229_102003873904423_7079383783564115968_n.jpg",
+      "user": {
+        "name": "Magali",
+        "username": "Magali16",
+        "avatar":
+          "https://s3.amazonaws.com/uifaces/faces/twitter/mastermindesign/128.jpg",
+        "email": "Magali1664@gmail.com"
+      }
+    }
+  ]
+}
