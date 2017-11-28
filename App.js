@@ -9,7 +9,6 @@ import Profile1 from './screens/Profile1/Profile'
 import Profile2 from './screens/Profile2/Profile'
 import Profile3 from './screens/Profile3'
 
-import { Nav } from './components'
 import Options from './screens/Profile3/Options'
 
 const Profile1Stack = StackNavigator(
@@ -50,11 +49,6 @@ const Profile3Stack = StackNavigator(
     },
     options: {
       screen: Options,
-      navigationOptions: {
-        header: ({ navigation }) => (
-          <Nav title="Settings" navigation={navigation} />
-        ),
-      },
       path: '/',
     },
   },
