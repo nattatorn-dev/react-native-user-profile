@@ -5,11 +5,11 @@ import { StackNavigator, TabNavigator } from 'react-navigation'
 import PropTypes from 'prop-types'
 import contactData from './mocks/contact.json'
 
-import Profile1 from './components/Profile1/Profile'
-import Profile2 from './components/Profile2/Profile'
-import Profile3 from './components/Profile3/SettingsScreenContainer'
+import Profile1 from './screens/Profile1/Profile'
+import Profile2 from './screens/Profile2/Profile'
+import Profile3 from './screens/Profile3'
 
-import Search from './components/Profile3/Search'
+import Options from './screens/Profile3/Options'
 
 const Profile1Stack = StackNavigator(
   {
@@ -44,10 +44,11 @@ const Profile2Stack = StackNavigator(
 const Profile3Stack = StackNavigator(
   {
     profile: {
-      screen: () => <Profile3 {...contactData} />,
-      navigationOptions: {
-        header: <Search title="Settings" />,
-      },
+      screen: Profile3,
+      path: '/',
+    },
+    options: {
+      screen: Options,
       path: '/',
     },
   },
@@ -110,7 +111,7 @@ const RootTabs = TabNavigator(
       },
     },
     tabBarPosition: 'bottom',
-    initialRouteName: 'profile1',
+    initialRouteName: 'profile3',
   }
 )
 
