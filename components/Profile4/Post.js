@@ -9,63 +9,40 @@ const styles = StyleSheet.create({
   postImage: {},
 })
 
-// const Post = ({ containerStyle, image }) => (
-//   <View style={[styles.container, containerStyle]}>
-//     {image && (
-//       <Image
-//         style={styles.postImage}
-//         source={{ uri: image }}
-//         resizeMode="cover"
-//       />
-//     )}
-//   </View>
-// )
-
-class Post extends Component {
-  state = {
-    height: 0,
-  }
-
-  componentWillMount() {
-    const { postWidth } = this.props
-    Image.getSize(
-      this.props.image,
-      (width, height) => {
-        const calHeight = postWidth * (height / width)
-        this.setState({ height: calHeight })
-      },
-      () => {
-        this.setState({ height: postWidth })
-      }
-    )
-  }
-
-  render() {
-    const { containerStyle, image, postWidth } = this.props
-    return (
-      <View style={[styles.container, containerStyle]}>
-        {image && (
-          <Image
-            style={[
-              styles.postImage,
-              { width: postWidth, height: this.state.height },
-            ]}
-            source={{ uri: image }}
-          />
-        )}
-      </View>
-    )
-  }
+const Post = props => {
+  const { containerStyle, image, imageHeight, imageWidth, postWidth } = props
+  return (
+    <View style={[styles.container, containerStyle]}>
+      {image && (
+        <Image
+          style={[
+            styles.postImage,
+            {
+              width: postWidth,
+              height: postWidth * (imageHeight / imageWidth),
+            },
+          ]}
+          source={{ uri: image }}
+        />
+      )}
+    </View>
+  )
 }
 
 Post.propTypes = {
   containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
   image: PropTypes.string,
+  imageHeight: PropTypes.number,
+  imageWidth: PropTypes.number,
+  postWidth: PropTypes.number,
 }
 
 Post.defaultProps = {
   containerStyle: {},
   image: null,
+  imageHeight: null,
+  imageWidth: null,
+  postWidth: null,
 }
 
 export default Post
