@@ -71,7 +71,7 @@ export default StyleSheet.create({
     marginTop: 10,
   },
   tabBar: {
-    backgroundColor: '#FFF',
+    backgroundColor: 'transparent',
     marginBottom: 20,
     marginLeft: 130,
   },
