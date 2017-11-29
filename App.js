@@ -111,7 +111,7 @@ const RootTabs = TabNavigator(
       },
     },
     tabBarPosition: 'bottom',
-    initialRouteName: 'profile3',
+    initialRouteName: 'profile1',
   }
 )
 
