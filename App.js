@@ -4,10 +4,12 @@ import { Icon } from 'react-native-elements'
 import { StackNavigator, TabNavigator } from 'react-navigation'
 import PropTypes from 'prop-types'
 import contactData from './mocks/contact.json'
+import contactData2 from './mocks/contact2.json'
 
 import Profile1 from './screens/Profile1/Profile'
 import Profile2 from './screens/Profile2/Profile'
 import Profile3 from './screens/Profile3'
+import Profile4 from './components/Profile4/Profile'
 
 import Options from './screens/Profile3/Options'
 
@@ -57,6 +59,21 @@ const Profile3Stack = StackNavigator(
   }
 )
 
+const Profile4Stack = StackNavigator(
+  {
+    profile: {
+      screen: () => <Profile4 {...contactData2} />,
+      navigationOptions: {
+        header: null,
+      },
+      path: '/',
+    },
+  },
+  {
+    mode: 'card',
+  }
+)
+
 const HomeIcon = ({ focused, tintColor }) => (
   <Icon
     name="circle"
@@ -86,6 +103,13 @@ const RootTabs = TabNavigator(
       screen: Profile3Stack,
       navigationOptions: {
         tabBarLabel: 'Profile3',
+        tabBarIcon: HomeIcon,
+      },
+    },
+    profile4: {
+      screen: Profile4Stack,
+      navigationOptions: {
+        tabBarLabel: 'Profile4',
         tabBarIcon: HomeIcon,
       },
     },
