@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Dimensions, Image, StyleSheet } from 'react-native'
+import { Dimensions, ListView, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
-import MasonryList from '@appandflow/masonry-list'
 
 import Post from './Post'
 
@@ -9,9 +8,7 @@ const windowWidth = Dimensions.get('window').width
 const space = 10
 const postContainerWidth = (windowWidth - space * 3) / 2
 const styles = StyleSheet.create({
-  masonryContainer: {
-    marginLeft: 10,
-  },
+  container: {},
   postContainer: {
     marginTop: 10,
     marginRight: 10,
@@ -45,37 +42,29 @@ class Posts extends Component {
     containerStyle: {},
   }
 
-  itemAddImgHeight = () => {
-    return this.props.posts.map(post => {
-      Image.getSize(
-        post.image,
-        (width, height) => {
-          post.imageHeight = height
-          post.imageWidth = width
-        },
-        () => {
-          post.imageHeight = 0
-        }
-      )
-      return post
-    })
+  state = {
+    postDS: new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2,
+    }).cloneWithRows(this.props.posts),
   }
 
   render() {
     return (
-      <MasonryList
-        style={styles.masonryContainer}
-        data={this.itemAddImgHeight()}
-        renderItem={({ item }) => (
-          <Post
-            containerStyle={styles.postContainer}
-            postWidth={postContainerWidth}
-            {...item}
-          />
-        )}
-        getHeightForItem={({ item }) => item.imageHeight + 2}
-        numColumns={2}
-        keyExtractor={item => item.id}
+      <ListView
+        scrollEnabled={false}
+        removeClippedSubviews={false}
+        contentContainerStyle={[styles.container, this.props.containerStyle]}
+        dataSource={this.state.postDS}
+        renderRow={e => {
+          return (
+            <Post
+              key={`post-${e.id} `}
+              containerStyle={styles.postContainer}
+              postWidth={postContainerWidth}
+              {...e}
+            />
+          )
+        }}
       />
     )
   }

@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Image, View, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'red',
-  },
+  container: {},
   postImage: {},
 })
 
