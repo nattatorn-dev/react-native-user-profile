@@ -58,7 +58,7 @@ class SettingsScreen extends Component {
   }
 
   render() {
-    const { avatar, name, emails } = this.props
+    const { avatar, name, emails: [firstEmail] } = this.props
     return (
       <ScrollView style={styles.scroll}>
         <View style={styles.userRow}>
@@ -79,7 +79,7 @@ class SettingsScreen extends Component {
                 fontSize: 16,
               }}
             >
-              {emails[0].email}
+              {firstEmail.email}
             </Text>
           </View>
         </View>
