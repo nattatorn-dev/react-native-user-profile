@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
   container: {},
   postContainer: {
     marginTop: 10,
-    marginRight: 10,
     padding: 0,
     borderWidth: 0,
     width: postContainerWidth,

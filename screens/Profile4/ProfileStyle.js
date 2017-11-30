@@ -71,7 +71,7 @@ export default StyleSheet.create({
     marginTop: 10,
   },
   tabBar: {
-    backgroundColor: '#FFF',
+    backgroundColor: 'transparent',
     marginBottom: 20,
     marginLeft: 130,
   },
@@ -93,14 +93,13 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
   mansonryContainer: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     flexWrap: 'wrap',
-    alignItems: 'flex-start',
     justifyContent: 'space-between',
     marginLeft: space,
     marginRight: space,
     // windowWidth - spaceLeft - spaceRight
-    width: windowWidth - space * 2,
-    maxHeight: 730,
+    // width: windowWidth - space * 2,
+    // maxHeight: 730,
   },
 })

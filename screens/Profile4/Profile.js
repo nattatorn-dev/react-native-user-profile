@@ -155,7 +155,7 @@ class Profile3 extends Component {
             }}
           >
             <View style={styles.coverTitleContainer}>
-              <Text style={styles.coverTitle}>Profile</Text>
+              <Text style={styles.coverTitle} />
             </View>
             <View style={styles.coverMetaContainer}>
               <Text style={styles.coverName}>{name}</Text>
