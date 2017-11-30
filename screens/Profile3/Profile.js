@@ -58,6 +58,7 @@ class SettingsScreen extends Component {
   }
 
   render() {
+    const { avatar, name, emails } = this.props
     return (
       <ScrollView style={styles.scroll}>
         <View style={styles.userRow}>
@@ -66,19 +67,19 @@ class SettingsScreen extends Component {
               large
               rounded
               source={{
-                uri: this.props.avatar,
+                uri: avatar,
               }}
             />
           </View>
           <View>
-            <Text style={{ fontSize: 16 }}>{this.props.name}</Text>
+            <Text style={{ fontSize: 16 }}>{name}</Text>
             <Text
               style={{
                 color: 'gray',
                 fontSize: 16,
               }}
             >
-              {this.props.emails[0].email}
+              {emails[0].email}
             </Text>
           </View>
         </View>
