@@ -93,14 +93,13 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
   mansonryContainer: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     flexWrap: 'wrap',
-    alignItems: 'flex-start',
     justifyContent: 'space-between',
     marginLeft: space,
     marginRight: space,
     // windowWidth - spaceLeft - spaceRight
-    width: windowWidth - space * 2,
-    maxHeight: 730,
+    // width: windowWidth - space * 2,
+    // maxHeight: 730,
   },
 })
