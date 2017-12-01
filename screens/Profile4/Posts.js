@@ -4,16 +4,15 @@ import PropTypes from 'prop-types'
 
 import Post from './Post'
 
-const windowWidth = Dimensions.get('window').width
 const space = 10
-const postContainerWidth = (windowWidth - space * 3) / 2
+const postContainerWidth = (Dimensions.get('window').width - space * 3) / 2
+
 const styles = StyleSheet.create({
   container: {},
   postContainer: {
-    marginTop: 10,
+    margin: 5,
     padding: 0,
     borderWidth: 0,
-    width: postContainerWidth,
   },
 })
 
@@ -22,17 +21,10 @@ class Posts extends Component {
     containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
     posts: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        words: PropTypes.string.isRequired,
-        sentence: PropTypes.string.isRequired,
-        paragraph: PropTypes.string.isRequired,
         image: PropTypes.string,
-        user: PropTypes.shape({
-          name: PropTypes.string.isRequired,
-          username: PropTypes.string.isRequired,
-          avatar: PropTypes.string.isRequired,
-          email: PropTypes.string.isRequired,
-        }),
+        imageHeight: PropTypes.number,
+        imageWidth: PropTypes.number,
+        postWidth: PropTypes.number,
       })
     ).isRequired,
   }
