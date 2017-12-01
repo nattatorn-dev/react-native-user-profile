@@ -1,40 +1,41 @@
 import React, { Component } from 'react'
-import { Animated, Image, Platform, ScrollView, Text, View } from 'react-native'
 import {
-  TabViewAnimated,
+  Animated,
+  Image,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native'
+import {
   TabBar,
-  TabViewPagerScroll,
+  TabViewAnimated,
   TabViewPagerPan,
+  TabViewPagerScroll,
 } from 'react-native-tab-view'
 import PropTypes from 'prop-types'
 
-import styles from './ProfileStyle'
+import profileStyles from './ProfileStyle'
 import Posts from './Posts'
+
+const styles = StyleSheet.create({ ...profileStyles })
 
 class Profile3 extends Component {
   static propTypes = {
     avatar: PropTypes.string.isRequired,
     avatarBackground: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
     bio: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
     tabContainerStyle: PropTypes.oneOfType([
-      PropTypes.object,
       PropTypes.number,
+      PropTypes.object,
     ]),
     posts: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number.isRequired,
-        words: PropTypes.string.isRequired,
-        sentence: PropTypes.string.isRequired,
-        paragraph: PropTypes.string.isRequired,
         image: PropTypes.string,
-        user: PropTypes.shape({
-          name: PropTypes.string.isRequired,
-          username: PropTypes.string.isRequired,
-          avatar: PropTypes.string.isRequired,
-          email: PropTypes.string.isRequired,
-        }),
       })
     ).isRequired,
   }
@@ -61,22 +62,33 @@ class Profile3 extends Component {
   }
 
   itemsToMansonry = items => {
-    const leftCol = [items[0]]
-    const rightCol = [items[1]]
-    let leftHeight = items[0].imageHeight
-    let rightHeight = items[1].imageHeight
-    items.forEach((item, i) => {
-      if (i > 1) {
-        if (leftHeight <= rightHeight) {
-          leftCol.push(items[i])
-          leftHeight = leftHeight + items[i].imageHeight
+    return items.reduce(
+      (p, c, k) => {
+        if (k > 1) {
+          if (p.leftHeight <= p.rightHeight) {
+            return {
+              ...p,
+              leftCol: [...p.leftCol, c],
+              leftHeight: p.leftHeight + c.imageHeight,
+            }
+          } else {
+            return {
+              ...p,
+              rightCol: [...p.rightCol, c],
+              rightHeight: p.rightHeight + c.imageHeight,
+            }
+          }
         } else {
-          rightCol.push(items[i])
-          rightHeight = rightHeight + items[i].imageHeight
+          return p
         }
+      },
+      {
+        leftCol: [items[0]],
+        rightCol: [items[1]],
+        leftHeight: items[0].imageHeight,
+        rightHeight: items[1].imageHeight,
       }
-    })
-    return { leftCol, rightCol }
+    )
   }
 
   _handleIndexChange = index => {
@@ -178,14 +190,18 @@ class Profile3 extends Component {
   renderMansonry2Col = () => {
     return (
       <View style={styles.mansonryContainer}>
-        <Posts
-          containerStyle={styles.sceneContainer}
-          posts={this.state.postsMasonry.leftCol}
-        />
-        <Posts
-          containerStyle={styles.sceneContainer}
-          posts={this.state.postsMasonry.rightCol}
-        />
+        <View>
+          <Posts
+            containerStyle={styles.sceneContainer}
+            posts={this.state.postsMasonry.leftCol}
+          />
+        </View>
+        <View>
+          <Posts
+            containerStyle={styles.sceneContainer}
+            posts={this.state.postsMasonry.rightCol}
+          />
+        </View>
       </View>
     )
   }

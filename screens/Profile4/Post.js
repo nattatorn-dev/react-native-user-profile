@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, View, StyleSheet } from 'react-native'
+import { Image, StyleSheet, View } from 'react-native'
 import PropTypes from 'prop-types'
 
 const styles = StyleSheet.create({
@@ -7,8 +7,13 @@ const styles = StyleSheet.create({
   postImage: {},
 })
 
-const Post = props => {
-  const { containerStyle, image, imageHeight, imageWidth, postWidth } = props
+const Post = ({
+  containerStyle,
+  image,
+  imageHeight,
+  imageWidth,
+  postWidth,
+}) => {
   return (
     <View style={[styles.container, containerStyle]}>
       {image && (
