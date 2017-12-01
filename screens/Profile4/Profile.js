@@ -34,8 +34,10 @@ class Profile3 extends Component {
     ]),
     posts: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.number.isRequired,
         image: PropTypes.string,
+        imageHeight: PropTypes.number,
+        imageWidth: PropTypes.number,
+        postWidth: PropTypes.number,
       })
     ).isRequired,
   }
