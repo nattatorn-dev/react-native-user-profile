@@ -4,9 +4,8 @@ import PropTypes from 'prop-types'
 
 import Post from './Post'
 
-const windowWidth = Dimensions.get('window').width
 const space = 10
-const postContainerWidth = (windowWidth - space * 3) / 2
+const postContainerWidth = (Dimensions.get('window').width - space * 3) / 2
 
 const styles = StyleSheet.create({
   container: {},
@@ -23,11 +22,9 @@ class Posts extends Component {
     posts: PropTypes.arrayOf(
       PropTypes.shape({
         image: PropTypes.string,
-        user: PropTypes.shape({
-          name: PropTypes.string.isRequired,
-          avatar: PropTypes.string.isRequired,
-          email: PropTypes.string.isRequired,
-        }),
+        imageHeight: PropTypes.number,
+        imageWidth: PropTypes.number,
+        postWidth: PropTypes.number,
       })
     ).isRequired,
   }
