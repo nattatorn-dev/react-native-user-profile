@@ -9,14 +9,14 @@
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
-    "expo": "^23.0.1",
+    "expo": "^23.0.0",
     "prop-types": "^15.6.0",
-    "react": "16.1.1",
+    "react": "16.0.0",
     "react-native":
-      "https://github.com/expo/react-native/archive/sdk-21.0.2.tar.gz",
+      "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
     "react-native-elements": "^0.18.2",
     "react-native-tab-view": "^0.0.70",
-    "react-navigation": "^1.0.0-beta.15"
+    "react-navigation": "^1.0.0-beta.19"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.2",
