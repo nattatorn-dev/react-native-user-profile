@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {
   Animated,
   Image,
+  ImageBackground,
   Platform,
   ScrollView,
   StyleSheet,
@@ -162,7 +163,7 @@ class Profile3 extends Component {
     return (
       <View style={styles.headerContainer}>
         <View style={styles.coverContainer}>
-          <Image
+          <ImageBackground
             style={styles.coverImage}
             source={{
               uri: avatarBackground,
@@ -175,7 +176,7 @@ class Profile3 extends Component {
               <Text style={styles.coverName}>{name}</Text>
               <Text style={styles.coverBio}>{bio}</Text>
             </View>
-          </Image>
+          </ImageBackground>
         </View>
         <View style={styles.profileImageContainer}>
           <Image

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Card, Icon } from 'react-native-elements'
 import {
   Image,
+  ImageBackground,
   Linking,
   ListView,
   Platform,
@@ -156,7 +157,7 @@ class Contact extends Component {
 
     return (
       <View style={styles.headerContainer}>
-        <Image
+        <ImageBackground
           style={styles.headerBackgroundImage}
           blurRadius={10}
           source={{
@@ -187,7 +188,7 @@ class Contact extends Component {
               </View>
             </View>
           </View>
-        </Image>
+        </ImageBackground>
       </View>
     )
   }
