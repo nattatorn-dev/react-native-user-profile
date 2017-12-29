@@ -3,23 +3,22 @@ import { Platform } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { StackNavigator, TabNavigator } from 'react-navigation'
 import PropTypes from 'prop-types'
-import contactData from './mocks/contact.json'
-import contactProfile4Data from './mocks/contactProfile4.json'
 
-import Profile1 from './screens/Profile1/Profile'
-import Profile2 from './screens/Profile2/Profile'
+import Profile1 from './screens/Profile1'
+import Profile2 from './screens/Profile2'
 import Profile3 from './screens/Profile3'
-import Profile4 from './screens/Profile4/Profile'
+import Profile4 from './screens/Profile4'
 
 import Options from './screens/Profile3/Options'
 
 const Profile1Stack = StackNavigator(
   {
     profile: {
-      screen: () => <Profile1 {...contactData} />,
-      navigationOptions: {
-        header: null,
-      },
+      screen: Profile1,
+      path: '/',
+    },
+    options: {
+      screen: Options,
       path: '/',
     },
   },
@@ -31,10 +30,11 @@ const Profile1Stack = StackNavigator(
 const Profile2Stack = StackNavigator(
   {
     profile: {
-      screen: () => <Profile2 {...contactData} />,
-      navigationOptions: {
-        header: null,
-      },
+      screen: Profile2,
+      path: '/',
+    },
+    options: {
+      screen: Options,
       path: '/',
     },
   },
@@ -62,10 +62,11 @@ const Profile3Stack = StackNavigator(
 const Profile4Stack = StackNavigator(
   {
     profile: {
-      screen: () => <Profile4 {...contactProfile4Data} />,
-      navigationOptions: {
-        header: null,
-      },
+      screen: Profile4,
+      path: '/',
+    },
+    options: {
+      screen: Options,
       path: '/',
     },
   },

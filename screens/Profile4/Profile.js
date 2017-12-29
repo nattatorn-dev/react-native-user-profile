@@ -81,8 +81,8 @@ class Profile3 extends Component {
       <TabBar
         {...props}
         indicatorStyle={styles.indicatorTab}
-        renderLabel={this._renderLabel(props)}
         pressOpacity={0.8}
+        renderLabel={this._renderLabel(props)}
         style={styles.tabBar}
       />
     )
@@ -137,10 +137,10 @@ class Profile3 extends Component {
       <View style={styles.headerContainer}>
         <View style={styles.coverContainer}>
           <ImageBackground
-            style={styles.coverImage}
             source={{
               uri: avatarBackground,
             }}
+            style={styles.coverImage}
           >
             <View style={styles.coverTitleContainer}>
               <Text style={styles.coverTitle} />
@@ -153,10 +153,10 @@ class Profile3 extends Component {
         </View>
         <View style={styles.profileImageContainer}>
           <Image
-            style={styles.profileImage}
             source={{
               uri: avatar,
             }}
+            style={styles.profileImage}
           />
         </View>
       </View>
@@ -189,12 +189,12 @@ class Profile3 extends Component {
           <View style={styles.cardContainer}>
             {this.renderContactHeader()}
             <TabViewAnimated
-              style={[styles.tabContainer, this.props.tabContainerStyle]}
               navigationState={this.state.tabs}
-              renderScene={this._renderScene}
-              renderPager={this._renderPager}
-              renderHeader={this._renderHeader}
               onIndexChange={this._handleIndexChange}
+              renderHeader={this._renderHeader}
+              renderPager={this._renderPager}
+              renderScene={this._renderScene}
+              style={[styles.tabContainer, this.props.tabContainerStyle]}
             />
           </View>
         </View>
