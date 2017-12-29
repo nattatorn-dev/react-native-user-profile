@@ -16,6 +16,7 @@ import {
   TabViewPagerScroll,
 } from 'react-native-tab-view'
 import PropTypes from 'prop-types'
+import { image } from '../../utils'
 
 import profileStyles from './ProfileStyle'
 import Posts from './Posts'
@@ -61,37 +62,9 @@ class Profile3 extends Component {
   }
 
   componentWillMount() {
-    this.setState({ postsMasonry: this.itemsToMansonry(this.props.posts) })
-  }
-
-  itemsToMansonry = items => {
-    return items.reduce(
-      (p, c, k) => {
-        if (k > 1) {
-          if (p.leftHeight <= p.rightHeight) {
-            return {
-              ...p,
-              leftCol: [...p.leftCol, c],
-              leftHeight: p.leftHeight + c.imageHeight,
-            }
-          } else {
-            return {
-              ...p,
-              rightCol: [...p.rightCol, c],
-              rightHeight: p.rightHeight + c.imageHeight,
-            }
-          }
-        } else {
-          return p
-        }
-      },
-      {
-        leftCol: [items[0]],
-        rightCol: [items[1]],
-        leftHeight: items[0].imageHeight,
-        rightHeight: items[1].imageHeight,
-      }
-    )
+    this.setState({
+      postsMasonry: image.mansonry(this.props.posts, 'imageHeight'),
+    })
   }
 
   _handleIndexChange = index => {
