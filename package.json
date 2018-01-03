@@ -15,7 +15,7 @@
     "react-native":
       "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
     "react-native-elements": "^0.18.2",
-    "react-native-tab-view": "^0.0.70",
+    "react-native-tab-view": "^0.0.74",
     "react-navigation": "^1.0.0-beta.19"
   },
   "devDependencies": {
