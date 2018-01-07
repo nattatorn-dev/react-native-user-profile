@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {
   Animated,
   Image,
+  ImageBackground,
   Platform,
   ScrollView,
   StyleSheet,
@@ -80,8 +81,8 @@ class Profile3 extends Component {
       <TabBar
         {...props}
         indicatorStyle={styles.indicatorTab}
-        renderLabel={this._renderLabel(props)}
         pressOpacity={0.8}
+        renderLabel={this._renderLabel(props)}
         style={styles.tabBar}
       />
     )
@@ -111,7 +112,7 @@ class Profile3 extends Component {
     })
 
     return (
-      <View>
+      <View style={styles.tabRow}>
         <Animated.Text style={[styles.tabLabelNumber, { color }]}>
           {route.count}
         </Animated.Text>
@@ -135,11 +136,11 @@ class Profile3 extends Component {
     return (
       <View style={styles.headerContainer}>
         <View style={styles.coverContainer}>
-          <Image
-            style={styles.coverImage}
+          <ImageBackground
             source={{
               uri: avatarBackground,
             }}
+            style={styles.coverImage}
           >
             <View style={styles.coverTitleContainer}>
               <Text style={styles.coverTitle} />
@@ -148,14 +149,14 @@ class Profile3 extends Component {
               <Text style={styles.coverName}>{name}</Text>
               <Text style={styles.coverBio}>{bio}</Text>
             </View>
-          </Image>
+          </ImageBackground>
         </View>
         <View style={styles.profileImageContainer}>
           <Image
-            style={styles.profileImage}
             source={{
               uri: avatar,
             }}
+            style={styles.profileImage}
           />
         </View>
       </View>
@@ -188,12 +189,12 @@ class Profile3 extends Component {
           <View style={styles.cardContainer}>
             {this.renderContactHeader()}
             <TabViewAnimated
-              style={[styles.tabContainer, this.props.tabContainerStyle]}
               navigationState={this.state.tabs}
-              renderScene={this._renderScene}
-              renderPager={this._renderPager}
-              renderHeader={this._renderHeader}
               onIndexChange={this._handleIndexChange}
+              renderHeader={this._renderHeader}
+              renderPager={this._renderPager}
+              renderScene={this._renderScene}
+              style={[styles.tabContainer, this.props.tabContainerStyle]}
             />
           </View>
         </View>
