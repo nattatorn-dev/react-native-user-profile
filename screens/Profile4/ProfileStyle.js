@@ -23,17 +23,17 @@ export default {
   coverMetaContainer: {
     backgroundColor: 'transparent',
     paddingBottom: 10,
-    paddingLeft: 150,
+    paddingLeft: 135,
   },
   coverName: {
     color: '#FFF',
-    fontSize: 22,
+    fontSize: 28,
     fontWeight: 'bold',
     paddingBottom: 2,
   },
   coverTitle: {
     color: '#FFF',
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -88,14 +88,19 @@ export default {
     position: 'relative',
     zIndex: 10,
   },
+  tabRow: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+  },
   tabLabelNumber: {
     color: 'black',
-    fontSize: 18,
+    fontSize: 22,
     textAlign: 'center',
+    marginBottom: 2,
   },
   tabLabelText: {
-    color: 'gray',
-    fontSize: 10,
+    color: 'black',
+    fontSize: 14,
     textAlign: 'center',
   },
 }
