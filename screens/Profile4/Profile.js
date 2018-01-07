@@ -112,7 +112,7 @@ class Profile3 extends Component {
     })
 
     return (
-      <View>
+      <View style={styles.tabRow}>
         <Animated.Text style={[styles.tabLabelNumber, { color }]}>
           {route.count}
         </Animated.Text>
