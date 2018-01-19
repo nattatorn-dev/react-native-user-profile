@@ -9,7 +9,7 @@
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
-    "expo": "^23.0.0",
+    "expo": "^25.0.0",
     "prop-types": "^15.6.0",
     "react": "16.0.0",
     "react-native":
