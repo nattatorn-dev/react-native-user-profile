@@ -9,6 +9,8 @@ import Profile2 from './screens/Profile2'
 import Profile3 from './screens/Profile3'
 import Profile4 from './screens/Profile4'
 
+import Product1 from './screens/Product1'
+
 import Options from './screens/Profile3/Options'
 
 const Profile1Stack = StackNavigator(
@@ -75,6 +77,22 @@ const Profile4Stack = StackNavigator(
   }
 )
 
+const Product1Stack = StackNavigator(
+  {
+    profile: {
+      screen: Product1,
+      path: '/',
+    },
+    options: {
+      screen: Options,
+      path: '/',
+    },
+  },
+  {
+    mode: 'card',
+  }
+)
+
 const HomeIcon = ({ focused, tintColor }) => (
   <Icon
     name="circle"
@@ -111,6 +129,15 @@ const RootTabs = TabNavigator(
       screen: Profile4Stack,
       navigationOptions: {
         tabBarLabel: 'Profile4',
+        tabBarIcon: HomeIcon,
+      },
+    },
+
+    // PRODUCT
+    product1: {
+      screen: Product1Stack,
+      navigationOptions: {
+        tabBarLabel: 'Product1',
         tabBarIcon: HomeIcon,
       },
     },
