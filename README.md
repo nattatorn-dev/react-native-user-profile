@@ -1,5 +1,5 @@
 # react-native-user-profile
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
+[![Travis](https://api.travis-ci.org/nattatorn-dev/react-native-user-profile.svg)]()
 [![Greenkeeper badge](https://badges.greenkeeper.io/nattatorn-dev/react-native-user-profile.svg)]()
 [![Known Vulnerabilities](https://snyk.io/test/github/nattatorn-dev/react-native-user-profile/badge.svg?targetFile=package.json)](https://snyk.io/test/github/nattatorn-dev/react-native-user-profile?targetFile=package.json)
 [![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg)]()
