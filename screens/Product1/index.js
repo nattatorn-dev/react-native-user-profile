@@ -1,18 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import contactData from './contact.json'
+import productData from './product.json'
 
-import Profile from './Profile'
+import { NavAbsolute } from '../../components'
+import Product from './Product'
 
-const ProfileScreen = () => <Profile {...contactData} />
+const ProductScreen = () => <Product {...productData} />
 
-ProfileScreen.navigationOptions = () => ({
-  header: null,
+ProductScreen.navigationOptions = ({ navigation }) => ({
+  header: (
+    <NavAbsolute
+      navigation={navigation}
+      title={productData.title}
+      subTitle={productData.address}
+    />
+  ),
 })
 
-ProfileScreen.propTypes = {
+ProductScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
 }
 
-export default ProfileScreen
+export default ProductScreen

@@ -83,10 +83,6 @@ const Product1Stack = StackNavigator(
       screen: Product1,
       path: '/',
     },
-    options: {
-      screen: Options,
-      path: '/',
-    },
   },
   {
     mode: 'card',
@@ -137,8 +133,9 @@ const RootTabs = TabNavigator(
     product1: {
       screen: Product1Stack,
       navigationOptions: {
-        tabBarLabel: 'Product1',
+        tabBarLabel: 'Profile1',
         tabBarIcon: HomeIcon,
+        tabBarVisible: false,
       },
     },
   },

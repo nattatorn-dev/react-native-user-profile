@@ -1,6 +1,7 @@
 # react-native-user-profile
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
+[![Travis](https://api.travis-ci.org/nattatorn-dev/react-native-user-profile.svg)]()
 [![Greenkeeper badge](https://badges.greenkeeper.io/nattatorn-dev/react-native-user-profile.svg)]()
+[![Known Vulnerabilities](https://snyk.io/test/github/nattatorn-dev/react-native-user-profile/badge.svg?targetFile=package.json)](https://snyk.io/test/github/nattatorn-dev/react-native-user-profile?targetFile=package.json)
 [![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg)]()
 [![GitHub license](https://img.shields.io/github/license/nattatorn-dev/react-native-user-profile.svg)]()
 
@@ -10,7 +11,7 @@ A react native mobile starter kit, Examples of user profiles screens to help you
 https://expo.io/@nattatorn-dev/expo-react-native-user-profile
 
 ## Profile1
-![Profile-1](https://i.imgur.com/Otl1wox.jpg)
+![Profile1](https://i.imgur.com/Otl1wox.jpg)
 
 ## Profile2
 ![Profile2](https://i.imgur.com/xT9pole.jpg)
@@ -21,6 +22,8 @@ https://expo.io/@nattatorn-dev/expo-react-native-user-profile
 ## Profile4
 ![Profile4](https://i.imgur.com/9TiMIB9.jpg)
 
+## Product1
+![Product1](https://i.imgur.com/3maoUqy.jpg)
 
 ## Features
 - Carefully crafted user experience and design
