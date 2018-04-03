@@ -8,7 +8,9 @@
 A react native mobile starter kit, Examples of user profiles screens to help you create component and design 🎨
 
 ## Find it on Expo
-https://expo.io/@nattatorn-dev/expo-react-native-user-profile
+https://expo.io/@nattatorn-dev/expo-react-native-user-profile 
+Scan QR Code and Sharing does not support ios
+https://blog.expo.io/upcoming-limitations-to-ios-expo-client-8076d01aee1a
 
 ## Profile1
 ![Profile1](https://i.imgur.com/Otl1wox.jpg)
