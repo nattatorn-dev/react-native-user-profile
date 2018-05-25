@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     flex: 2,
     flexDirection: 'row',
     justifyContent: 'flex-end',
+    marginRight: 4,
   },
   titleText: {
     color: Colors.white,
