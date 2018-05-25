@@ -53,8 +53,8 @@ const Post = ({ containerStyle, user, image, createdDate, sentences }) => (
     <View style={styles.postRow}>
       <View style={styles.userImage}>
         <Avatar
-          small
           rounded
+          size="medium"
           source={{
             uri: user.avatar,
           }}
