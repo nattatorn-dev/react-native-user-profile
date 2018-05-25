@@ -80,6 +80,7 @@ export default {
     backgroundColor: 'transparent',
     marginBottom: 20,
     marginLeft: 130,
+    marginRight: 15,
   },
   tabContainer: {
     flex: 1,
@@ -101,6 +102,6 @@ export default {
   tabLabelText: {
     color: 'black',
     fontSize: 14,
-    textAlign: 'center',
+    textAlign: 'left',
   },
 }
