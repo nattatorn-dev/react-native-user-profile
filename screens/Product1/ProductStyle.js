@@ -63,6 +63,8 @@ export default {
     color: Colors.green,
     fontWeight: 'bold',
     alignItems: 'flex-start',
+    justifyContent: 'center',
+
     fontSize: 16,
   },
   borderCenter: {

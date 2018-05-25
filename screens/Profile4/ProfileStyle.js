@@ -78,7 +78,7 @@ export default {
   },
   tabBar: {
     backgroundColor: 'transparent',
-    marginBottom: 20,
+    marginBottom: -10,
     marginLeft: 130,
     marginRight: 15,
   },
@@ -91,7 +91,10 @@ export default {
   },
   tabRow: {
     flexWrap: 'wrap',
-    flexDirection: 'row',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    flex: 1,
   },
   tabLabelNumber: {
     color: 'black',
