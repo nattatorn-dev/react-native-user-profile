@@ -77,9 +77,9 @@ const styles = StyleSheet.create({
   },
   userImage: {
     borderRadius: 60,
-    height: 110,
+    height: 120,
     marginBottom: 10,
-    width: 110,
+    width: 120,
   },
   userNameRow: {
     marginBottom: 10,

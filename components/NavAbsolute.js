@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
 
 class Nav extends Component {
   static propTypes = {
+    navigation: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
     subTitle: PropTypes.string.isRequired,
   }
@@ -78,7 +79,7 @@ class Nav extends Component {
   }
 
   render() {
-    const { title, subTitle } = this.props
+    const { navigation, title, subTitle } = this.props
 
     return (
       <View>
@@ -88,7 +89,7 @@ class Nav extends Component {
               size={34}
               name="arrow-back"
               type="material-icon"
-              onPress={() => null}
+              onPress={() => navigation.goBack(null)}
               color={Colors.white}
               iconStyle={styles.icon}
               underlayColor="transparent"
