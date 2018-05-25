@@ -12,6 +12,11 @@
     "loading": {
       "icon": "./assets/icons/loading-icon.png"
     },
+    "splash": {
+      "image": "./assets/icons/loading-icon-512.png",
+      "backgroundColor": "#FFAC2C",
+      "resizeMode": "cover"
+    },
     "packagerOpts": {
       "assetExts": ["ttf", "mp4"]
     },
