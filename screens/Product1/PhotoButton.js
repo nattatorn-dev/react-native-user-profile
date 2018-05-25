@@ -24,10 +24,15 @@ const PhotoButton = () => (
         borderWidth: 0,
         borderRadius: 5,
         paddingLeft: 10,
-        borderColor: 'transparent',
+        // borderColor: 'transparent',
         backgroundColor: 'rgba(128,128,128, 0.7)',
+        elevation: 0,
       }}
-      style={{ marginRight: 15, marginBottom: 15, padding: 0 }}
+      containerStyle={{
+        marginBottom: 15,
+        marginRight: 15,
+        padding: 0,
+      }}
     />
   </View>
 )
