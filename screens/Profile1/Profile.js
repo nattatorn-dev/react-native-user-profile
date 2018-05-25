@@ -134,7 +134,7 @@ class Contact extends Component {
   }
 
   onPressTel = number => {
-    Linking.openURL(`tel:${number}`).catch(err => console.log('Error:', err))
+    Linking.openURL(`tel://${number}`).catch(err => console.log('Error:', err))
   }
 
   onPressSms = () => {
@@ -142,7 +142,7 @@ class Contact extends Component {
   }
 
   onPressEmail = email => {
-    Linking.openURL(`mailto:${email}?subject=subject&body=body`).catch(err =>
+    Linking.openURL(`mailto://${email}?subject=subject&body=body`).catch(err =>
       console.log('Error:', err)
     )
   }
