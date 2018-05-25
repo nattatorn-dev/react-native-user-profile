@@ -15,7 +15,7 @@
     "splash": {
       "image": "./assets/icons/loading-icon-512.png",
       "backgroundColor": "#FFAC2C",
-      "resizeMode": "cover"
+      // "resizeMode": "cover"
     },
     "packagerOpts": {
       "assetExts": ["ttf", "mp4"]
