@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import { Avatar, List, ListItem } from 'react-native-elements'
+import { ScrollView, Switch, StyleSheet, Text, View } from 'react-native'
+import { Avatar, ListItem } from 'react-native-elements'
 import PropTypes from 'prop-types'
 
 import Icon from './Icon'
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   userRow: {
     alignItems: 'center',
     flexDirection: 'row',
-    paddingBottom: 6,
+    paddingBottom: 8,
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 6,
@@ -21,13 +21,9 @@ const styles = StyleSheet.create({
   userImage: {
     marginRight: 12,
   },
-  listContainer: {
-    marginBottom: 0,
-    marginTop: 0,
-    borderTopWidth: 0,
-  },
   listItemContainer: {
-    borderBottomColor: '#ECECEC',
+    borderWidth: 0.5,
+    borderColor: '#ECECEC',
   },
 })
 
@@ -64,8 +60,8 @@ class SettingsScreen extends Component {
         <View style={styles.userRow}>
           <View style={styles.userImage}>
             <Avatar
-              large
               rounded
+              size="large"
               source={{
                 uri: avatar,
               }}
@@ -84,14 +80,18 @@ class SettingsScreen extends Component {
           </View>
         </View>
         <InfoText text="Account" />
-        <List containerStyle={styles.listContainer}>
+        <View>
           <ListItem
-            switchButton
+            // switchButton
             hideChevron
             title="Push Notifications"
-            switched={this.state.pushNotifications}
-            onSwitch={this.onChangePushNotifications}
             containerStyle={styles.listItemContainer}
+            rightElement={
+              <Switch
+                onValueChange={this.onChangePushNotifications}
+                value={this.state.pushNotifications}
+              />
+            }
             leftIcon={
               <Icon
                 containerStyle={{
@@ -105,6 +105,7 @@ class SettingsScreen extends Component {
             }
           />
           <ListItem
+            chevron
             title="Currency"
             rightTitle="USD"
             onPress={() => this.onPressOptions()}
@@ -120,6 +121,7 @@ class SettingsScreen extends Component {
             }
           />
           <ListItem
+            chevron
             title="Location"
             rightTitle="New York"
             onPress={() => this.onPressOptions()}
@@ -135,6 +137,7 @@ class SettingsScreen extends Component {
             }
           />
           <ListItem
+            chevron
             title="Language"
             rightTitle="English"
             onPress={() => this.onPressOptions()}
@@ -149,10 +152,11 @@ class SettingsScreen extends Component {
               />
             }
           />
-        </List>
+        </View>
         <InfoText text="More" />
-        <List containerStyle={styles.listContainer}>
+        <View>
           <ListItem
+            chevron
             title="About US"
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
@@ -167,6 +171,7 @@ class SettingsScreen extends Component {
             }
           />
           <ListItem
+            chevron
             title="Terms and Policies"
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
@@ -181,6 +186,7 @@ class SettingsScreen extends Component {
             }
           />
           <ListItem
+            chevron
             title="Share our App"
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
@@ -197,9 +203,15 @@ class SettingsScreen extends Component {
             }
           />
           <ListItem
+            chevron
             title="Rate Us"
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
+            badge={{
+              value: 5,
+              textStyle: { color: 'white' },
+              containerStyle: { backgroundColor: 'gray', marginTop: 0 },
+            }}
             leftIcon={
               <Icon
                 containerStyle={{
@@ -213,6 +225,7 @@ class SettingsScreen extends Component {
             }
           />
           <ListItem
+            chevron
             title="Send FeedBack"
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
@@ -228,7 +241,7 @@ class SettingsScreen extends Component {
               />
             }
           />
-        </List>
+        </View>
       </ScrollView>
     )
   }

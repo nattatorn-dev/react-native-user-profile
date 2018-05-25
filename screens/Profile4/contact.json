@@ -1,10 +1,13 @@
 {
-  "name": "Jennis BNK48",
-  "username": "Jennis_BNK48",
+  "name": "Kaimook BNK48",
+  "username": "Kaimook_BNK48",
   "bio": "Singer",
-  "avatar": "https://instagram.fbkk1-5.fna.fbcdn.net/t51.2885-19/s320x320/22860796_2092599727635043_6266815081133113344_n.jpg",
-  "avatarBackground": "https://scontent.fbkk1-5.fna.fbcdn.net/v/t31.0-8/21731738_477105036002034_2224382863757666662_o.jpg?_nc_eui2=v1%3AAeGrhsE0ySS4x4vjIcNRRkRcaxWg1jO6JL-PCL7AzeaUlWh4GAGZVGNt4yhU8NzGkEPAv8h4u6uuxA8YUfoP22Kb-3PEkb4V2eli5-ypa5FnEA&oh=c7a4929535a5ddc7b394f6d8468bb1a3&oe=5AD52E28",
-  "posts": [{
+  "avatar":
+    "https://i.imgur.com/3oyxBVT.jpg",
+  "avatarBackground":
+    "https://i.imgur.com/ybayoOq.jpg",
+  "posts": [
+    {
       "id": 1,
       "words": "cupiditate qui cum",
       "sentence": "Ipsum laborum quasi debitis dolores veniam.",
