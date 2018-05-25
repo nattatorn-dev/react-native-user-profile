@@ -10,19 +10,20 @@ const PhotoButton = () => (
   <View style={styles.coverMetaContainer}>
     <Button
       color="white"
-      text="41 Photos"
+      title="41 Photos"
       icon={<Icon size={22} color="white" type="ionicon" name="md-photos" />}
-      iconContainerStyle={{ marginLeft: 10 }}
+      // iconContainerStyle={{ marginLeft: 10 }}
       textStyle={{
         fontSize: 16,
         fontWeight: '400',
-        paddingBottom: 8,
-        paddingRight: 10,
-        paddingTop: 8,
+        // paddingBottom: 8,
+        // paddingRight: 10,
+        // paddingTop: 8,
       }}
       buttonStyle={{
         borderWidth: 0,
         borderRadius: 5,
+        paddingLeft: 10,
         borderColor: 'transparent',
         backgroundColor: 'rgba(128,128,128, 0.7)',
       }}

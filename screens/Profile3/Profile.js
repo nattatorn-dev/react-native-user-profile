@@ -84,7 +84,7 @@ class SettingsScreen extends Component {
           </View>
         </View>
         <InfoText text="Account" />
-        <List containerStyle={styles.listContainer}>
+        <View containerStyle={styles.listContainer}>
           <ListItem
             switchButton
             hideChevron
@@ -149,9 +149,9 @@ class SettingsScreen extends Component {
               />
             }
           />
-        </List>
+        </View>
         <InfoText text="More" />
-        <List containerStyle={styles.listContainer}>
+        <View containerStyle={styles.listContainer}>
           <ListItem
             title="About US"
             onPress={() => this.onPressOptions()}
@@ -228,7 +228,7 @@ class SettingsScreen extends Component {
               />
             }
           />
-        </List>
+        </View>
       </ScrollView>
     )
   }
