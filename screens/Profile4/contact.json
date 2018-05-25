@@ -5,7 +5,7 @@
   "avatar":
     "https://i.imgur.com/3oyxBVT.jpg",
   "avatarBackground":
-    "https://i.imgur.com/ybayoOq.jpg",
+    "https://i.imgur.com/FrRne0I.jpg",
   "posts": [
     {
       "id": 1,
@@ -16,9 +16,9 @@
       "paragraph":
         "Beatae voluptas ea magni quibusdam dolorem sit aut qui. Dolorem rerum et consequuntur inventore officia excepturi dolore architecto fuga. Quia consequatur asperiores rerum qui corporis dolorum. At harum velit adipisci iste odit modi veniam ut. Deserunt quibusdam velit non ea.",
       "image":
-        "https://i.pinimg.com/564x/db/1f/90/db1f90449f6a421b289c55511fe66e5c.jpg",
-      "imageHeight": 1163,
-      "imageWidth": 1080,
+        "https://i.imgur.com/Lyp0qIz.jpg",
+      "imageHeight": 1080,
+      "imageWidth": 1350,
       "createdDate": "2017-11-21T02:33:53.770Z",
       "user": {
         "name": "Ronaldo",
@@ -143,9 +143,93 @@
         "Veniam veritatis nihil illum rerum et. Temporibus facere sed delectus corporis alias. Et odio aliquid est. Quas sit et quia tempora sit eveniet quam.",
       "createdDate": "2017-03-24T10:56:15.461Z",
       "image":
-        "https://instagram.fbkk1-5.fna.fbcdn.net/t51.2885-15/s640x640/sh0.08/e35/22860229_102003873904423_7079383783564115968_n.jpg",
-      "imageHeight": 479,
-      "imageWidth": 640,
+        "https://i.imgur.com/hRC0U2s.jpg",
+      "imageHeight": 525,
+      "imageWidth": 680,
+      "user": {
+        "name": "Magali",
+        "username": "Magali16",
+        "avatar":
+          "https://s3.amazonaws.com/uifaces/faces/twitter/mastermindesign/128.jpg",
+        "email": "Magali1664@gmail.com"
+      }
+    },
+    {
+      "id": 8,
+      "words": "vitae voluptas quia",
+      "sentence": "Voluptates dolor ad rem amet voluptas.",
+      "sentences":
+        "Rem ipsum quis. Animi ipsum ut at possimus. Beatae molestiae non odio soluta quidem ut suscipit.",
+      "paragraph":
+        "Veniam veritatis nihil illum rerum et. Temporibus facere sed delectus corporis alias. Et odio aliquid est. Quas sit et quia tempora sit eveniet quam.",
+      "createdDate": "2017-03-24T10:56:15.461Z",
+      "image":
+        "https://i.imgur.com/ZWiVaKl.jpg",
+      "imageHeight": 480,
+      "imageWidth": 480,
+      "user": {
+        "name": "Magali",
+        "username": "Magali16",
+        "avatar":
+          "https://s3.amazonaws.com/uifaces/faces/twitter/mastermindesign/128.jpg",
+        "email": "Magali1664@gmail.com"
+      }
+    },
+    {
+      "id": 9,
+      "words": "vitae voluptas quia",
+      "sentence": "Voluptates dolor ad rem amet voluptas.",
+      "sentences":
+        "Rem ipsum quis. Animi ipsum ut at possimus. Beatae molestiae non odio soluta quidem ut suscipit.",
+      "paragraph":
+        "Veniam veritatis nihil illum rerum et. Temporibus facere sed delectus corporis alias. Et odio aliquid est. Quas sit et quia tempora sit eveniet quam.",
+      "createdDate": "2017-03-24T10:56:15.461Z",
+      "image":
+        "https://i.imgur.com/1iDsg9Q.jpg",
+      "imageHeight": 600,
+      "imageWidth": 600,
+      "user": {
+        "name": "Magali",
+        "username": "Magali16",
+        "avatar":
+          "https://s3.amazonaws.com/uifaces/faces/twitter/mastermindesign/128.jpg",
+        "email": "Magali1664@gmail.com"
+      }
+    },
+    {
+      "id": 10,
+      "words": "vitae voluptas quia",
+      "sentence": "Voluptates dolor ad rem amet voluptas.",
+      "sentences":
+        "Rem ipsum quis. Animi ipsum ut at possimus. Beatae molestiae non odio soluta quidem ut suscipit.",
+      "paragraph":
+        "Veniam veritatis nihil illum rerum et. Temporibus facere sed delectus corporis alias. Et odio aliquid est. Quas sit et quia tempora sit eveniet quam.",
+      "createdDate": "2017-03-24T10:56:15.461Z",
+      "image":
+        "https://i.imgur.com/tjHSIUK.jpg",
+      "imageHeight": 600,
+      "imageWidth": 600,
+      "user": {
+        "name": "Magali",
+        "username": "Magali16",
+        "avatar":
+          "https://s3.amazonaws.com/uifaces/faces/twitter/mastermindesign/128.jpg",
+        "email": "Magali1664@gmail.com"
+      }
+    },
+    {
+      "id": 11,
+      "words": "vitae voluptas quia",
+      "sentence": "Voluptates dolor ad rem amet voluptas.",
+      "sentences":
+        "Rem ipsum quis. Animi ipsum ut at possimus. Beatae molestiae non odio soluta quidem ut suscipit.",
+      "paragraph":
+        "Veniam veritatis nihil illum rerum et. Temporibus facere sed delectus corporis alias. Et odio aliquid est. Quas sit et quia tempora sit eveniet quam.",
+      "createdDate": "2017-03-24T10:56:15.461Z",
+      "image":
+        "https://i.imgur.com/BxQO3ac.jpg",
+      "imageHeight": 600,
+      "imageWidth": 600,
       "user": {
         "name": "Magali",
         "username": "Magali16",
