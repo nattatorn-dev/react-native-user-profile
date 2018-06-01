@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { ScrollView, Switch, StyleSheet, Text, View } from 'react-native'
-import { Avatar, ListItem, Icon } from 'react-native-elements'
+import { Avatar, ListItem } from 'react-native-elements'
 import PropTypes from 'prop-types'
 
 import BaseIcon from './Icon'
