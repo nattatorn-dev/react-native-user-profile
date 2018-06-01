@@ -12,6 +12,9 @@ https://expo.io/@nattatorn-dev/expo-react-native-user-profile
 Scan QR Code and Sharing does not support ios
 https://blog.expo.io/upcoming-limitations-to-ios-expo-client-8076d01aee1a
 
+## Example
+https://media.giphy.com/media/8gNNgcHtWMlPXhdvWn/giphy.gif
+
 ## Profile1
 ![Profile1](https://i.imgur.com/Otl1wox.jpg)
 
