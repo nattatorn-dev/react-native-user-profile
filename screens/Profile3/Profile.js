@@ -3,7 +3,8 @@ import { ScrollView, Switch, StyleSheet, Text, View } from 'react-native'
 import { Avatar, ListItem } from 'react-native-elements'
 import PropTypes from 'prop-types'
 
-import Icon from './Icon'
+import BaseIcon from './Icon'
+import Chevron from './Chevron'
 import InfoText from './InfoText'
 
 const styles = StyleSheet.create({
@@ -22,6 +23,7 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   listItemContainer: {
+    height: 55,
     borderWidth: 0.5,
     borderColor: '#ECECEC',
   },
@@ -82,7 +84,6 @@ class SettingsScreen extends Component {
         <InfoText text="Account" />
         <View>
           <ListItem
-            // switchButton
             hideChevron
             title="Push Notifications"
             containerStyle={styles.listItemContainer}
@@ -93,7 +94,7 @@ class SettingsScreen extends Component {
               />
             }
             leftIcon={
-              <Icon
+              <BaseIcon
                 containerStyle={{
                   backgroundColor: '#FFADF2',
                 }}
@@ -105,13 +106,14 @@ class SettingsScreen extends Component {
             }
           />
           <ListItem
-            chevron
+            // chevron
             title="Currency"
             rightTitle="USD"
+            rightTitleStyle={{ fontSize: 15 }}
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
             leftIcon={
-              <Icon
+              <BaseIcon
                 containerStyle={{ backgroundColor: '#FAD291' }}
                 icon={{
                   type: 'font-awesome',
@@ -119,15 +121,16 @@ class SettingsScreen extends Component {
                 }}
               />
             }
+            rightIcon={<Chevron />}
           />
           <ListItem
-            chevron
             title="Location"
             rightTitle="New York"
+            rightTitleStyle={{ fontSize: 15 }}
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
             leftIcon={
-              <Icon
+              <BaseIcon
                 containerStyle={{ backgroundColor: '#57DCE7' }}
                 icon={{
                   type: 'material',
@@ -135,15 +138,16 @@ class SettingsScreen extends Component {
                 }}
               />
             }
+            rightIcon={<Chevron />}
           />
           <ListItem
-            chevron
             title="Language"
             rightTitle="English"
+            rightTitleStyle={{ fontSize: 15 }}
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
             leftIcon={
-              <Icon
+              <BaseIcon
                 containerStyle={{ backgroundColor: '#FEA8A1' }}
                 icon={{
                   type: 'material',
@@ -151,17 +155,17 @@ class SettingsScreen extends Component {
                 }}
               />
             }
+            rightIcon={<Chevron />}
           />
         </View>
         <InfoText text="More" />
         <View>
           <ListItem
-            chevron
             title="About US"
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
             leftIcon={
-              <Icon
+              <BaseIcon
                 containerStyle={{ backgroundColor: '#A4C8F0' }}
                 icon={{
                   type: 'ionicon',
@@ -169,14 +173,14 @@ class SettingsScreen extends Component {
                 }}
               />
             }
+            rightIcon={<Chevron />}
           />
           <ListItem
-            chevron
             title="Terms and Policies"
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
             leftIcon={
-              <Icon
+              <BaseIcon
                 containerStyle={{ backgroundColor: '#C6C7C6' }}
                 icon={{
                   type: 'entypo',
@@ -184,14 +188,14 @@ class SettingsScreen extends Component {
                 }}
               />
             }
+            rightIcon={<Chevron />}
           />
           <ListItem
-            chevron
             title="Share our App"
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
             leftIcon={
-              <Icon
+              <BaseIcon
                 containerStyle={{
                   backgroundColor: '#C47EFF',
                 }}
@@ -201,9 +205,9 @@ class SettingsScreen extends Component {
                 }}
               />
             }
+            rightIcon={<Chevron />}
           />
           <ListItem
-            chevron
             title="Rate Us"
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
@@ -213,7 +217,7 @@ class SettingsScreen extends Component {
               containerStyle: { backgroundColor: 'gray', marginTop: 0 },
             }}
             leftIcon={
-              <Icon
+              <BaseIcon
                 containerStyle={{
                   backgroundColor: '#FECE44',
                 }}
@@ -223,14 +227,14 @@ class SettingsScreen extends Component {
                 }}
               />
             }
+            rightIcon={<Chevron />}
           />
           <ListItem
-            chevron
             title="Send FeedBack"
             onPress={() => this.onPressOptions()}
             containerStyle={styles.listItemContainer}
             leftIcon={
-              <Icon
+              <BaseIcon
                 containerStyle={{
                   backgroundColor: '#00C001',
                 }}
@@ -240,6 +244,7 @@ class SettingsScreen extends Component {
                 }}
               />
             }
+            rightIcon={<Chevron />}
           />
         </View>
       </ScrollView>
