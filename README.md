@@ -34,6 +34,11 @@ https://media.giphy.com/media/8gNNgcHtWMlPXhdvWn/giphy.gif
 - Carefully crafted user experience and design
 - Clean and comprehensive codebase
 
+## Install
+- Git clone the repository.
+- In the repo directory, run "npm install" to install dependencies
+- Run "exp start" to initiate expo. Then, you will see instructions to run a demo on a real device or a simulator.
+
 ## Made with help of
 - [react-native](https://github.com/facebook/react-native)
 - [react-native-elements](https://github.com/react-native-training/react-native-elements)
