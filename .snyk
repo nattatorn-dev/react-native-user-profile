@@ -1,0 +1,17 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:hoek:20180212':
+    - react-native > metro > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2018-12-08T03:09:50.895Z'
+    - react-native > metro > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2018-12-08T03:09:50.895Z'
+    - react-native > metro > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2018-12-08T03:09:50.895Z'
+    - react-native > metro > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2018-12-08T03:09:50.895Z'
+  'npm:lodash:20180130':
+    - react-native > plist > xmlbuilder > lodash:
+        patched: '2018-12-08T03:09:50.895Z'
