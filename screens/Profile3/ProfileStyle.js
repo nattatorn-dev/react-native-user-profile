@@ -17,7 +17,7 @@ export default {
     position: 'relative',
   },
   coverImage: {
-    height: Dimensions.get('window').width * (3 / 4),
+    height: Dimensions.get('window').width * (3.5 / 4),
     width: Dimensions.get('window').width,
   },
   coverMetaContainer: {
@@ -51,10 +51,9 @@ export default {
     backgroundColor: 'transparent',
   },
   mansonryContainer: {
-    alignItems: 'center',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     marginLeft: 0,
     marginRight: 0,
   },
@@ -71,7 +70,7 @@ export default {
     position: 'absolute',
   },
   sceneContainer: {
-    marginTop: 10,
+    marginTop: 15,
   },
   scroll: {
     backgroundColor: '#FFF',
@@ -79,8 +78,8 @@ export default {
   tabBar: {
     backgroundColor: 'transparent',
     marginBottom: -10,
-    marginLeft: 130,
-    marginRight: 15,
+    marginLeft: 120,
+    marginRight: 5,
   },
   tabContainer: {
     flex: 1,
@@ -104,7 +103,7 @@ export default {
   },
   tabLabelText: {
     color: 'black',
-    fontSize: 14,
+    fontSize: 10,
     textAlign: 'left',
   },
 }

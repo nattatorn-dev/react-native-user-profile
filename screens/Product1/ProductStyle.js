@@ -37,8 +37,6 @@ export default {
     alignItems: 'flex-end',
     flex: 1,
     justifyContent: 'flex-end',
-    // marginBottom: 15,
-    // marginRight: 15,
   },
   footer: {
     position: 'absolute',
@@ -46,7 +44,7 @@ export default {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: '#F64A25',
+    backgroundColor: '#e36449',
     flexDirection: 'row',
     height: 65,
     alignItems: 'center',

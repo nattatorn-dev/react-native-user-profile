@@ -4,7 +4,7 @@ import {
   Image,
   ImageBackground,
   Linking,
-  ListView,
+  FlatList,
   Platform,
   ScrollView,
   StyleSheet,
@@ -12,8 +12,6 @@ import {
   View,
 } from 'react-native'
 import PropTypes from 'prop-types'
-
-import mainColor from './constants'
 
 import Email from './Email'
 import Separator from './Separator'
@@ -37,7 +35,7 @@ const styles = StyleSheet.create({
   },
   headerBackgroundImage: {
     paddingBottom: 20,
-    paddingTop: 35,
+    paddingTop: 45,
   },
   headerContainer: {},
   headerColumn: {
@@ -79,7 +77,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   userImage: {
-    borderColor: mainColor,
+    borderColor: '#FFF',
     borderRadius: 85,
     borderWidth: 3,
     height: 170,
@@ -120,15 +118,6 @@ class Contact extends Component {
     ).isRequired,
   }
 
-  state = {
-    telDS: new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2,
-    }).cloneWithRows(this.props.tels),
-    emailDS: new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2,
-    }).cloneWithRows(this.props.emails),
-  }
-
   onPressPlace = () => {
     console.log('place')
   }
@@ -160,16 +149,12 @@ class Contact extends Component {
         <ImageBackground
           style={styles.headerBackgroundImage}
           blurRadius={10}
-          source={{
-            uri: avatarBackground,
-          }}
+          source={{uri: avatarBackground}}
         >
           <View style={styles.headerColumn}>
             <Image
               style={styles.userImage}
-              source={{
-                uri: avatar,
-              }}
+              source={{uri: avatar}}
             />
             <Text style={styles.userNameText}>{name}</Text>
             <View style={styles.userAddressRow}>
@@ -194,14 +179,16 @@ class Contact extends Component {
   }
 
   renderTel = () => (
-    <ListView
+    <FlatList
       contentContainerStyle={styles.telContainer}
-      dataSource={this.state.telDS}
-      renderRow={({ id, name, number }, _, k) => {
+      data={this.props.tels}
+      renderItem={(list) => {
+        const { id, name, number } = list.item
+
         return (
           <Tel
             key={`tel-${id}`}
-            index={k}
+            index={list.index}
             name={name}
             number={number}
             onPressSms={this.onPressSms}
@@ -213,14 +200,16 @@ class Contact extends Component {
   )
 
   renderEmail = () => (
-    <ListView
+    <FlatList
       contentContainerStyle={styles.emailContainer}
-      dataSource={this.state.emailDS}
-      renderRow={({ email, id, name }, _, k) => {
+      data={this.props.emails}
+      renderItem={(list) => {
+        const { email, id, name } = list.item
+
         return (
           <Email
             key={`email-${id}`}
-            index={k}
+            index={list.index}
             name={name}
             email={email}
             onPressEmail={this.onPressEmail}

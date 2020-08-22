@@ -1,27 +1,13 @@
 {
+  "name": "expo-react-native-user-profile",
+  "displayName": "expo react native user profile",
   "expo": {
     "name": "expo-react-native-user-profile",
     "description": "An empty new project",
     "slug": "expo-react-native-user-profile",
-    "privacy": "public",
-    "sdkVersion": "27.0.0",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "primaryColor": "#cccccc",
-    "icon": "./assets/icons/app-icon.png",
-    "loading": {
-      "icon": "./assets/icons/loading-icon.png"
-    },
-    "splash": {
-      "image": "./assets/icons/loading-icon-512.png",
-      "backgroundColor": "#FFAC2C",
-      // "resizeMode": "cover"
-    },
-    "packagerOpts": {
-      "assetExts": ["ttf", "mp4"]
-    },
-    "ios": {
-      "supportsTablet": true
-    }
+    "assetBundlePatterns": [
+      "**/*"
+    ]
   }
 }

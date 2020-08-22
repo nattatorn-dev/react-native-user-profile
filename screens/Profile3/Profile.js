@@ -1,255 +1,206 @@
 import React, { Component } from 'react'
-import { ScrollView, Switch, StyleSheet, Text, View } from 'react-native'
-import { Avatar, ListItem } from 'react-native-elements'
+import {
+  Animated,
+  Image,
+  ImageBackground,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native'
+import {
+  TabView,
+  TabBar,
+  TabViewPagerScroll,
+  TabViewPagerPan,
+} from 'react-native-tab-view'
 import PropTypes from 'prop-types'
+import { image } from '../../utils'
 
-import BaseIcon from './Icon'
-import Chevron from './Chevron'
-import InfoText from './InfoText'
+import profileStyles from './ProfileStyle'
+import Posts from './Posts'
 
-const styles = StyleSheet.create({
-  scroll: {
-    backgroundColor: 'white',
-  },
-  userRow: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    paddingBottom: 8,
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingTop: 6,
-  },
-  userImage: {
-    marginRight: 12,
-  },
-  listItemContainer: {
-    height: 55,
-    borderWidth: 0.5,
-    borderColor: '#ECECEC',
-  },
-})
+const styles = StyleSheet.create({ ...profileStyles })
 
-class SettingsScreen extends Component {
+class Profile3 extends Component {
   static propTypes = {
     avatar: PropTypes.string.isRequired,
+    avatarBackground: PropTypes.string.isRequired,
+    bio: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    navigation: PropTypes.object.isRequired,
-    emails: PropTypes.arrayOf(
+    containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    tabContainerStyle: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.object,
+    ]),
+    posts: PropTypes.arrayOf(
       PropTypes.shape({
-        email: PropTypes.string.isRequired,
+        image: PropTypes.string,
+        imageHeight: PropTypes.number,
+        imageWidth: PropTypes.number,
+        postWidth: PropTypes.number,
       })
     ).isRequired,
   }
 
+  static defaultProps = {
+    containerStyle: {},
+    tabContainerStyle: {},
+  }
+
   state = {
-    pushNotifications: true,
+    tabs: {
+      index: 0,
+      routes: [
+        { key: '1', title: 'PHOTOS', count: 687 },
+        { key: '2', title: 'FOLLOWING', count: 1224 },
+        { key: '3', title: 'FOLLOWERS', count: '3 M' },
+      ],
+    },
+    postsMasonry: {},
   }
 
-  onPressOptions = () => {
-    this.props.navigation.navigate('options')
+  componentWillMount() {
+    this.setState({
+      postsMasonry: image.mansonry(this.props.posts, 'imageHeight'),
+    })
   }
 
-  onChangePushNotifications = () => {
-    this.setState(state => ({
-      pushNotifications: !state.pushNotifications,
-    }))
+  handleIndexChange = index => {
+    this.setState({
+      tabs: {
+        ...this.state.tabs,
+        index,
+      },
+    })
+  }
+
+  renderTabBar = props => {
+    return <TabBar
+      {...props}
+      indicatorStyle={styles.indicatorTab}
+      renderLabel={this.renderLabel(props)}
+      pressOpacity={0.8}
+      style={styles.tabBar}
+    />
+  };
+
+  renderLabel = props => ({ route }) => {
+    const routes = props.navigationState.routes
+
+    let labels = []
+    routes.forEach((e, index) => {
+      labels.push(index === props.navigationState.index ? 'black' : 'gray')
+    })
+
+    const currentIndex = parseInt(route.key) - 1
+    const color = labels[currentIndex]
+
+    return (
+      <View style={styles.tabRow}>
+        <Animated.Text style={[styles.tabLabelNumber, { color }]}>
+          {route.count}
+        </Animated.Text>
+        <Animated.Text style={[styles.tabLabelText, { color }]}>
+          {route.title}
+        </Animated.Text>
+      </View>
+    )
+  }
+
+  renderScene = ({ route: { key } }) => {
+    switch (key) {
+      case '1':
+        return this.renderMansonry2Col()
+      case '2':
+        return this.renderMansonry2Col()
+      case '3':
+        return this.renderMansonry2Col()
+      default:
+        return <View />
+    }
+  }
+
+  renderPager = props => {
+    return Platform.OS === 'ios' ? (
+      <TabViewPagerScroll {...props} />
+    ) : (
+      <TabViewPagerPan {...props} />
+    )
+  }
+
+  renderContactHeader = () => {
+    const { avatar, avatarBackground, name, bio } = this.props
+
+    return (
+      <View style={styles.headerContainer}>
+        <View style={styles.coverContainer}>
+          <ImageBackground
+            source={{
+              uri: avatarBackground,
+            }}
+            style={styles.coverImage}
+          >
+            <View style={styles.coverTitleContainer}>
+              <Text style={styles.coverTitle} />
+            </View>
+            <View style={styles.coverMetaContainer}>
+              <Text style={styles.coverName}>{name}</Text>
+              <Text style={styles.coverBio}>{bio}</Text>
+            </View>
+          </ImageBackground>
+        </View>
+        <View style={styles.profileImageContainer}>
+          <Image
+            source={{
+              uri: avatar,
+            }}
+            style={styles.profileImage}
+          />
+        </View>
+      </View>
+    )
+  }
+
+  renderMansonry2Col = () => {
+    return (
+      <View style={styles.mansonryContainer}>
+        <View>
+          <Posts
+            containerStyle={styles.sceneContainer}
+            posts={this.state.postsMasonry.leftCol}
+          />
+        </View>
+        <View>
+          <Posts
+            containerStyle={styles.sceneContainer}
+            posts={this.state.postsMasonry.rightCol}
+          />
+        </View>
+      </View>
+    )
   }
 
   render() {
-    const { avatar, name, emails: [firstEmail] } = this.props
     return (
       <ScrollView style={styles.scroll}>
-        <View style={styles.userRow}>
-          <View style={styles.userImage}>
-            <Avatar
-              rounded
-              size="large"
-              source={{
-                uri: avatar,
-              }}
+        <View style={[styles.container, this.props.containerStyle]}>
+          <View style={styles.cardContainer}>
+            {this.renderContactHeader()}
+            <TabView
+              style={[styles.tabContainer, this.props.tabContainerStyle]}
+              navigationState={this.state.tabs}
+              renderScene={this.renderScene}
+              renderTabBar={this.renderTabBar}
+              // renderPager={this.renderPager}
+              onIndexChange={this.handleIndexChange}
             />
           </View>
-          <View>
-            <Text style={{ fontSize: 16 }}>{name}</Text>
-            <Text
-              style={{
-                color: 'gray',
-                fontSize: 16,
-              }}
-            >
-              {firstEmail.email}
-            </Text>
-          </View>
-        </View>
-        <InfoText text="Account" />
-        <View>
-          <ListItem
-            hideChevron
-            title="Push Notifications"
-            containerStyle={styles.listItemContainer}
-            rightElement={
-              <Switch
-                onValueChange={this.onChangePushNotifications}
-                value={this.state.pushNotifications}
-              />
-            }
-            leftIcon={
-              <BaseIcon
-                containerStyle={{
-                  backgroundColor: '#FFADF2',
-                }}
-                icon={{
-                  type: 'material',
-                  name: 'notifications',
-                }}
-              />
-            }
-          />
-          <ListItem
-            // chevron
-            title="Currency"
-            rightTitle="USD"
-            rightTitleStyle={{ fontSize: 15 }}
-            onPress={() => this.onPressOptions()}
-            containerStyle={styles.listItemContainer}
-            leftIcon={
-              <BaseIcon
-                containerStyle={{ backgroundColor: '#FAD291' }}
-                icon={{
-                  type: 'font-awesome',
-                  name: 'money',
-                }}
-              />
-            }
-            rightIcon={<Chevron />}
-          />
-          <ListItem
-            title="Location"
-            rightTitle="New York"
-            rightTitleStyle={{ fontSize: 15 }}
-            onPress={() => this.onPressOptions()}
-            containerStyle={styles.listItemContainer}
-            leftIcon={
-              <BaseIcon
-                containerStyle={{ backgroundColor: '#57DCE7' }}
-                icon={{
-                  type: 'material',
-                  name: 'place',
-                }}
-              />
-            }
-            rightIcon={<Chevron />}
-          />
-          <ListItem
-            title="Language"
-            rightTitle="English"
-            rightTitleStyle={{ fontSize: 15 }}
-            onPress={() => this.onPressOptions()}
-            containerStyle={styles.listItemContainer}
-            leftIcon={
-              <BaseIcon
-                containerStyle={{ backgroundColor: '#FEA8A1' }}
-                icon={{
-                  type: 'material',
-                  name: 'language',
-                }}
-              />
-            }
-            rightIcon={<Chevron />}
-          />
-        </View>
-        <InfoText text="More" />
-        <View>
-          <ListItem
-            title="About US"
-            onPress={() => this.onPressOptions()}
-            containerStyle={styles.listItemContainer}
-            leftIcon={
-              <BaseIcon
-                containerStyle={{ backgroundColor: '#A4C8F0' }}
-                icon={{
-                  type: 'ionicon',
-                  name: 'md-information-circle',
-                }}
-              />
-            }
-            rightIcon={<Chevron />}
-          />
-          <ListItem
-            title="Terms and Policies"
-            onPress={() => this.onPressOptions()}
-            containerStyle={styles.listItemContainer}
-            leftIcon={
-              <BaseIcon
-                containerStyle={{ backgroundColor: '#C6C7C6' }}
-                icon={{
-                  type: 'entypo',
-                  name: 'light-bulb',
-                }}
-              />
-            }
-            rightIcon={<Chevron />}
-          />
-          <ListItem
-            title="Share our App"
-            onPress={() => this.onPressOptions()}
-            containerStyle={styles.listItemContainer}
-            leftIcon={
-              <BaseIcon
-                containerStyle={{
-                  backgroundColor: '#C47EFF',
-                }}
-                icon={{
-                  type: 'entypo',
-                  name: 'share',
-                }}
-              />
-            }
-            rightIcon={<Chevron />}
-          />
-          <ListItem
-            title="Rate Us"
-            onPress={() => this.onPressOptions()}
-            containerStyle={styles.listItemContainer}
-            badge={{
-              value: 5,
-              textStyle: { color: 'white' },
-              containerStyle: { backgroundColor: 'gray', marginTop: 0 },
-            }}
-            leftIcon={
-              <BaseIcon
-                containerStyle={{
-                  backgroundColor: '#FECE44',
-                }}
-                icon={{
-                  type: 'entypo',
-                  name: 'star',
-                }}
-              />
-            }
-            rightIcon={<Chevron />}
-          />
-          <ListItem
-            title="Send FeedBack"
-            onPress={() => this.onPressOptions()}
-            containerStyle={styles.listItemContainer}
-            leftIcon={
-              <BaseIcon
-                containerStyle={{
-                  backgroundColor: '#00C001',
-                }}
-                icon={{
-                  type: 'materialicon',
-                  name: 'feedback',
-                }}
-              />
-            }
-            rightIcon={<Chevron />}
-          />
         </View>
       </ScrollView>
     )
   }
 }
 
-export default SettingsScreen
+export default Profile3

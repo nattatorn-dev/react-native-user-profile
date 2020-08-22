@@ -1,25 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import productData from './product.json'
 
 import { NavAbsolute } from '../../components'
 import Product from './Product'
 
-const ProductScreen = () => <Product {...productData} />
+const ProductScreen = (props) => {
+  props.navigation.setOptions({
+    header: ({ navigation }) => (
+        <NavAbsolute
+          navigation={navigation}
+          title={productData.title}
+          subTitle={productData.address}
+        />
+    ),
+  })
 
-ProductScreen.navigationOptions = ({ navigation }) => ({
-  header: (
-    <NavAbsolute
-      navigation={navigation}
-      title={productData.title}
-      subTitle={productData.address}
-    />
-  ),
-})
-
-ProductScreen.propTypes = {
-  navigation: PropTypes.object.isRequired,
+  return <Product {...productData} {...props}/>
 }
 
 export default ProductScreen

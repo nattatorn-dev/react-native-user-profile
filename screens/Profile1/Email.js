@@ -47,7 +47,7 @@ const Email = ({ containerStyle, onPressEmail, name, email, index }) => (
   <TouchableOpacity onPress={() => onPressEmail(email)}>
     <View style={[styles.container, containerStyle]}>
       <View style={styles.iconRow}>
-        {+index === 0 && (
+        {index === 0 && (
           <Icon
             name="email"
             underlayColor="transparent"
@@ -61,7 +61,7 @@ const Email = ({ containerStyle, onPressEmail, name, email, index }) => (
           <Text style={styles.emailText}>{email}</Text>
         </View>
         <View style={styles.emailNameColumn}>
-          {name.trim().length !== 0 && (
+          {name.length !== 0 && (
             <Text style={styles.emailNameText}>{name}</Text>
           )}
         </View>
@@ -73,7 +73,7 @@ const Email = ({ containerStyle, onPressEmail, name, email, index }) => (
 Email.propTypes = {
   containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
   email: PropTypes.string.isRequired,
-  index: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   name: PropTypes.string,
   onPressEmail: PropTypes.func.isRequired,
 }

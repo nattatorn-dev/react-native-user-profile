@@ -19,12 +19,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0,
     elevation: 0,
     flexDirection: 'row',
-    height: 55,
+    height: 125,
     justifyContent: 'center',
     left: 0,
     marginLeft: 10,
     marginRight: 10,
-    marginTop: 22,
     position: 'absolute',
     right: 0,
     zIndex: 100,
@@ -90,7 +89,6 @@ class Nav extends Component {
               size={34}
               name="arrow-back"
               type="material-icon"
-              onPress={() => navigation.goBack(null)}
               color={Colors.white}
               iconStyle={styles.icon}
               underlayColor="transparent"

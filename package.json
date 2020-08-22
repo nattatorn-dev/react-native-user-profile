@@ -1,32 +1,45 @@
 {
   "name": "react-native-user-profile",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Hello Expo!",
   "author": "nattatorn-dev",
+  "main": "index.js",
   "scripts": {
-    "lint": "eslint --fix '**/*.js'"
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "web": "expo start",
+    "start": "expo start",
+    "test": "jest"
   },
-  "private": true,
-  "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
-    "expo": "27.0.0",
-    "prop-types": "^15.6.0",
-    "react": "16.3.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
-    "react-native-elements": "^v1.0.0-beta5",
-    "react-native-tab-view": "^0.0.75",
-    "react-navigation": "1.5.11"
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/bottom-tabs": "^5.8.0",
+    "@react-navigation/native": "^5.7.3",
+    "@react-navigation/stack": "^5.9.0",
+    "expo": "~38.0.9",
+    "expo-splash-screen": "^0.5.0",
+    "expo-status-bar": "^1.0.0",
+    "expo-updates": "~0.2.10",
+    "react": "~16.11.0",
+    "react-dom": "~16.11.0",
+    "react-native": "~0.62.2",
+    "react-native-elements": "^2.2.1",
+    "react-native-gesture-handler": "~1.6.0",
+    "react-native-reanimated": "~1.9.0",
+    "react-native-safe-area-context": "~3.0.7",
+    "react-native-screens": "~2.9.0",
+    "react-native-tab-view": "^2.15.1",
+    "react-native-unimodules": "~0.10.1",
+    "react-native-web": "~0.11.7"
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.2",
-    "eslint": "^4.9.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.6.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-prettier": "^2.3.1",
-    "eslint-plugin-react": "^7.4.0",
-    "eslint-plugin-react-native": "^3.1.0",
-    "prettier": "^1.7.4"
-  }
+    "@babel/core": "~7.9.0",
+    "babel-jest": "~25.2.6",
+    "jest": "~25.2.6",
+    "react-test-renderer": "~16.11.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "private": true
 }

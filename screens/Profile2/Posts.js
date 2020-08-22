@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ListView, StyleSheet } from 'react-native'
+import { FlatList, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
 
 import Post from './Post'
@@ -46,25 +46,19 @@ class Posts extends Component {
     containerStyle: {},
   }
 
-  state = {
-    postDS: new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2,
-    }).cloneWithRows(this.props.posts),
-  }
-
   render() {
     return (
-      <ListView
+      <FlatList
         scrollEnabled={false}
         removeClippedSubviews={false}
         contentContainerStyle={[styles.container, this.props.containerStyle]}
-        dataSource={this.state.postDS}
-        renderRow={e => {
+        data={this.props.posts}
+        renderItem={list => {
           return (
             <Post
-              key={`post-${e.id} `}
+              key={`post-${list.item.id}`}
               containerStyle={styles.postContainer}
-              {...e}
+              {...list.item}
             />
           )
         }}

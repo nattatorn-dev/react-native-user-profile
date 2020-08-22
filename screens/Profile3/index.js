@@ -1,26 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import contactData from '../../mocks/contact.json'
-import { Nav } from '../../components'
+import contactData from './contact.json'
+
 import Profile from './Profile'
 
-const ProfileScreen = ({ navigation }) => (
-  <Profile {...contactData} navigation={navigation} />
-)
+const ProfileScreen = () => <Profile {...contactData} />
 
-ProfileScreen.navigationOptions = ({ navigation }) => ({
-  header: (
-    <Nav
-      title="Settings"
-      navigation={navigation}
-      leftIcon={{
-        type: 'ionicon',
-        name: 'md-list',
-        size: 26,
-      }}
-    />
-  ),
+ProfileScreen.navigationOptions = () => ({
+  header: null,
 })
 
 ProfileScreen.propTypes = {

@@ -12,6 +12,8 @@ import PropTypes from 'prop-types'
 import PhotoButton from './PhotoButton'
 import ProductStyles from './ProductStyle'
 
+import productData from './product.json'
+
 const styles = StyleSheet.create({ ...ProductStyles })
 
 class Product extends Component {
@@ -37,7 +39,7 @@ class Product extends Component {
   renderDescription = () => {
     return (
       <View>
-        <Text style={styles.priceText}>$1,175,000</Text>
+        <Text style={styles.priceText}>$175,000</Text>
         <Text style={styles.descriptionText}>1 Bed, 2 Bath, 1088 soft</Text>
         <Text style={styles.descriptionText}>Condo, 342 Days on Trulia</Text>
         <Text style={styles.descriptionText}>Est. Mortgage $52,604</Text>
@@ -48,9 +50,7 @@ class Product extends Component {
   renderNavigator = () => {
     return (
       <View
-        style={{
-          flexDirection: 'row',
-        }}
+        style={{ flexDirection: 'row' }}
       >
         <TouchableOpacity style={[styles.navigatorButton, { flex: 2 }]}>
           <Text style={styles.navigatorText}>DIRECTIONS</Text>
@@ -71,9 +71,7 @@ class Product extends Component {
       <View style={styles.headerContainer}>
         <View style={styles.coverContainer}>
           <ImageBackground
-            source={{
-              uri: img,
-            }}
+            source={{ uri: img }}
             style={styles.coverImage}
           >
             <PhotoButton />

@@ -10,7 +10,7 @@ import {
 } from 'react-native'
 import { Icon } from 'react-native-elements'
 import {
-  TabViewAnimated,
+  TabView,
   TabBar,
   TabViewPagerScroll,
   TabViewPagerPan,
@@ -146,7 +146,7 @@ class Profile2 extends Component {
     console.log('place')
   }
 
-  _handleIndexChange = index => {
+  handleIndexChange = index => {
     this.setState({
       tabs: {
         ...this.state.tabs,
@@ -155,20 +155,42 @@ class Profile2 extends Component {
     })
   }
 
-  _renderHeader = props => {
+  renderTabBar = props => {
+    return <TabBar
+      {...props}
+      indicatorStyle={styles.indicatorTab}
+      renderLabel={this.renderLabel(props)}
+      pressOpacity={0.8}
+      style={styles.tabBar}
+    />
+  };
+
+  renderLabel = props => ({ route }) => {
+    const routes = props.navigationState.routes
+
+    let labels = []
+    routes.forEach((e, index) => {
+      labels.push(index === props.navigationState.index ? 'black' : 'gray')
+    })
+
+    const currentIndex = parseInt(route.key) - 1
+    const color = labels[currentIndex]
+
     return (
-      <TabBar
-        {...props}
-        indicatorStyle={styles.indicatorTab}
-        renderLabel={this._renderLabel(props)}
-        pressOpacity={0.8}
-        style={styles.tabBar}
-      />
+      <View>
+        <Animated.Text style={[styles.tabLabelText, { color }]}>
+          {route.count}
+        </Animated.Text>
+        <Animated.Text style={[styles.tabLabelNumber, { color }]}>
+          {route.title}
+        </Animated.Text>
+      </View>
     )
   }
 
-  _renderScene = ({ route: { key } }) => {
+  renderScene = ({ route: { key } }) => {
     const { posts } = this.props
+
     switch (key) {
       case '1':
         return <Posts containerStyle={styles.sceneContainer} posts={posts} />
@@ -183,29 +205,7 @@ class Profile2 extends Component {
     }
   }
 
-  _renderLabel = props => ({ route, index }) => {
-    const inputRange = props.navigationState.routes.map((x, i) => i)
-    const outputRange = inputRange.map(
-      inputIndex => (inputIndex === index ? 'black' : 'gray')
-    )
-    const color = props.position.interpolate({
-      inputRange,
-      outputRange,
-    })
-
-    return (
-      <View>
-        <Animated.Text style={[styles.tabLabelText, { color }]}>
-          {route.count}
-        </Animated.Text>
-        <Animated.Text style={[styles.tabLabelNumber, { color }]}>
-          {route.title}
-        </Animated.Text>
-      </View>
-    )
-  }
-
-  _renderPager = props => {
+  renderPager = props => {
     return Platform.OS === 'ios' ? (
       <TabViewPagerScroll {...props} />
     ) : (
@@ -215,6 +215,7 @@ class Profile2 extends Component {
 
   renderContactHeader = () => {
     const { avatar, name, bio } = this.props
+
     return (
       <View style={styles.headerContainer}>
         <View style={styles.userRow}>
@@ -270,13 +271,14 @@ class Profile2 extends Component {
         <View style={[styles.container, this.props.containerStyle]}>
           <View style={styles.cardContainer}>
             {this.renderContactHeader()}
-            <TabViewAnimated
+            <TabView
               style={[styles.tabContainer, this.props.tabContainerStyle]}
               navigationState={this.state.tabs}
-              renderScene={this._renderScene}
-              renderPager={this._renderPager}
-              renderHeader={this._renderHeader}
-              onIndexChange={this._handleIndexChange}
+              renderScene={this.renderScene}
+              renderTabBar={this.renderTabBar}
+              // renderPager={this._renderPager}
+              // renderHeader={this._renderHeader}
+              onIndexChange={this.handleIndexChange}
             />
           </View>
         </View>
