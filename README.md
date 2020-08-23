@@ -43,7 +43,9 @@ Pixel2
 ## Install
 - Git clone the repository.
 - In the repo directory, run "npm install" to install dependencies
+  - If you have a problem with react-natigation, Do this https://reactnavigation.org/docs/getting-started
 - Run "exp start" to initiate expo. Then, you will see instructions to run a demo on a real device or a simulator.
+
 
 ## Made with help of
 - [react-native](https://github.com/facebook/react-native)
