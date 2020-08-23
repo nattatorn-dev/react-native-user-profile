@@ -75,10 +75,10 @@ const Tab = createBottomTabNavigator()
 
 const HomeIcon = ({ focused, tintColor }) => (
   <Icon
-    name="circle"
-    type="entypo"
+    name="lens"
+    type="material"
     size={26}
-    color={focused ? tintColor : 'gray'}
+    color={focused ? '#adacac' : '#ededed'}
   />
 )
 
@@ -105,7 +105,7 @@ export default function App() {
             height: 30,
           },
           style: {
-            backgroundColor: 'white',
+            // backgroundColor: 'transparent',
             justifyContent: 'center',
           },
         }}
