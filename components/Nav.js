@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Icon } from 'react-native-elements'
+import { Platform } from 'react-native'
 import PropTypes from 'prop-types'
 
 import { Colors } from '../constants'
@@ -15,7 +16,14 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: 'row',
-    height: 55,
+    ...Platform.select({
+      ios: {
+        height: 55,
+      },
+      android: {
+        height: 80,
+      },
+    }),
     justifyContent: 'center',
     marginLeft: 10,
     marginRight: 10,
