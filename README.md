@@ -15,8 +15,7 @@ Scan QR Code and Sharing does not support ios
 https://blog.expo.io/upcoming-limitations-to-ios-expo-client-8076d01aee1a
 
 ## Example
-Iphone 11
-<img src="https://media.giphy.com/media/St96uqEAkLFrDuw5Di/giphy.gif" />
+![Iphone11](https://github.com/nattatorn-dev/react-native-user-profile/blob/master/images/iphone11-giphy.gif)
 
 ## Profile1
 ![Profile1](https://i.imgur.com/Otl1wox.jpg)
