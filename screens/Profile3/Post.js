@@ -25,7 +25,7 @@ const Post = ({
               height: postWidth * (imageHeight / imageWidth),
             },
           ]}
-          source={{ uri: image }}
+          source={{uri: image}}
         />
       )}
     </View>

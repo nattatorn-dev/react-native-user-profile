@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { SafeAreaView } from 'react-native'
+
 import contactData from '../../mocks/contact.json'
+
 import { Nav } from '../../components'
 import Setting from './Setting'
 

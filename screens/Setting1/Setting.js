@@ -64,9 +64,7 @@ class SettingsScreen extends Component {
             <Avatar
               rounded
               size="large"
-              source={{
-                uri: avatar,
-              }}
+              source={{uri: avatar}}
             />
           </View>
           <View>

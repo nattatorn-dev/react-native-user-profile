@@ -50,7 +50,7 @@ export default {
   indicatorTab: {
     backgroundColor: 'transparent',
   },
-  mansonryContainer: {
+  masonryContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',

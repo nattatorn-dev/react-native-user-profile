@@ -78,11 +78,11 @@ class Profile3 extends Component {
 
   renderTabBar = props => {
     return <TabBar
-      {...props}
       indicatorStyle={styles.indicatorTab}
       renderLabel={this.renderLabel(props)}
       pressOpacity={0.8}
       style={styles.tabBar}
+      {...props}
     />
   };
 
@@ -122,14 +122,6 @@ class Profile3 extends Component {
     }
   }
 
-  renderPager = props => {
-    return Platform.OS === 'ios' ? (
-      <TabViewPagerScroll {...props} />
-    ) : (
-      <TabViewPagerPan {...props} />
-    )
-  }
-
   renderContactHeader = () => {
     const { avatar, avatarBackground, name, bio } = this.props
 
@@ -137,9 +129,7 @@ class Profile3 extends Component {
       <View style={styles.headerContainer}>
         <View style={styles.coverContainer}>
           <ImageBackground
-            source={{
-              uri: avatarBackground,
-            }}
+            source={{uri: avatarBackground}}
             style={styles.coverImage}
           >
             <View style={styles.coverTitleContainer}>
@@ -153,9 +143,7 @@ class Profile3 extends Component {
         </View>
         <View style={styles.profileImageContainer}>
           <Image
-            source={{
-              uri: avatar,
-            }}
+            source={{uri: avatar}}
             style={styles.profileImage}
           />
         </View>
@@ -165,7 +153,7 @@ class Profile3 extends Component {
 
   renderMansonry2Col = () => {
     return (
-      <View style={styles.mansonryContainer}>
+      <View style={styles.masonryContainer}>
         <View>
           <Posts
             containerStyle={styles.sceneContainer}
@@ -193,7 +181,6 @@ class Profile3 extends Component {
               navigationState={this.state.tabs}
               renderScene={this.renderScene}
               renderTabBar={this.renderTabBar}
-              // renderPager={this.renderPager}
               onIndexChange={this.handleIndexChange}
             />
           </View>

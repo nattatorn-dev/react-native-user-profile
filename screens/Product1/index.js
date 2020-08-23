@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 import productData from './product.json'
 
 import { NavAbsolute } from '../../components'

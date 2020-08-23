@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Card, Icon } from 'react-native-elements'
 import {
+  FlatList,
   Image,
   ImageBackground,
   Linking,
-  FlatList,
   Platform,
   ScrollView,
   StyleSheet,

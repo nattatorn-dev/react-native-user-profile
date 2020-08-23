@@ -70,7 +70,7 @@ const Post = ({ containerStyle, user, image, createdDate, sentences }) => (
     <View style={styles.wordRow}>
       <Text style={styles.wordText}>{sentences}</Text>
     </View>
-    {image && <Image style={styles.postImage} source={{ uri: image }} />}
+    {image && <Image style={styles.postImage} source={{uri: image}} />}
   </View>
 )
 

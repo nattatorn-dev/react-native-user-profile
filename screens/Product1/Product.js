@@ -9,10 +9,10 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 
+import productData from './product.json'
+
 import PhotoButton from './PhotoButton'
 import ProductStyles from './ProductStyle'
-
-import productData from './product.json'
 
 const styles = StyleSheet.create({ ...ProductStyles })
 
@@ -49,9 +49,7 @@ class Product extends Component {
 
   renderNavigator = () => {
     return (
-      <View
-        style={{ flexDirection: 'row' }}
-      >
+      <View style={{ flexDirection: 'row' }} >
         <TouchableOpacity style={[styles.navigatorButton, { flex: 2 }]}>
           <Text style={styles.navigatorText}>DIRECTIONS</Text>
         </TouchableOpacity>
@@ -66,12 +64,11 @@ class Product extends Component {
   }
 
   renderContactHeader = () => {
-    const { img } = this.props
     return (
       <View style={styles.headerContainer}>
         <View style={styles.coverContainer}>
           <ImageBackground
-            source={{ uri: img }}
+            source={{uri: this.props.img}}
             style={styles.coverImage}
           >
             <PhotoButton />
@@ -83,7 +80,7 @@ class Product extends Component {
 
   render() {
     return (
-      <View style={styles.mainviewStyle}>
+      <View style={styles.mainViewStyle}>
         <ScrollView style={styles.scroll}>
           <View style={[styles.container, this.props.containerStyle]}>
             <View style={styles.cardContainer}>

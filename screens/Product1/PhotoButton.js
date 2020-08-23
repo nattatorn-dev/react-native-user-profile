@@ -16,11 +16,11 @@ const PhotoButton = () => (
         fontWeight: '400',
       }}
       buttonStyle={{
-        borderWidth: 0,
-        borderRadius: 5,
-        paddingLeft: 10,
         backgroundColor: 'rgba(128,128,128, 0.7)',
+        borderRadius: 5,
+        borderWidth: 0,
         elevation: 0,
+        paddingLeft: 10,
       }}
       containerStyle={{
         marginBottom: 15,

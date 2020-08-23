@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   separator: {
-    flex: 8,
-    flexDirection: 'row',
     borderColor: '#EDEDED',
     borderWidth: 0.8,
+    flex: 8,
+    flexDirection: 'row',
   },
 })
 

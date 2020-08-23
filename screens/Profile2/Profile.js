@@ -157,11 +157,11 @@ class Profile2 extends Component {
 
   renderTabBar = props => {
     return <TabBar
-      {...props}
       indicatorStyle={styles.indicatorTab}
       renderLabel={this.renderLabel(props)}
       pressOpacity={0.8}
       style={styles.tabBar}
+      {...props}
     />
   };
 
@@ -205,14 +205,6 @@ class Profile2 extends Component {
     }
   }
 
-  renderPager = props => {
-    return Platform.OS === 'ios' ? (
-      <TabViewPagerScroll {...props} />
-    ) : (
-      <TabViewPagerPan {...props} />
-    )
-  }
-
   renderContactHeader = () => {
     const { avatar, name, bio } = this.props
 
@@ -221,9 +213,7 @@ class Profile2 extends Component {
         <View style={styles.userRow}>
           <Image
             style={styles.userImage}
-            source={{
-              uri: avatar,
-            }}
+            source={{uri: avatar}}
           />
           <View style={styles.userNameRow}>
             <Text style={styles.userNameText}>{name}</Text>
@@ -276,8 +266,6 @@ class Profile2 extends Component {
               navigationState={this.state.tabs}
               renderScene={this.renderScene}
               renderTabBar={this.renderTabBar}
-              // renderPager={this._renderPager}
-              // renderHeader={this._renderHeader}
               onIndexChange={this.handleIndexChange}
             />
           </View>
