@@ -1,23 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   Animated,
   Image,
-  Platform,
   ScrollView,
   StyleSheet,
   Text,
   View,
-} from 'react-native'
-import { Icon } from 'react-native-elements'
-import {
-  TabView,
-  TabBar,
-  TabViewPagerScroll,
-  TabViewPagerPan,
-} from 'react-native-tab-view'
-import PropTypes from 'prop-types'
+} from 'react-native';
+import { Icon } from 'react-native-elements';
+import { TabView, TabBar } from 'react-native-tab-view';
+import PropTypes from 'prop-types';
 
-import Posts from './Posts'
+import Posts from './Posts';
 
 const styles = StyleSheet.create({
   cardContainer: {
@@ -96,7 +90,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 12,
   },
-})
+});
 
 class Profile2 extends Component {
   static propTypes = {
@@ -123,12 +117,12 @@ class Profile2 extends Component {
         }),
       })
     ).isRequired,
-  }
+  };
 
   static defaultProps = {
     containerStyle: {},
     tabContainerStyle: {},
-  }
+  };
 
   state = {
     tabs: {
@@ -140,81 +134,82 @@ class Profile2 extends Component {
         { key: '4', title: 'followers', count: '1.3 K' },
       ],
     },
-  }
+  };
 
   onPressPlace = () => {
-    console.log('place')
-  }
+    console.log('place');
+  };
 
-  handleIndexChange = index => {
+  handleIndexChange = (index) => {
     this.setState({
       tabs: {
         ...this.state.tabs,
         index,
       },
-    })
-  }
-
-  renderTabBar = props => {
-    return <TabBar
-      indicatorStyle={styles.indicatorTab}
-      renderLabel={this.renderLabel(props)}
-      pressOpacity={0.8}
-      style={styles.tabBar}
-      {...props}
-    />
+    });
   };
 
-  renderLabel = props => ({ route }) => {
-    const routes = props.navigationState.routes
-
-    let labels = []
-    routes.forEach((e, index) => {
-      labels.push(index === props.navigationState.index ? 'black' : 'gray')
-    })
-
-    const currentIndex = parseInt(route.key) - 1
-    const color = labels[currentIndex]
-
+  renderTabBar = (props) => {
     return (
-      <View>
-        <Animated.Text style={[styles.tabLabelText, { color }]}>
-          {route.count}
-        </Animated.Text>
-        <Animated.Text style={[styles.tabLabelNumber, { color }]}>
-          {route.title}
-        </Animated.Text>
-      </View>
-    )
-  }
+      <TabBar
+        indicatorStyle={styles.indicatorTab}
+        renderLabel={this.renderLabel(props)}
+        pressOpacity={0.8}
+        style={styles.tabBar}
+        {...props}
+      />
+    );
+  };
+
+  renderLabel =
+    (props) =>
+    ({ route }) => {
+      const routes = props.navigationState.routes;
+
+      let labels = [];
+      routes.forEach((e, index) => {
+        labels.push(index === props.navigationState.index ? 'black' : 'gray');
+      });
+
+      const currentIndex = parseInt(route.key) - 1;
+      const color = labels[currentIndex];
+
+      return (
+        <View>
+          <Animated.Text style={[styles.tabLabelText, { color }]}>
+            {route.count}
+          </Animated.Text>
+          <Animated.Text style={[styles.tabLabelNumber, { color }]}>
+            {route.title}
+          </Animated.Text>
+        </View>
+      );
+    };
 
   renderScene = ({ route: { key } }) => {
-    const { posts } = this.props
+    const { posts } = this.props;
 
     switch (key) {
       case '1':
-        return <Posts containerStyle={styles.sceneContainer} posts={posts} />
+        return <Posts containerStyle={styles.sceneContainer} posts={posts} />;
       case '2':
-        return <Posts containerStyle={styles.sceneContainer} posts={posts} />
+        return <Posts containerStyle={styles.sceneContainer} posts={posts} />;
       case '3':
-        return <Posts containerStyle={styles.sceneContainer} posts={posts} />
+        return <Posts containerStyle={styles.sceneContainer} posts={posts} />;
       case '4':
-        return <Posts containerStyle={styles.sceneContainer} posts={posts} />
+        return <Posts containerStyle={styles.sceneContainer} posts={posts} />;
       default:
-        return <View />
+        return <View />;
     }
-  }
+  };
 
   renderContactHeader = () => {
-    const { avatar, name, bio } = this.props
+    const { avatar, name, bio } = this.props;
 
     return (
       <View style={styles.headerContainer}>
         <View style={styles.userRow}>
-          <Image
-            style={styles.userImage}
-            source={{uri: avatar}}
-          />
+          <Image style={styles.userImage} source={{ uri: avatar }} />
           <View style={styles.userNameRow}>
             <Text style={styles.userNameText}>{name}</Text>
           </View>
@@ -252,8 +247,8 @@ class Profile2 extends Component {
           </View>
         </View>
       </View>
-    )
-  }
+    );
+  };
 
   render() {
     return (
@@ -271,8 +266,8 @@ class Profile2 extends Component {
           </View>
         </View>
       </ScrollView>
-    )
+    );
   }
 }
 
-export default Profile2
+export default Profile2;

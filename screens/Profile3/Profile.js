@@ -1,27 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   Animated,
   Image,
   ImageBackground,
-  Platform,
   ScrollView,
   StyleSheet,
   Text,
   View,
-} from 'react-native'
-import {
-  TabView,
-  TabBar,
-  TabViewPagerScroll,
-  TabViewPagerPan,
-} from 'react-native-tab-view'
-import PropTypes from 'prop-types'
-import { image } from '../../utils'
+} from 'react-native';
+import { TabView, TabBar } from 'react-native-tab-view';
+import PropTypes from 'prop-types';
+import { image } from '../../utils';
 
-import profileStyles from './ProfileStyle'
-import Posts from './Posts'
+import profileStyles from './ProfileStyle';
+import Posts from './Posts';
 
-const styles = StyleSheet.create({ ...profileStyles })
+const styles = StyleSheet.create({ ...profileStyles });
 
 class Profile3 extends Component {
   static propTypes = {
@@ -42,12 +36,12 @@ class Profile3 extends Component {
         postWidth: PropTypes.number,
       })
     ).isRequired,
-  }
+  };
 
   static defaultProps = {
     containerStyle: {},
     tabContainerStyle: {},
-  }
+  };
 
   state = {
     tabs: {
@@ -59,77 +53,81 @@ class Profile3 extends Component {
       ],
     },
     postsMasonry: {},
-  }
+  };
 
   componentWillMount() {
     this.setState({
       postsMasonry: image.mansonry(this.props.posts, 'imageHeight'),
-    })
+    });
   }
 
-  handleIndexChange = index => {
+  handleIndexChange = (index) => {
     this.setState({
       tabs: {
         ...this.state.tabs,
         index,
       },
-    })
-  }
-
-  renderTabBar = props => {
-    return <TabBar
-      indicatorStyle={styles.indicatorTab}
-      renderLabel={this.renderLabel(props)}
-      pressOpacity={0.8}
-      style={styles.tabBar}
-      {...props}
-    />
+    });
   };
 
-  renderLabel = props => ({ route }) => {
-    const routes = props.navigationState.routes
-
-    let labels = []
-    routes.forEach((e, index) => {
-      labels.push(index === props.navigationState.index ? 'black' : 'gray')
-    })
-
-    const currentIndex = parseInt(route.key) - 1
-    const color = labels[currentIndex]
-
+  renderTabBar = (props) => {
     return (
-      <View style={styles.tabRow}>
-        <Animated.Text style={[styles.tabLabelNumber, { color }]}>
-          {route.count}
-        </Animated.Text>
-        <Animated.Text style={[styles.tabLabelText, { color }]}>
-          {route.title}
-        </Animated.Text>
-      </View>
-    )
-  }
+      <TabBar
+        indicatorStyle={styles.indicatorTab}
+        renderLabel={this.renderLabel(props)}
+        pressOpacity={0.8}
+        style={styles.tabBar}
+        {...props}
+      />
+    );
+  };
+
+  renderLabel =
+    (props) =>
+    ({ route }) => {
+      const routes = props.navigationState.routes;
+
+      let labels = [];
+      routes.forEach((e, index) => {
+        labels.push(index === props.navigationState.index ? 'black' : 'gray');
+      });
+
+      const currentIndex = parseInt(route.key) - 1;
+      const color = labels[currentIndex];
+
+      return (
+        <View style={styles.tabRow}>
+          <Animated.Text style={[styles.tabLabelNumber, { color }]}>
+            {route.count}
+          </Animated.Text>
+          <Animated.Text style={[styles.tabLabelText, { color }]}>
+            {route.title}
+          </Animated.Text>
+        </View>
+      );
+    };
 
   renderScene = ({ route: { key } }) => {
     switch (key) {
       case '1':
-        return this.renderMansonry2Col()
+        return this.renderMansonry2Col();
       case '2':
-        return this.renderMansonry2Col()
+        return this.renderMansonry2Col();
       case '3':
-        return this.renderMansonry2Col()
+        return this.renderMansonry2Col();
       default:
-        return <View />
+        return <View />;
     }
-  }
+  };
 
   renderContactHeader = () => {
-    const { avatar, avatarBackground, name, bio } = this.props
+    const { avatar, avatarBackground, name, bio } = this.props;
 
     return (
       <View style={styles.headerContainer}>
         <View style={styles.coverContainer}>
           <ImageBackground
-            source={{uri: avatarBackground}}
+            source={{ uri: avatarBackground }}
             style={styles.coverImage}
           >
             <View style={styles.coverTitleContainer}>
@@ -142,14 +140,11 @@ class Profile3 extends Component {
           </ImageBackground>
         </View>
         <View style={styles.profileImageContainer}>
-          <Image
-            source={{uri: avatar}}
-            style={styles.profileImage}
-          />
+          <Image source={{ uri: avatar }} style={styles.profileImage} />
         </View>
       </View>
-    )
-  }
+    );
+  };
 
   renderMansonry2Col = () => {
     return (
@@ -167,8 +162,8 @@ class Profile3 extends Component {
           />
         </View>
       </View>
-    )
-  }
+    );
+  };
 
   render() {
     return (
@@ -186,8 +181,8 @@ class Profile3 extends Component {
           </View>
         </View>
       </ScrollView>
-    )
+    );
   }
 }
 
-export default Profile3
+export default Profile3;

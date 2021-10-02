@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-import { Card, Icon } from 'react-native-elements'
+import React, { Component } from 'react';
+import { Card, Icon } from 'react-native-elements';
 import {
-  FlatList,
   Image,
   ImageBackground,
   Linking,
@@ -10,12 +9,12 @@ import {
   StyleSheet,
   Text,
   View,
-} from 'react-native'
-import PropTypes from 'prop-types'
+} from 'react-native';
+import PropTypes from 'prop-types';
 
-import Email from './Email'
-import Separator from './Separator'
-import Tel from './Tel'
+import Email from './Email';
+import Separator from './Separator';
+import Tel from './Tel';
 
 const styles = StyleSheet.create({
   cardContainer: {
@@ -91,7 +90,7 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     textAlign: 'center',
   },
-})
+});
 
 class Contact extends Component {
   static propTypes = {
@@ -116,25 +115,27 @@ class Contact extends Component {
         number: PropTypes.string.isRequired,
       })
     ).isRequired,
-  }
+  };
 
   onPressPlace = () => {
-    console.log('place')
-  }
+    console.log('place');
+  };
 
-  onPressTel = number => {
-    Linking.openURL(`tel://${number}`).catch(err => console.log('Error:', err))
-  }
+  onPressTel = (number) => {
+    Linking.openURL(`tel://${number}`).catch((err) =>
+      console.log('Error:', err)
+    );
+  };
 
   onPressSms = () => {
-    console.log('sms')
-  }
+    console.log('sms');
+  };
 
-  onPressEmail = email => {
-    Linking.openURL(`mailto://${email}?subject=subject&body=body`).catch(err =>
-      console.log('Error:', err)
-    )
-  }
+  onPressEmail = (email) => {
+    Linking.openURL(`mailto://${email}?subject=subject&body=body`).catch(
+      (err) => console.log('Error:', err)
+    );
+  };
 
   renderHeader = () => {
     const {
@@ -142,20 +143,17 @@ class Contact extends Component {
       avatarBackground,
       name,
       address: { city, country },
-    } = this.props
+    } = this.props;
 
     return (
       <View style={styles.headerContainer}>
         <ImageBackground
           style={styles.headerBackgroundImage}
           blurRadius={10}
-          source={{uri: avatarBackground}}
+          source={{ uri: avatarBackground }}
         >
           <View style={styles.headerColumn}>
-            <Image
-              style={styles.userImage}
-              source={{uri: avatar}}
-            />
+            <Image style={styles.userImage} source={{ uri: avatar }} />
             <Text style={styles.userNameText}>{name}</Text>
             <View style={styles.userAddressRow}>
               <View>
@@ -175,49 +173,45 @@ class Contact extends Component {
           </View>
         </ImageBackground>
       </View>
-    )
-  }
+    );
+  };
 
   renderTel = () => (
-    <FlatList
-      contentContainerStyle={styles.telContainer}
-      data={this.props.tels}
-      renderItem={(list) => {
-        const { id, name, number } = list.item
+    <View style={styles.telContainer}>
+      {this.props.tels.map((item, index) => {
+        const { id, name, number } = item;
 
         return (
           <Tel
             key={`tel-${id}`}
-            index={list.index}
+            index={index}
             name={name}
             number={number}
             onPressSms={this.onPressSms}
             onPressTel={this.onPressTel}
           />
-        )
-      }}
-    />
-  )
+        );
+      })}
+    </View>
+  );
 
   renderEmail = () => (
-    <FlatList
-      contentContainerStyle={styles.emailContainer}
-      data={this.props.emails}
-      renderItem={(list) => {
-        const { email, id, name } = list.item
+    <View style={styles.emailContainer}>
+      {this.props.emails.map((item, index) => {
+        const { email, id, name } = item;
 
         return (
           <Email
             key={`email-${id}`}
-            index={list.index}
+            index={index}
             name={name}
             email={email}
             onPressEmail={this.onPressEmail}
           />
-        )
-      }}
-    />
-  )
+        );
+      })}
+    </View>
+  );
 
   render() {
     return (
@@ -231,8 +225,8 @@ class Contact extends Component {
           </Card>
         </View>
       </ScrollView>
-    )
+    );
   }
 }
 
-export default Contact
+export default Contact;
