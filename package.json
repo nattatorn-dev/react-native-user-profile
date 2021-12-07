@@ -25,7 +25,7 @@
     "react-native": "~0.62.2",
     "react-native-elements": "^2.2.1",
     "react-native-gesture-handler": "~1.6.0",
-    "react-native-reanimated": "~1.9.0",
+    "react-native-reanimated": "~2.3.0",
     "react-native-safe-area-context": "~3.0.7",
     "react-native-screens": "~2.9.0",
     "react-native-tab-view": "^2.15.1",
