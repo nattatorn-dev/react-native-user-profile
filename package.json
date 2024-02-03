@@ -29,7 +29,7 @@
     "react-native-safe-area-context": "~3.0.7",
     "react-native-screens": "~2.9.0",
     "react-native-tab-view": "^2.15.1",
-    "react-native-unimodules": "~0.10.1",
+    "react-native-unimodules": "~0.14.10",
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {
